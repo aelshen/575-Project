@@ -1,3 +1,4 @@
+# -*- coding: iso-8859-15 -*-
 '''
 #==============================================================================
 CSV_creator
@@ -9,6 +10,8 @@ import os
 import sys
 import re
 import random
+from codecs import open as codec_open
+
 #==============================================================================
 #--------------------------------Constants-------------------------------------
 #==============================================================================
@@ -28,7 +31,7 @@ def main():
     
     for transcription in os.listdir(TRANSCRIPTION_PATH):
         vid_id = re.search(r'_([0-9]+)\.txt', transcription).groups()[0]
-        vid_youtube_id = re.search(r'watch\?v=(.+)$', video_list[ int(vid_id) ]).groups()[0]
+        vid_youtube_id = re.search(r'watch\?v=(.+)&?', video_list[ int(vid_id) ]).groups()[0]
         
         
         file = open( os.path.join(TRANSCRIPTION_PATH, transcription) ).readlines()
@@ -107,7 +110,7 @@ def GetTimestamp(time):
 ##-------------------------------------------------------------------------
 def MakeCSV(transcriptions_list):
     
-    with open(OUTFILE, 'w') as outfile:
+    with codec_open(OUTFILE, 'w', 'utf-8-sig') as outfile:
         outfile.write(','.join(LABELS.split()) + os.linesep)
         while len(transcriptions_list) > 0:
             HIT = random.sample(transcriptions_list, min(5, len(transcriptions_list)) )
