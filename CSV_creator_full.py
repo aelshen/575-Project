@@ -34,10 +34,14 @@ def main():
 
 		file = open( os.path.join(TRANSCRIPTION_PATH, transcription) ).readlines()
 		text = '"'
+		is_sentiment = False
 		for line in file:
 			line = line.strip()
-			if (len(line) > 0) and (line[0] != '#') and (line[0] != '<'):
+			if line == "<sentiment>":
+				is_sentiment = True
+			if (len(line) > 0) and (line[0] != '#') and (line[0] != '<') and not is_sentiment:
 				text += line.replace('\n', '').replace('"', "'").strip() + '<br>'
+				is_sentiment = False
 		text += '"'
 		transcriptions_list.append(Row(vid_id, text, vid_youtube_id))
 
