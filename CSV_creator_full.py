@@ -30,7 +30,7 @@ def main():
 
 	for transcription in os.listdir(TRANSCRIPTION_PATH):
 		vid_id = re.search(r'_([0-9]+)\.txt', transcription).groups()[0]
-		vid_youtube_id = re.search(r'watch\?v=(.+)&?', video_list[ int(vid_id) - 1 ]).groups()[0]
+		vid_youtube_id = re.search(r'watch\?v=(.+)&?', video_list[ int(vid_id) - 1 ]).groups()[0].strip()
 
 		file = open( os.path.join(TRANSCRIPTION_PATH, transcription) ).readlines()
 		text = '"'
