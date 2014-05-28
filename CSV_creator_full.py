@@ -17,6 +17,8 @@ from codecs import open as codec_open
 LABELS = '''
          id transcription url
          '''
+         
+OUTFILE = '575_HIT_full.csv'     
 TRANSCRIPTION_PATH = os.getcwd() + '/Transcription'
 video_list = open('vid_list', 'r').readlines()
 
@@ -24,13 +26,12 @@ video_list = open('vid_list', 'r').readlines()
 #-----------------------------------Main---------------------------------------
 #==============================================================================
 def main():
-	output_file = sys.argv[1]
 
 	transcriptions_list = []
 
 	for transcription in os.listdir(TRANSCRIPTION_PATH):
 		vid_id = re.search(r'_([0-9]+)\.txt', transcription).groups()[0]
-		vid_youtube_id = re.search(r'watch\?v=(.+)&?', video_list[ int(vid_id) - 1 ]).groups()[0]
+		vid_youtube_id = "'" + re.search(r'watch\?v=(.+)&?', video_list[ int(vid_id) - 1 ]).groups()[0] + "'"
 
 		file = open( os.path.join(TRANSCRIPTION_PATH, transcription) ).readlines()
 		text = '"'
@@ -41,7 +42,7 @@ def main():
 		text += '"'
 		transcriptions_list.append(Row(vid_id, text, vid_youtube_id))
 
-	MakeCSV(transcriptions_list, output_file)
+	MakeCSV(transcriptions_list, OUTFILE)
 
 	print("CSV file created successfully!")
 
