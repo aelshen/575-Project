@@ -31,14 +31,22 @@ def main():
 
 	for transcription in os.listdir(TRANSCRIPTION_PATH):
 		vid_id = re.search(r'_([0-9]+)\.txt', transcription).groups()[0]
+<<<<<<< HEAD
 		vid_youtube_id = "'" + re.search(r'watch\?v=(.+)&?', video_list[ int(vid_id) - 1 ]).groups()[0] + "'"
+=======
+		vid_youtube_id = re.search(r'watch\?v=(.+)&?', video_list[ int(vid_id) - 1 ]).groups()[0].strip()
+>>>>>>> FETCH_HEAD
 
 		file = open( os.path.join(TRANSCRIPTION_PATH, transcription) ).readlines()
 		text = '"'
+		is_sentiment = False
 		for line in file:
 			line = line.strip()
-			if (len(line) > 0) and (line[0] != '#') and (line[0] != '<'):
+			if line == "<sentiment>":
+				is_sentiment = True
+			if (len(line) > 0) and (line[0] != '#') and (line[0] != '<') and not is_sentiment:
 				text += line.replace('\n', '').replace('"', "'").strip() + '<br>'
+				is_sentiment = False
 		text += '"'
 		transcriptions_list.append(Row(vid_id, text, vid_youtube_id))
 
