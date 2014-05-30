@@ -16,8 +16,14 @@ from re import split as re_split
 #--------------------------------Constants-------------------------------------
 #==============================================================================
 DEBUG = True
-fragment_HIT = '575_HIT.csv'
-full_CSV = '575_youtube_video_collection.csv'
+fragment_HIT = 'Data/575_HIT.csv'
+full_CSV = 'Data/575_youtube_video_collection.csv'
+MTURK_DIR = os.getcwd() + '/MTurk_results'
+
+
+cur = __import__(__name__)
+
+
 #==============================================================================
 #-----------------------------------Main---------------------------------------
 #==============================================================================
@@ -32,6 +38,18 @@ def main():
     
     fragment_dict, video_dict = Initialize()
     
+    for filename in os.listdir(MTURK_DIR):
+        if not filename[0] == '.':
+            x = filename.split('_')[0]
+            filename = os.path.join(MTURK_DIR, filename)
+            try:
+                CSV_func = getattr(cur, x)
+            except AttributeError:
+                print( 'function not found "%s" (%s)' % (x, filename) )
+            else:
+                CSV_func(filename)
+
+            print( filename )
     print("Hello, World!")
 #==============================================================================    
 #---------------------------------Functions------------------------------------
@@ -110,9 +128,9 @@ def TextFragment(mturk_csv):
         for row in f[1:]:
             hit_id = row[0]
             worker_id = row[15]
-            work_time = [23]
+            work_time = row[23]
             chunk_ids = row[27:47:5]
-            answer_polarities = row[60:64]
+            answer_polarities = row[54:58]
             
             temp = FragmentHIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities)
             

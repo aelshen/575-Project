@@ -18,7 +18,7 @@ LABELS = '''
          id transcription url
          '''
          
-OUTFILE = '575_HIT_full.csv'     
+OUTFILE = 'Data/575_HIT_full.csv'     
 TRANSCRIPTION_PATH = os.getcwd() + '/Transcription'
 video_list = open('vid_list', 'r').readlines()
 
