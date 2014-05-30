@@ -16,17 +16,38 @@ from re import split as re_split
 #--------------------------------Constants-------------------------------------
 #==============================================================================
 DEBUG = True
-
+fragment_HIT = '575_HIT.csv'
+full_CSV = '575_youtube_video_collection.csv'
 #==============================================================================
 #-----------------------------------Main---------------------------------------
 #==============================================================================
 def main():
-    fragment_HIT = '575_HIT.csv'
-    full_CSV = '575_youtube_video_collection.csv'
-    
-    
+    #fragment_dict = defaultdict(list)
     #key = chunk_id of first chunk in hit 
     #value = tuple(cumulative length of all chunks in seconds, list of Fragment objects
+    
+    #video_dict = defaultdict(Video)
+    #key = video_id 
+    #value = Video object
+    
+    fragment_dict, video_dict = Initialize()
+    
+    print("Hello, World!")
+#==============================================================================    
+#---------------------------------Functions------------------------------------
+#==============================================================================
+
+##-------------------------------------------------------------------------
+## Initialize()
+##-------------------------------------------------------------------------
+##    Description:     Import information from input CSVs and put them into
+##                     into dictionaries
+##
+##        Returns:     fragment_dict; dictionary of Row objects
+##-------------------------------------------------------------------------
+def Initialize():
+    #key = chunk_id of first chunk in hit 
+    #value = Row object
     fragment_dict = defaultdict(list) 
     
     #key = video_id 
@@ -45,7 +66,9 @@ def main():
                 total_clip_time += temp.duration
                 fragment_list.append( temp )
             
-            fragment_dict[fragment_list[0].id] = (total_clip_time, fragment_list)
+            cur_row = Row(total_clip_time, fragment_list)
+            fragment_dict[fragment_list[0].id] = cur_row
+    
     
     with codec_open(full_CSV, 'rb', 'utf-8') as full_csv:
         f = list( csv.reader(full_csv) )
@@ -53,20 +76,18 @@ def main():
             temp = Video(row[0], row[5])
             video_dict[temp.id] = temp
     
-    print("Hello, World!")
-#==============================================================================    
-#---------------------------------Functions------------------------------------
-#==============================================================================
+    return fragment_dict,video_dict
 ##-------------------------------------------------------------------------
-## test()
+## Functions for extracting completed HITs from MTurk CSVs
 ##-------------------------------------------------------------------------
-##    Description:        description
+##    Description:     Take an MTurk produced CSV of the results of the 
+##                     HIT online, and import the tasks submitted into the
+##                     program.
 ##
-##    Arguments:        arguments
+##    Arguments:       mturk_csv; MTurk produced CSV of HIT results
 ##
-##    Calls:                calls
 ##
-##        Returns:            returns
+##    Returns:         HIT_list; list of all the submitted HITs
 ##-------------------------------------------------------------------------
 def TextFragment(mturk_csv):
     #[0] = HITId
@@ -398,6 +419,19 @@ class FullHIT():
         
         self.vid_transcription = []
         
+##-------------------------------------------------------------------------
+## Class Row
+##-------------------------------------------------------------------------
+##    Description:    Container class for a row of chunks, from the fragment CSV
+##
+##    Arguments:      total_clip_length; the total length of all clips in a 
+##                        row of the fragment CSV
+##                    fragment_list; list of Fragment objects
+##-------------------------------------------------------------------------
+class Row():
+    def __init__(self, total_clip_length, fragment_list):
+        self.total_clip_length = total_clip_length
+        self.fragment_list = fragment_list
         
 
 #==============================================================================    
