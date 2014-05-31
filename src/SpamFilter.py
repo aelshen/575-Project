@@ -88,7 +88,7 @@ def main():
 ##    Description:     Import information from input CSVs and put them into
 ##                     into dictionaries
 ##
-##        Returns:     fragment_dict; dictionary of Row objects
+##    Returns:         fragment_dict; dictionary of Row objects
 ##-------------------------------------------------------------------------
 def Initialize():
     #key = chunk_id of first chunk in hit 
@@ -444,11 +444,10 @@ def AVFull(mturk_csv, experiment):
 ##    Description:    Container class for a video 
 ##
 ##    Arguments:      id; the video ID number
-##                    start_time; the start time of the video in seconds
-##                    end_time; the end time of the video in seconds
+##                    time; the length of the video (XmYs)
 ##
 ##    Properties:     self.id; the video ID number
-##                    self.duration; the duration of the fragment in seconds
+##                    self.total_clip_length; the duration of the video in seconds
 ##-------------------------------------------------------------------------
 class Video:
     def __init__(self, id, time):
@@ -487,12 +486,22 @@ class Fragment:
 ##-------------------------------------------------------------------------
 ##    Description:    Container class for a video fragment
 ##
-##    Arguments:      id; the fragment ID number
-##                    start_time; the start time of the fragment in seconds
-##                    end_time; the end time of the fragment in seconds
+##    Arguments:      hit_id; hit_id
+##                    worker_id; worker_id
+##                    work_time; time in seconds for completion of HIT
+##                    id; list[], the id of the video/fragments
+##                    polarity; list[], the sentiment scores of the video/fragments  
 ##
-##    Properties:     self.id; the fragment ID number
-##                    self.duration; the duration of the fragment in seconds
+##    Properties:     self.hit_id; hit_id
+##                    self.worker_id; worker_id
+##                    self.work_time; time in seconds for completion of HIT
+##                    self.ids = list[], the id of the video/fragments
+##                    self.task_id = the id of the HIT, set to the id of the 
+##                        video, or the first fragment id
+##                    self.polarities; list[], the sentiment scores of the video/fragments
+##                    self.reject_flag; flag for if a HIT is to be rejected 
+##                        (i.e. it has been marked for spam)
+##                    self.reject_reason; reason for having been marked as spam
 ##-------------------------------------------------------------------------
 class HIT():
     def __init__(self, hit_id, worker_id, work_time, id, polarity):
@@ -530,15 +539,21 @@ class Row():
         self.fragment_list = fragment_list
 
 
+
 ##-------------------------------------------------------------------------
 ## Class Experiment
 ##-------------------------------------------------------------------------
 ##    Description:    Container class for each experiment
 ##                    i.e. text only, audio only, etc. etc.
 ##
-##    Arguments:      total_clip_length; the total length of all clips in a 
-##                        row of the fragment CSV
-##                    fragment_list; list of Fragment objects
+##    Arguments:      name; the name of the experiment (TextFull, AVFragment, etc.)
+##
+##    Properties:     self.name; name of the experiment
+##                    self.gender; Counter(), demographics for gender
+##                    self.age; Counter(); demographics for age
+##                    self.locaiton; Counter() demographics for location
+##                    self.has_transcriptions; flag for if the experiment 
+##                        is one that involves transcriptions
 ##-------------------------------------------------------------------------
 class Experiment():
     def __init__(self, name):
@@ -553,6 +568,20 @@ class Experiment():
             self.has_transcriptions = True
     
     
+    ##-------------------------------------------------------------------------
+    ## Experiment.FilterSpam()
+    ##-------------------------------------------------------------------------
+    ##    Description:     Filter out the spam from a list of HITs, using a 
+    ##                     four-pass sweep.
+    ##
+    ##    Arguments:       answer_key; dict(), key=id value=Video/Row object
+    ##
+    ##
+    ##    Calls:           Experiment.CheckTime()
+    ##                     Experiment.CheckTranscriptions()
+    ##                     Experiment.CheckGoldHIT()
+    ##                     Experiment.AggregateScores()
+    ##-------------------------------------------------------------------------
     def FilterSpam(self, answer_key):
         self.answer_key = answer_key
 
@@ -567,7 +596,18 @@ class Experiment():
         #then call function to check averages
         self.AggregateScores()
                 
-    
+    ##-------------------------------------------------------------------------
+    ## Experiment.CheckTime()
+    ##-------------------------------------------------------------------------
+    ##    Description:     Checks to make sure that a HIT was completed in a  
+    ##                     time greater than the length of the video 
+    ##                     or the cumulative length of the Fragments.
+    ##
+    ##    Arguments:       hit; a HIT object
+    ##
+    ##
+    ##    Called by:       Experiment.FilterSpam()
+    ##-------------------------------------------------------------------------
     def CheckTime(self, hit):
         if 'Text' in self.name:
             if hit.work_time <= TEXT_TIME_THRESHOLD:
@@ -579,7 +619,23 @@ class Experiment():
                 hit.reject_flag = True
                 hit.reject_reason = 'Task was submitted in a time shorter than the length of the video(s)'
     
-    
+    ##-------------------------------------------------------------------------
+    ## Experiment.CheckTranscriptions()
+    ##-------------------------------------------------------------------------
+    ##    Description:     Checks to make sure that the partial transcriptions   
+    ##                     in a HIT are acceptable according to these checks:
+    ##                     (1) As many transcriptions are given as there were
+    ##                         videos in the HIT, and that they are all unique
+    ##                         as no HITs involve repeats.
+    ##                     (2) The transcriptions provided are greater than 
+    ##                         some set threshold, so that they are at least 
+    ##                         of an acceptable length and not empty.
+    ##
+    ##    Arguments:       hit; a HIT object
+    ##
+    ##
+    ##    Called by:       Experiment.FilterSpam()
+    ##-------------------------------------------------------------------------
     def CheckTranscriptions(self, hit):
         if hit.reject_flag:
             return
@@ -600,6 +656,19 @@ class Experiment():
                 hit.reject_reason = 'One or more transcriptions were empty or were suspiciously short'
                 return
     
+    ##-------------------------------------------------------------------------
+    ## Experiment.CheckGoldHIT()
+    ##-------------------------------------------------------------------------
+    ##    Description:     Checks to make sure that the answers given for    
+    ##                     certain HITs are in agreement with golden answers.
+    ##                     If the worker's answer is of an opposite polarity than 
+    ##                     the golden answer, the HIT is flagged as spam.
+    ##
+    ##    Arguments:       hit; a HIT object
+    ##
+    ##
+    ##    Called by:       Experiment.FilterSpam()
+    ##-------------------------------------------------------------------------
     def CheckGoldHIT(self, hit):
         if hit.reject_flag:
             return
@@ -617,6 +686,19 @@ class Experiment():
                         hit.reject_flag = True
                         hit.reject_reason = 'One or more answers did not agree with Golden HIT answer'
     
+    ##-------------------------------------------------------------------------
+    ## Experiment.CompareAverages()
+    ##-------------------------------------------------------------------------
+    ##    Description:     Compares a worker's scores with the average of all
+    ##                     workers' answers. If the current worker's answer is
+    ##                     off by a certain amount (set by AVERAGE_SCORE_THRESHOLD)
+    ##                     the HIT is flagged as spam.    
+    ##
+    ##    Arguments:       hit; a HIT object
+    ##
+    ##
+    ##    Called by:       Experiment.FilterSpam()
+    ##-------------------------------------------------------------------------
     def CompareAverages(self, hit):
         if hit.reject_flag:
             return
@@ -632,7 +714,15 @@ class Experiment():
                 return
             
 
-    
+    ##-------------------------------------------------------------------------
+    ## Experiment.AggregateScores()
+    ##-------------------------------------------------------------------------
+    ##    Description:     Builds a dictionary to hold the counts of all the 
+    ##                     scores for the experiment.
+    ##                     dict( key=id value=Counter(key=score value=count) )
+    ##                     And then builds a dictionary of the average score
+    ##                     for a given id.  
+    ##-------------------------------------------------------------------------
     def AggregateScores(self):
         self.sentiment_scores = defaultdict(lambda: Counter())
         total_counts = Counter()
@@ -656,7 +746,14 @@ class Experiment():
             
             self.sentiment_averages[id] = total / count 
     
-    
+    ##-------------------------------------------------------------------------
+    ## Experiment.PrintSpamList()
+    ##-------------------------------------------------------------------------
+    ##    Description:     Prints out all of the HITs that were flagged as spam  
+    ##
+    ##    Arguments:       outfile_stream; an opened file. 
+    ##                         if not None, prints to stdout, else prints to file
+    ##-------------------------------------------------------------------------
     def PrintSpamList(self, outfile_stream = None):
         if outfile_stream:
             sys.stdout = outfile_stream
@@ -666,7 +763,7 @@ class Experiment():
         print(self.name + ': %s spam HITs out of %s total HITs' % (str(len(spam_list)), str(len(self.HIT_list))))
         print('#'*50)
         for hit in spam_list:
-            print(" ".join([hit.hit_id, hit.worker_id, hit.reject_reason]))
+            print("\t".join([hit.hit_id, hit.worker_id, hit.reject_reason]))
         print()
             
 
