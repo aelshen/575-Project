@@ -1,0 +1,205 @@
+##################################################
+AudioFragment: 4 spam HITs out of 15 total HITs
+##################################################
+3KLL7H3EGDEBPXCY88G62H2BU93HV4 A2HQHBR7Z4AI56 One or more answers were left blank
+3LEG2HW4UF0IEANQP88VXRTNHWXF2W A2RYZ8Z3U7T0SE One or more answers did not agree with Golden HIT answer
+3LN3BXKGC08A4QHSEC3K3J9OMIRWGT A1T2CG5MVZWBV5 One or more answers were left blank
+37VE3DA4YUUWGJES3RP61584RHMHBX A32BIDGWOVYA9T Unique transcriptions were not provided for all five fragments
+
+##################################################
+AudioFull: 14 spam HITs out of 71 total HITs
+##################################################
+3I7KR83SNAQ4UG03BSE7NRT6VYNK9U A1ZBMULAPZZ3FG Task was submitted in a time shorter than the length of the video(s)
+3I7KR83SNAQ4UG03BSE7NRT6VYNK9U A14X36W5M4A8O4 Task was submitted in a time shorter than the length of the video(s)
+3TCFMTM8HE1ROVTII9TA8PPTGME21I A3YP2RNFZ1PQP Task was submitted in a time shorter than the length of the video(s)
+3VGZ74AYTGT1QSBNXL3JRP2LU2ACG1 A3YP2RNFZ1PQP Task was submitted in a time shorter than the length of the video(s)
+3BJKPTD2QCP91ZMCZISLF3GWKXKTRW A1ZBMULAPZZ3FG Task was submitted in a time shorter than the length of the video(s)
+3MNJFORX8BHAD76D7RATVYWZ16OF5X A1ZBMULAPZZ3FG Task was submitted in a time shorter than the length of the video(s)
+3AC6MFV69KVSYHH89559NNF7IK8ZHL A3YP2RNFZ1PQP Task was submitted in a time shorter than the length of the video(s)
+3IH9TRB0FBCVZG7K7CE2V5WA5IBI19 AGTM17BH0R98Y Task was submitted in a time shorter than the length of the video(s)
+3FW4EL5A3L1YDGBE1DTOD8ZY8SS22Z A1ZBMULAPZZ3FG Task was submitted in a time shorter than the length of the video(s)
+3FW4EL5A3L1YDGBE1DTOD8ZY8SS22Z A3YP2RNFZ1PQP Task was submitted in a time shorter than the length of the video(s)
+3BFF0DJK8XPL2EMPE7SQ5DLS6Z3TSK A2TDLLB8JTZGBN Task was submitted in a time shorter than the length of the video(s)
+36U4VBVNQOQO1C11ZNIVKZ2Y3BRRUL A2TDLLB8JTZGBN Task was submitted in a time shorter than the length of the video(s)
+36U4VBVNQOQO1C11ZNIVKZ2Y3BRRUL A7IH21LIOFH9 Task was submitted in a time shorter than the length of the video(s)
+3HEADTGN2P5OERQ14DS0GL4HHI0RVA A1ZBMULAPZZ3FG Task was submitted in a time shorter than the length of the video(s)
+
+##################################################
+AVFragment: 1 spam HITs out of 2 total HITs
+##################################################
+3VEI3XUCZRAB97T5I1J1ATFZVUZRPP A32BIDGWOVYA9T One or more answers were left blank
+
+##################################################
+AVFull: 14 spam HITs out of 57 total HITs
+##################################################
+3FO95NVK5CD8MZ9XAINV5YKAIE6RS5 A1ZBMULAPZZ3FG Task was submitted in a time shorter than the length of the video(s)
+3OND0WXMHWSUNMQCDIRW2DEPUEZHEX A1ZBMULAPZZ3FG Task was submitted in a time shorter than the length of the video(s)
+3W0KKJIARRM4GBHT608TNVYVBS5K85 AJAU1KH2MY7YM One or more transcriptions were empty or were suspiciously short
+3XJOUITW8U49PY7CM33LAD6ROBITQV A1ZBMULAPZZ3FG Task was submitted in a time shorter than the length of the video(s)
+3ABAOCJ4R8H5C3HSD629OZBZU3MMQN A1ZBMULAPZZ3FG Task was submitted in a time shorter than the length of the video(s)
+38XPGNCKHTDHDLO3T1WN8ST7P4H4V5 A1ZBMULAPZZ3FG Task was submitted in a time shorter than the length of the video(s)
+3VP28W7DUNX8KLQ2EFH9K23U25VZFN A1ZBMULAPZZ3FG Task was submitted in a time shorter than the length of the video(s)
+3H1C3QRA01W36EFWRQDVRMH9HMVCEK A2UHH88Z8XNXMN One or more transcriptions were empty or were suspiciously short
+3H1C3QRA01W36EFWRQDVRMH9HMVCEK A1ZBMULAPZZ3FG Task was submitted in a time shorter than the length of the video(s)
+3AC6MFV69KVSYHH89559NNF7IK9HZ4 A1ZBMULAPZZ3FG Task was submitted in a time shorter than the length of the video(s)
+3126F2F5F8GM03O0WVZ1BMGGG59PEA A1ZBMULAPZZ3FG Task was submitted in a time shorter than the length of the video(s)
+3UV0D2KX1MWSHO2DTMRJQ6QL1ATF4S A2LT5VXO2LS0UL Task was submitted in a time shorter than the length of the video(s)
+3R868ACW4SPEYLMXPZNR2N363KVZGM A1ZBMULAPZZ3FG Task was submitted in a time shorter than the length of the video(s)
+3JVP4ZJHDP5VSRM2BTA2H0D00Q5I06 A2LT5VXO2LS0UL Task was submitted in a time shorter than the length of the video(s)
+
+##################################################
+TextFragment: 23 spam HITs out of 233 total HITs
+##################################################
+3PA41K45VNH1RO9Q9NLV5COZUI5P7O AL8NYDL4JOYL3 One or more answers were left blank
+3EN4YVUOUC5ZKSCJWNK92FFBNCEJXD A1TQYQG3VFJTWW One or more answers did not agree with Golden HIT answer
+3EN4YVUOUC5ZKSCJWNK92FFBNCEJXD AY3LDNDWACXCT One or more answers were left blank
+3EN4YVUOUC5ZKSCJWNK92FFBNCEJXD A3QLLE1FRSUG8J One or more answers did not agree with Golden HIT answer
+3EN4YVUOUC5ZKSCJWNK92FFBNCEJXD A3CFBT2CBQQIZY One or more answers were left blank
+3EN4YVUOUC5ZKSCJWNK92FFBNCEJXD AL8NYDL4JOYL3 One or more answers were left blank
+3EN4YVUOUC5ZKSCJWNK92FFBNCEJXD A3CHMRKLKSXB4Q One or more answers did not agree with Golden HIT answer
+3PUOXASB57GZJBZPBTHHA6HJZ70Z9V AY3LDNDWACXCT One or more answers were left blank
+3511RHPADVRLIME7Q9QUTC6FQKYRLR A32BIDGWOVYA9T One or more answers did not agree with Golden HIT answer
+3IZPORCT1FMJWQVHZOBW1KD893QHRB AL8NYDL4JOYL3 One or more answers were left blank
+3IZPORCT1FMJWQVHZOBW1KD893QHRB A32BIDGWOVYA9T One or more answers did not agree with Golden HIT answer
+3IZPORCT1FMJWQVHZOBW1KD893QHRB A1A6HHPEAE5VI4 One or more answers were left blank
+36818Z1KV3QC3121IS0820NOQUKA3P A32BIDGWOVYA9T One or more answers did not agree with Golden HIT answer
+3EQVJH0T40YWC5893DGR1ZEQXONHTO A32BIDGWOVYA9T One or more answers did not agree with Golden HIT answer
+3EQVJH0T40YWC5893DGR1ZEQXONHTO A2UD6YLEN1BU8M One or more answers were left blank
+3RWB1RTQDJ05R2E9JSD1JCKU52BP8B AL8NYDL4JOYL3 One or more answers were left blank
+3RWB1RTQDJ05R2E9JSD1JCKU52BP8B AM5CFEE9TX19X One or more answers did not agree with Golden HIT answer
+3RWB1RTQDJ05R2E9JSD1JCKU52BP8B A32BIDGWOVYA9T One or more answers did not agree with Golden HIT answer
+32CAVSKPCE20872K1T3GE8KLZDY1U0 A32BIDGWOVYA9T One or more answers did not agree with Golden HIT answer
+32CAVSKPCE20872K1T3GE8KLZDY1U0 AY3LDNDWACXCT One or more answers did not agree with Golden HIT answer
+32CAVSKPCE20872K1T3GE8KLZDY1U0 A2UD6YLEN1BU8M One or more answers were left blank
+32CAVSKPCE20872K1T3GE8KLZDY1U0 AL8NYDL4JOYL3 One or more answers did not agree with Golden HIT answer
+3OB6JN3A9Q25O4WSQLR9TPL4QPORMT A32BIDGWOVYA9T One or more answers were left blank
+
+##################################################
+TextFull: 18 spam HITs out of 202 total HITs
+##################################################
+375VSR8FVWM5NBVB5AH31RHD5T6RZA AY3LDNDWACXCT Task was completed suspiciously quickly.
+375VSR8FVWM5NBVB5AH31RHD5T6RZA ABMX8XUNPR3LP Task was completed suspiciously quickly.
+3SV8KD29L45J07IGFQ860FVZA1CZKP A3CFBT2CBQQIZY Task was completed suspiciously quickly.
+3SV8KD29L45J07IGFQ860FVZA1CZKP AY3LDNDWACXCT Task was completed suspiciously quickly.
+3XEIP58NL00UKD0Y0QK7FF8EZ1HZLS AY3LDNDWACXCT Task was completed suspiciously quickly.
+3XEIP58NL00UKD0Y0QK7FF8EZ1HZLS AOPG07J95DDJT Task was completed suspiciously quickly.
+3XEIP58NL00UKD0Y0QK7FF8EZ1HZLS ABMX8XUNPR3LP Task was completed suspiciously quickly.
+3CKVGCS3PGIKM5PYG54GL2JN9O6S07 AY3LDNDWACXCT Task was completed suspiciously quickly.
+3P0I4CQYVYKYW3YQ2VGS8SIQD4IWOG AY3LDNDWACXCT Task was completed suspiciously quickly.
+3P0I4CQYVYKYW3YQ2VGS8SIQD4IWOG ABMX8XUNPR3LP Task was completed suspiciously quickly.
+3GONHBMNHVBEQVIJ02LMFSN3Z67ZMU ABMX8XUNPR3LP Task was completed suspiciously quickly.
+3KWGG5KP6JF1I2798O1E4UMIQOMCM9 AY3LDNDWACXCT Task was completed suspiciously quickly.
+3B6F54KMR2PKTUAGCO8GZ72XEGCS1A AY3LDNDWACXCT Task was completed suspiciously quickly.
+3B6F54KMR2PKTUAGCO8GZ72XEGCS1A ACXKO7WRVOXWQ One or more answers were left blank
+3B6F54KMR2PKTUAGCO8GZ72XEGCS1A A1TQYQG3VFJTWW Task was completed suspiciously quickly.
+3B6F54KMR2PKTUAGCO8GZ72XEGCS1A ABMX8XUNPR3LP Task was completed suspiciously quickly.
+3E6L1VR4XWZ6WB6RCAKYN4AZX1ZF6D ACXKO7WRVOXWQ One or more answers were left blank
+3E6L1VR4XWZ6WB6RCAKYN4AZX1ZF6D A3CFBT2CBQQIZY Task was completed suspiciously quickly.
+
+##################################################
+VideoFragment: 43 spam HITs out of 144 total HITs
+##################################################
+335HHSX8CDIPVGCCHNGCWVW4U2YHD4 A2B3ZS2XWMPUTR One or more answers were left blank
+322ZSN9Z5GX20TKEO6W87A5MSJ14TP A2B3ZS2XWMPUTR One or more answers did not agree with Golden HIT answer
+37YYO3NWHD3O9GVIVZ701YH6WAICCR A2B3ZS2XWMPUTR Task was submitted in a time shorter than the length of the video(s)
+37YYO3NWHD3O9GVIVZ701YH6WAICCR A3QZMGTVA4VO44 One or more answers did not agree with Golden HIT answer
+37YYO3NWHD3O9GVIVZ701YH6WAICCR A3HEEJU34TVU1 One or more answers did not agree with Golden HIT answer
+3K3IX1W4S64JAQ7OGQXFF3QPVQBPAF A2B3ZS2XWMPUTR One or more answers did not agree with Golden HIT answer
+3K3IX1W4S64JAQ7OGQXFF3QPVQBPAF A3QZMGTVA4VO44 One or more answers did not agree with Golden HIT answer
+3WJGKMRWVIMYE81WVV2BL4ZOHAUCDR A32BIDGWOVYA9T One or more answers did not agree with Golden HIT answer
+3WJGKMRWVIMYE81WVV2BL4ZOHAUCDR A3QZMGTVA4VO44 One or more answers did not agree with Golden HIT answer
+3WJGKMRWVIMYE81WVV2BL4ZOHAUCDR A1G9G9IQV38J9P One or more answers did not agree with Golden HIT answer
+385MDVINFCSKVS7TMION0W14EA8WJX A2SWQM5X54P1O5 One or more answers did not agree with Golden HIT answer
+385MDVINFCSKVS7TMION0W14EA8WJX A32BIDGWOVYA9T One or more answers did not agree with Golden HIT answer
+3SR6AEG6W56STR73DJ3Q9G65CQ5HYD A7IH21LIOFH9 One or more answers did not agree with Golden HIT answer
+3SR6AEG6W56STR73DJ3Q9G65CQ5HYD A2B3ZS2XWMPUTR One or more answers did not agree with Golden HIT answer
+3SR6AEG6W56STR73DJ3Q9G65CQ5HYD A3QZMGTVA4VO44 One or more answers did not agree with Golden HIT answer
+3SR6AEG6W56STR73DJ3Q9G65CQ5HYD A2GYWG3QKKC2E1 One or more answers did not agree with Golden HIT answer
+3KA7IJSNW6IOT0CGM4XBAEAVD8WPBA A3QZMGTVA4VO44 One or more answers did not agree with Golden HIT answer
+3KA7IJSNW6IOT0CGM4XBAEAVD8WPBA A1D1Y2Z8WQ1UM One or more answers did not agree with Golden HIT answer
+3KA7IJSNW6IOT0CGM4XBAEAVD8WPBA A1TQYQG3VFJTWW One or more answers did not agree with Golden HIT answer
+3RZS0FBRWKN7354M04T6LYGDVTWPCH A1TQYQG3VFJTWW One or more answers did not agree with Golden HIT answer
+3RZS0FBRWKN7354M04T6LYGDVTWPCH A3QZMGTVA4VO44 One or more answers did not agree with Golden HIT answer
+3RZS0FBRWKN7354M04T6LYGDVTWPCH A2B3ZS2XWMPUTR One or more answers did not agree with Golden HIT answer
+3BCRDCM0OD7HCXY5DLBV3H245XFK6J A32BIDGWOVYA9T One or more answers did not agree with Golden HIT answer
+3BCRDCM0OD7HCXY5DLBV3H245XFK6J A2GYWG3QKKC2E1 Task was submitted in a time shorter than the length of the video(s)
+3MA5N0ATTCOF6CDB43OZ1B1HTZ8WKW A25DP2IBIXX6MM One or more answers did not agree with Golden HIT answer
+3MA5N0ATTCOF6CDB43OZ1B1HTZ8WKW A3FW9NWR6TJ4M9 One or more answers did not agree with Golden HIT answer
+3MA5N0ATTCOF6CDB43OZ1B1HTZ8WKW A2B3ZS2XWMPUTR Task was submitted in a time shorter than the length of the video(s)
+3MA5N0ATTCOF6CDB43OZ1B1HTZ8WKW A1ZZ0H4IM94QTB One or more answers did not agree with Golden HIT answer
+3MA5N0ATTCOF6CDB43OZ1B1HTZ8WKW A2GYWG3QKKC2E1 One or more answers did not agree with Golden HIT answer
+3MA5N0ATTCOF6CDB43OZ1B1HTZ8WKW A32BIDGWOVYA9T One or more answers did not agree with Golden HIT answer
+3TRB893CSJNVEBGR64V8B3A7TRJ7G3 A32BIDGWOVYA9T One or more answers did not agree with Golden HIT answer
+3TRB893CSJNVEBGR64V8B3A7TRJ7G3 A2GYWG3QKKC2E1 One or more answers did not agree with Golden HIT answer
+3TRB893CSJNVEBGR64V8B3A7TRJ7G3 A104V5RLS1VRHC Task was submitted in a time shorter than the length of the video(s)
+3DTJ4WT8BDSGE7Q6J4X32KIUQ4GZE5 A1D1Y2Z8WQ1UM One or more answers did not agree with Golden HIT answer
+3DTJ4WT8BDSGE7Q6J4X32KIUQ4GZE5 A2FWMAJ0Z92JAY One or more answers did not agree with Golden HIT answer
+3DTJ4WT8BDSGE7Q6J4X32KIUQ4GZE5 A2W7FJSCH7SV0I One or more answers did not agree with Golden HIT answer
+3DTJ4WT8BDSGE7Q6J4X32KIUQ4GZE5 A3QZMGTVA4VO44 One or more answers did not agree with Golden HIT answer
+3DTJ4WT8BDSGE7Q6J4X32KIUQ4GZE5 A1ZZ0H4IM94QTB One or more answers did not agree with Golden HIT answer
+3R16PJFTS343XAURUXIG6JIQ969K4Y A1D1Y2Z8WQ1UM One or more answers did not agree with Golden HIT answer
+3R16PJFTS343XAURUXIG6JIQ969K4Y A2B3ZS2XWMPUTR One or more answers did not agree with Golden HIT answer
+3R16PJFTS343XAURUXIG6JIQ969K4Y A15LJBDDYKA4M7 One or more answers did not agree with Golden HIT answer
+3R16PJFTS343XAURUXIG6JIQ969K4Y A104V5RLS1VRHC Task was submitted in a time shorter than the length of the video(s)
+3X878VYTIEVP0BKWVKPQTIAVSCJ7F4 A32BIDGWOVYA9T One or more answers did not agree with Golden HIT answer
+
+##################################################
+VideoFull: 56 spam HITs out of 201 total HITs
+##################################################
+3ZLW647WAL8NYY7X5D7TWI4QE6S23A A1FG7WZHUGYGBO Task was submitted in a time shorter than the length of the video(s)
+3ZLW647WAL8NYY7X5D7TWI4QE6S23A A1UF113072UTML Task was submitted in a time shorter than the length of the video(s)
+3ZLW647WAL8NYY7X5D7TWI4QE6S23A A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+3P7RGTLO6EQIZZA83YS7JM4Q1G5KA9 A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+3P7RGTLO6EQIZZA83YS7JM4Q1G5KA9 A1UF113072UTML Task was submitted in a time shorter than the length of the video(s)
+3P7RGTLO6EQIZZA83YS7JM4Q1G5KA9 A3QLLE1FRSUG8J Task was submitted in a time shorter than the length of the video(s)
+3P7RGTLO6EQIZZA83YS7JM4Q1G5KA9 A1RN57G3SSIRMM Task was submitted in a time shorter than the length of the video(s)
+3P7RGTLO6EQIZZA83YS7JM4Q1G5KA9 A2T4ZXKK6OBT3H Task was submitted in a time shorter than the length of the video(s)
+3K8CQCU3KEEGEIYE1GGFT3ILNUDWN1 A1FG7WZHUGYGBO Task was submitted in a time shorter than the length of the video(s)
+3K8CQCU3KEEGEIYE1GGFT3ILNUDWN1 A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+3ODOP6T3ASX8GUQ15RCC6NWWS6O24V A1UF113072UTML Task was submitted in a time shorter than the length of the video(s)
+3ODOP6T3ASX8GUQ15RCC6NWWS6O24V A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+3ODOP6T3ASX8GUQ15RCC6NWWS6O24V A3QLLE1FRSUG8J Task was submitted in a time shorter than the length of the video(s)
+32204AGAABPS70M3JDHK2GZ17UEHGE A2FWMAJ0Z92JAY Task was submitted in a time shorter than the length of the video(s)
+32204AGAABPS70M3JDHK2GZ17UEHGE A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+31KSVEGZ3451TGQ6UNXW2NNVOR2RWK A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+31KSVEGZ3451TGQ6UNXW2NNVOR2RWK A33XXKGG4SP92D Task was submitted in a time shorter than the length of the video(s)
+31KSVEGZ3451TGQ6UNXW2NNVOR2RWK A1UF113072UTML Task was submitted in a time shorter than the length of the video(s)
+31KSVEGZ3451TGQ6UNXW2NNVOR2RWK A3QLLE1FRSUG8J Task was submitted in a time shorter than the length of the video(s)
+31KSVEGZ3451TGQ6UNXW2NNVOR2RWK AVJP26EXKPSE1 Task was submitted in a time shorter than the length of the video(s)
+3EKZL9T8Y8ZFQO6YHRL1CPEM92NCH0 A33XXKGG4SP92D Task was submitted in a time shorter than the length of the video(s)
+341YLJU21IC2O1PGQGEG0O6FXOPI2Q A1UF113072UTML Task was submitted in a time shorter than the length of the video(s)
+341YLJU21IC2O1PGQGEG0O6FXOPI2Q A1FG7WZHUGYGBO Task was submitted in a time shorter than the length of the video(s)
+341YLJU21IC2O1PGQGEG0O6FXOPI2Q A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+37AQKJ12TX1MHEZ437XGFIHE8IHTT9 A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+3ECKRY5B1Q9SUCSSFNNUNZGMIXNZIE A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+3ECKRY5B1Q9SUCSSFNNUNZGMIXNZIE A2T4ZXKK6OBT3H Task was submitted in a time shorter than the length of the video(s)
+3YLPJ8OXX8Q9HATYTGX5WDQS5FP4X8 A1UF113072UTML Task was submitted in a time shorter than the length of the video(s)
+3YLPJ8OXX8Q9HATYTGX5WDQS5FP4X8 A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+3YLPJ8OXX8Q9HATYTGX5WDQS5FP4X8 A3M6D6HNOB7OZ Task was submitted in a time shorter than the length of the video(s)
+3G3AJKPCXL5YHFJ8YCJ7FRX17LJ4YE A3QLLE1FRSUG8J Task was submitted in a time shorter than the length of the video(s)
+3G3AJKPCXL5YHFJ8YCJ7FRX17LJ4YE A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+3G3AJKPCXL5YHFJ8YCJ7FRX17LJ4YE A1UF113072UTML Task was submitted in a time shorter than the length of the video(s)
+3G3AJKPCXL5YHFJ8YCJ7FRX17LJ4YE A1FG7WZHUGYGBO Task was submitted in a time shorter than the length of the video(s)
+3G3AJKPCXL5YHFJ8YCJ7FRX17LJ4YE A1RN57G3SSIRMM Task was submitted in a time shorter than the length of the video(s)
+372AGES0I4IGIGVW4STI4612XT8RXD A1UF113072UTML Task was submitted in a time shorter than the length of the video(s)
+372AGES0I4IGIGVW4STI4612XT8RXD A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+3UEDKCTP9V30GXCAWVGN9V200807K6 A1UF113072UTML Task was submitted in a time shorter than the length of the video(s)
+3UEDKCTP9V30GXCAWVGN9V200807K6 A3QLLE1FRSUG8J Task was submitted in a time shorter than the length of the video(s)
+3UEDKCTP9V30GXCAWVGN9V200807K6 A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+3OQQD2WO8IJR9JLZUGSLJYB732PI31 A9F8CVAIB53GJ Task was submitted in a time shorter than the length of the video(s)
+3OQQD2WO8IJR9JLZUGSLJYB732PI31 A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+3OQQD2WO8IJR9JLZUGSLJYB732PI31 A14X36W5M4A8O4 Task was submitted in a time shorter than the length of the video(s)
+3OQQD2WO8IJR9JLZUGSLJYB732PI31 A1FG7WZHUGYGBO Task was submitted in a time shorter than the length of the video(s)
+3OQQD2WO8IJR9JLZUGSLJYB732PI31 A3QLLE1FRSUG8J Task was submitted in a time shorter than the length of the video(s)
+3IKDQS3DQEDFMJHIN93MC1F19F2CIT A3QLLE1FRSUG8J Task was submitted in a time shorter than the length of the video(s)
+3IKDQS3DQEDFMJHIN93MC1F19F2CIT A1UF113072UTML Task was submitted in a time shorter than the length of the video(s)
+3IKDQS3DQEDFMJHIN93MC1F19F2CIT A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+3EQPA8A3749OPNCYX58UZ0VMVCCZJQ A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+3EQPA8A3749OPNCYX58UZ0VMVCCZJQ A1UF113072UTML Task was submitted in a time shorter than the length of the video(s)
+3EQPA8A3749OPNCYX58UZ0VMVCCZJQ A33XXKGG4SP92D Task was submitted in a time shorter than the length of the video(s)
+3DIIW4IV8P8CRF43UUX4T33DH2LI4M A1UF113072UTML Task was submitted in a time shorter than the length of the video(s)
+3DIIW4IV8P8CRF43UUX4T33DH2LI4M A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+3PKVGQTFIHX5ILL69OFKNK8BZZ2RYJ A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+3ZXNP4Z39RYB03USHVSOOVFFP857L9 A3QLLE1FRSUG8J Task was submitted in a time shorter than the length of the video(s)
+3ZXNP4Z39RYB03USHVSOOVFFP857L9 A2URMYFRQM2WHN Task was submitted in a time shorter than the length of the video(s)
+

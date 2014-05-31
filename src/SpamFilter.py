@@ -71,11 +71,13 @@ def main():
         #weights worker scores against the average scores for that task
         for hit in e.HIT_list:
             e.CompareAverages(hit)
-        
-        e.PrintSpamList()
+    
+    #print out the spam submissions
+    with open('Data/spam_list.txt', 'w') as outfile:
+        for e in experiment_list:    
+            e.PrintSpamList(outfile)
     
     
-    print("Hello, World!")
 #==============================================================================    
 #---------------------------------Functions------------------------------------
 #==============================================================================
@@ -184,7 +186,7 @@ def TextFull(mturk_csv, experiment):
             hit_id = row[0]
             worker_id = row[15]
             work_time = row[23]
-            vid_id = row[27]
+            vid_id = [row[27]]
             answer_polarity = [row[32]]
             age,location = row[30].split('|')
             gender = row[31]
@@ -260,7 +262,7 @@ def AudioFull(mturk_csv, experiment):
             hit_id = row[0]
             worker_id = row[15]
             work_time = row[23]
-            vid_id = row[27]
+            vid_id = [row[27]]
             vid_transcription = [row[33]]
             answer_polarity = [row[34]]
             age = row[30]
@@ -410,7 +412,7 @@ def AVFull(mturk_csv, experiment):
             hit_id = row[0]
             worker_id = row[15]
             work_time = row[23]
-            vid_id = row[27]
+            vid_id = [row[27]]
             vid_transcription = [row[33]]
             answer_polarity = [row[34]]
             age = row[30]
@@ -553,11 +555,13 @@ class Experiment():
     
     def FilterSpam(self, answer_key):
         self.answer_key = answer_key
+
         for hit in self.HIT_list:
             self.CheckTime(hit)
             if self.has_transcriptions:
                 self.CheckTranscriptions(hit)
             self.CheckGoldHIT(hit)
+            
             
         #Aggregate all the scores now that spam has been removed
         #then call function to check averages
@@ -653,7 +657,10 @@ class Experiment():
             self.sentiment_averages[id] = total / count 
     
     
-    def PrintSpamList(self):
+    def PrintSpamList(self, outfile_stream = None):
+        if outfile_stream:
+            sys.stdout = outfile_stream
+        
         spam_list = [hit for hit in self.HIT_list if hit.reject_flag]
         print('#'*50)
         print(self.name + ': %s spam HITs out of %s total HITs' % (str(len(spam_list)), str(len(self.HIT_list))))
