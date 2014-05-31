@@ -26,6 +26,7 @@ GOLD_HITS = { x.split()[0]:int(x.split()[1]) for x in open('DATA/gold_file', 'r'
 cur = __import__(__name__)
 
 TEXT_TIME_THRESHOLD = 20
+AVERAGE_SCORE_THRESHOLD = 3
 #==============================================================================
 #-----------------------------------Main---------------------------------------
 #==============================================================================
@@ -55,15 +56,23 @@ def main():
             else:
                 new_experiment.HIT_list = CSV_func(filename, new_experiment)
             
-            experiment_list.append( new_experiment )
-    
-            print( filename )
+            experiment_list.append( new_experiment )    
     #end for filename in os.listdir(MTURK_DIR):  
+    
+    
+    #filter out spam from the experiment
     for e in experiment_list:
         if "Full" in e.name:
             e.FilterSpam(video_dict)
         else:
             e.FilterSpam(fragment_dict)
+        
+        ####OPTIONAL####
+        #weights worker scores against the average scores for that task
+        for hit in e.HIT_list:
+            e.CompareAverages(hit)
+        
+        e.PrintSpamList()
     
     
     print("Hello, World!")
@@ -151,11 +160,11 @@ def TextFragment(mturk_csv, experiment):
             gender = row[53]
             
             #worker demographics
-            experiment.age[age]
-            experiment.gender[gender]
-            experiment.location[location]
+            experiment.age[age] += 1
+            experiment.gender[gender] += 1
+            experiment.location[location] += 1
             
-            temp = FragmentHIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities)
+            temp = HIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities)
             
             HIT_list.append( temp )
     
@@ -176,16 +185,16 @@ def TextFull(mturk_csv, experiment):
             worker_id = row[15]
             work_time = row[23]
             vid_id = row[27]
-            answer_polarity = row[32]
+            answer_polarity = [row[32]]
             age,location = row[30].split('|')
             gender = row[31]
             
             #worker demographics
-            experiment.age[age]
-            experiment.gender[gender]
-            experiment.location[location]
+            experiment.age[age] += 1
+            experiment.gender[gender] += 1
+            experiment.location[location] += 1
             
-            HIT_list.append( FullHIT(hit_id, worker_id, work_time, vid_id, answer_polarity) )
+            HIT_list.append( HIT(hit_id, worker_id, work_time, vid_id, answer_polarity) )
     
     return HIT_list
     
@@ -224,12 +233,12 @@ def AudioFragment(mturk_csv, experiment):
             gender = row[54]
             
             #worker demographics
-            experiment.age[age]
-            experiment.gender[gender]
-            experiment.location[location]
+            experiment.age[age] += 1 
+            experiment.gender[gender] += 1
+            experiment.location[location] += 1
             
-            temp = FragmentHIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities)
-            temp.chunk_transcriptions = set(chunk_transcriptions)
+            temp = HIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities)
+            temp.transcriptions = set(chunk_transcriptions)
             
             HIT_list.append( temp )
     
@@ -252,19 +261,19 @@ def AudioFull(mturk_csv, experiment):
             worker_id = row[15]
             work_time = row[23]
             vid_id = row[27]
-            vid_transcription = row[33]
-            answer_polarity = row[34]
+            vid_transcription = [row[33]]
+            answer_polarity = [row[34]]
             age = row[30]
             location = row[31]
             gender = row[32]
             
             #worker demographics
-            experiment.age[age]
-            experiment.gender[gender]
-            experiment.location[location]
+            experiment.age[age] += 1
+            experiment.gender[gender] += 1
+            experiment.location[location] += 1
             
-            temp = FragmentHIT(hit_id, worker_id, work_time, vid_id, answer_polarity)
-            temp.vid_transcription = set([vid_transcription])
+            temp = HIT(hit_id, worker_id, work_time, vid_id, answer_polarity)
+            temp.transcriptions = set(vid_transcription)
             
             HIT_list.append( temp )
     
@@ -300,11 +309,11 @@ def VideoFragment(mturk_csv, experiment):
             gender = row[54]
             
             #worker demographics
-            experiment.age[age]
-            experiment.gender[gender]
-            experiment.location[location]
+            experiment.age[age] += 1
+            experiment.gender[gender] += 1
+            experiment.location[location] += 1
             
-            temp = FragmentHIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities)
+            temp = HIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities)
             
             HIT_list.append( temp )
     
@@ -324,18 +333,18 @@ def VideoFull(mturk_csv, experiment):
             hit_id = row[0]
             worker_id = row[15]
             work_time = row[23]
-            vid_id = row[27]
-            answer_polarity = row[33]
+            vid_id = [row[27]]
+            answer_polarity = [row[33]]
             age = row[30]
             location = row[31]
             gender = row[32]
             
             #worker demographics
-            experiment.age[age]
-            experiment.gender[gender]
-            experiment.location[location]
+            experiment.age[age] += 1
+            experiment.gender[gender] += 1
+            experiment.location[location] += 1
             
-            HIT_list.append( FullHIT(hit_id, worker_id, work_time, vid_id, answer_polarity) )
+            HIT_list.append( HIT(hit_id, worker_id, work_time, vid_id, answer_polarity) )
     
     return HIT_list
     
@@ -374,12 +383,12 @@ def AVFragment(mturk_csv, experiment):
             gender = row[54]
             
             #worker demographics
-            experiment.age[age]
-            experiment.gender[gender]
-            experiment.location[location]
+            experiment.age[age] += 1
+            experiment.gender[gender] += 1
+            experiment.location[location] += 1
             
-            temp = FragmentHIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities)
-            temp.chunk_transcriptions = set(chunk_transcriptions)
+            temp = HIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities)
+            temp.transcriptions = set(chunk_transcriptions)
             
             HIT_list.append( temp )
     
@@ -402,19 +411,19 @@ def AVFull(mturk_csv, experiment):
             worker_id = row[15]
             work_time = row[23]
             vid_id = row[27]
-            vid_transcription = row[33]
-            answer_polarity = row[34]
+            vid_transcription = [row[33]]
+            answer_polarity = [row[34]]
             age = row[30]
             location = row[31]
             gender = row[32]
             
             #worker demographics
-            experiment.age[age]
-            experiment.gender[gender]
-            experiment.location[location]
+            experiment.age[age] += 1
+            experiment.gender[gender] += 1
+            experiment.location[location] += 1
             
-            temp = FragmentHIT(hit_id, worker_id, work_time, vid_id, answer_polarity)
-            temp.vid_transcription = set([vid_transcription])
+            temp = HIT(hit_id, worker_id, work_time, vid_id, answer_polarity)
+            temp.transcriptions = set(vid_transcription)
             
             HIT_list.append( temp )
     
@@ -449,7 +458,7 @@ class Video:
         minute,sec,__ = re_split('[ms]', time)
         seconds = 60 * int(minute) + int(sec)
         
-        return str(seconds)
+        return seconds
 
 ##-------------------------------------------------------------------------
 ## Class Fragment
@@ -472,7 +481,7 @@ class Fragment:
 
 
 ##-------------------------------------------------------------------------
-## Class FragmentHIT
+## Class HIT
 ##-------------------------------------------------------------------------
 ##    Description:    Container class for a video fragment
 ##
@@ -483,44 +492,26 @@ class Fragment:
 ##    Properties:     self.id; the fragment ID number
 ##                    self.duration; the duration of the fragment in seconds
 ##-------------------------------------------------------------------------
-class FragmentHIT():
-    def __init__(self, hit_id, worker_id, work_time, chunk_ids, chunk_polarities):
+class HIT():
+    def __init__(self, hit_id, worker_id, work_time, id, polarity):
         self.hit_id = hit_id
         self.worker_id = worker_id
         self.work_time = int( work_time )
-        self.chunk_ids = chunk_ids
-        self.task_id = self.chunk_ids[0]
-        self.chunk_polarities = chunk_polarities
+        self.ids = id
+        self.task_id = self.ids[0]
         
-        self.chunk_transcriptions = set()
-        self.reject_flag = False
-        self.reject_reason = ''
-        
-        
-##-------------------------------------------------------------------------
-## Class FullHIT
-##-------------------------------------------------------------------------
-##    Description:    Container class for a video fragment
-##
-##    Arguments:      id; the fragment ID number
-##                    start_time; the start time of the fragment in seconds
-##                    end_time; the end time of the fragment in seconds
-##
-##    Properties:     self.id; the fragment ID number
-##                    self.duration; the duration of the fragment in seconds
-##-------------------------------------------------------------------------
-class FullHIT():
-    def __init__(self, hit_id, worker_id, work_time, vid_id, vid_polarity):
-        self.hit_id = hit_id
-        self.worker_id = worker_id
-        self.work_time = int( work_time ) 
-        self.vid_id = vid_id
-        self.task_id = self.vid_id
-        self.vid_polarity = vid_polarity
-        
-        self.vid_transcription = set()
-        self.reject_flag = False
-        self.reject_reason = ''
+        #the following try-block checks to make sure that none of the 
+        #answers are 'select one', which means that a worker left a 
+        #field blank
+        try:
+            self.polarities = [ int(p) for p in polarity ]
+        except ValueError:
+            self.reject_flag = True
+            self.reject_reason = 'One or more answers were left blank'
+        else:
+            self.transcriptions = set()
+            self.reject_flag = False
+            self.reject_reason = ''
         
 ##-------------------------------------------------------------------------
 ## Class Row
@@ -551,7 +542,6 @@ class Experiment():
     def __init__(self, name):
         self.name = name
         
-        self.sentiment_scores = defaultdict(lambda: Counter())
         self.gender = Counter()
         self.age = Counter()
         self.location = Counter()
@@ -563,45 +553,115 @@ class Experiment():
     
     def FilterSpam(self, answer_key):
         self.answer_key = answer_key
-        for HIT in self.HIT_list:
-            self.CheckTime(HIT)
+        for hit in self.HIT_list:
+            self.CheckTime(hit)
             if self.has_transcriptions:
-                self.CheckTranscriptions(HIT)
-            self.CompareAverages(HIT)
+                self.CheckTranscriptions(hit)
+            self.CheckGoldHIT(hit)
             
-        print('filtered')
+        #Aggregate all the scores now that spam has been removed
+        #then call function to check averages
+        self.AggregateScores()
+                
     
-    
-    def CheckTime(self, HIT):
+    def CheckTime(self, hit):
         if 'Text' in self.name:
-            if HIT.work_time <= TEXT_TIME_THRESHOLD:
-                HIT.reject_flag = True
-                HIT.reject_reason = 'Task was completed suspiciously quickly.'
+            if hit.work_time <= TEXT_TIME_THRESHOLD:
+                hit.reject_flag = True
+                hit.reject_reason = 'Task was completed suspiciously quickly.'
         else:
-            min_possible_completion_time = self.answer_key[HIT.task_id].total_clip_length
-            if HIT.work_time <= min_possible_completion_time:
-                HIT.reject_flag = True
-                HIT.reject_reason = 'Task was submitted in a time shorter than the length of the video(s)'
+            min_possible_completion_time = self.answer_key[hit.task_id].total_clip_length
+            if hit.work_time <= min_possible_completion_time:
+                hit.reject_flag = True
+                hit.reject_reason = 'Task was submitted in a time shorter than the length of the video(s)'
     
     
-    def CheckTranscriptions(self, HIT):
-        if len(HIT.chunk_transcriptions) < 5:
-            HIT.reject_flag = True
-            HIT.reject_reason = 'Unique transcriptions were not provided for all five fragments'
+    def CheckTranscriptions(self, hit):
+        if hit.reject_flag:
+            return
+        #if the set of transcriptions is less than 5, it means either:
+        #1: transcriptions were not left for all five videos
+        #2: there were fewer than 5 unique transcriptions
+        if len(hit.transcriptions) < len(hit.ids):
+            hit.reject_flag = True
+            hit.reject_reason = 'Unique transcriptions were not provided for all five fragments'
             return
         
         #checks to make sure that each partial transcription given
         #is a string greater then N characters.
         #N = 20
-        for t in HIT.chunk_transcriptions:
+        for t in hit.transcriptions:
             if len(t) <= 20:
-                HIT.reject_flag = True
-                HIT.reject_reason = 'One or more transcriptions were empty or were suspiciously short'
+                hit.reject_flag = True
+                hit.reject_reason = 'One or more transcriptions were empty or were suspiciously short'
+                return
     
+    def CheckGoldHIT(self, hit):
+        if hit.reject_flag:
+            return
+        for i in range( len(hit.ids) ):
+            if hit.ids[i] in GOLD_HITS:
+                gold_answer = GOLD_HITS[hit.ids[i]]
+                worker_answer = hit.polarities[i]
+                
+                if gold_answer > 3:
+                    if worker_answer < 3:
+                        hit.reject_flag = True
+                        hit.reject_reason = 'One or more answers did not agree with Golden HIT answer'
+                elif gold_answer < 3:
+                    if worker_answer > 3:
+                        hit.reject_flag = True
+                        hit.reject_reason = 'One or more answers did not agree with Golden HIT answer'
     
-    def CompareAverages(self, HIT):
-        print('Compared')
+    def CompareAverages(self, hit):
+        if hit.reject_flag:
+            return
+        for i in range( len(hit.ids) ):
+            cur_id = hit.ids[i]
+            cur_score = hit.polarities[i]
+            
+            difference = abs( self.sentiment_averages[cur_id] - cur_score )
+            
+            if difference > AVERAGE_SCORE_THRESHOLD:
+                hit.reject_flag = True
+                hit.reject_reason = 'One or more answers did not agree with a Golden HIT answer'
+                return
+            
+
+    
+    def AggregateScores(self):
+        self.sentiment_scores = defaultdict(lambda: Counter())
+        total_counts = Counter()
+        self.sentiment_averages = defaultdict(float)
         
+        
+        temp = [x for x in self.HIT_list if not x.reject_flag]
+        for hit in temp:
+            for i in range( len(hit.ids) ):
+                self.sentiment_scores[hit.ids[i]][hit.polarities[i]] += 1
+                total_counts[hit.ids[i]] += 1
+        
+        
+        for id in self.sentiment_scores:
+            score_Counter = self.sentiment_scores[id]
+            total = 0
+            count = 0
+            for score in score_Counter:
+                total += score * score_Counter[score] 
+                count += score_Counter[score]
+            
+            self.sentiment_averages[id] = total / count 
+    
+    
+    def PrintSpamList(self):
+        spam_list = [hit for hit in self.HIT_list if hit.reject_flag]
+        print('#'*50)
+        print(self.name + ': %s spam HITs out of %s total HITs' % (str(len(spam_list)), str(len(self.HIT_list))))
+        print('#'*50)
+        for hit in spam_list:
+            print(" ".join([hit.hit_id, hit.worker_id, hit.reject_reason]))
+        print()
+            
 
 
         
