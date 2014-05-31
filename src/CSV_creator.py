@@ -19,7 +19,7 @@ DEBUG = True
 LABELS = '''
          chunk_1_id    chunk_1_start    chunk_1_end    chunk_1_text    chunk_1_url    chunk_2_id    chunk_2_start    chunk_2_end    chunk_2_text    chunk_2_url    chunk_3_id    chunk_3_start    chunk_3_end    chunk_3_text    chunk_3_url    chunk_4_id    chunk_4_start    chunk_4_end    chunk_4_text    chunk_4_url    chunk_5_id    chunk_5_start    chunk_5_end    chunk_5_text    chunk_5_url
          ''' 
-OUTFILE = '575_HIT.csv'     
+OUTFILE = 'Data/575_HIT.csv'     
 TRANSCRIPTION_PATH = os.getcwd() + '/Transcription'     
 video_list = open('vid_list', 'r').readlines()
 

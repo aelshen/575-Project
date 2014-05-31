@@ -10,3 +10,5 @@
 *.prefs
 
 *.pyc
+
+.DS_Store
