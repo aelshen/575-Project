@@ -97,51 +97,14 @@ TextFull: 18 spam HITs out of 202 total HITs
 3E6L1VR4XWZ6WB6RCAKYN4AZX1ZF6D	A3CFBT2CBQQIZY	Task was completed suspiciously quickly.
 
 ##################################################
-VideoFragment: 43 spam HITs out of 144 total HITs
+VideoFragment: 6 spam HITs out of 144 total HITs
 ##################################################
 335HHSX8CDIPVGCCHNGCWVW4U2YHD4	A2B3ZS2XWMPUTR	One or more answers were left blank
-322ZSN9Z5GX20TKEO6W87A5MSJ14TP	A2B3ZS2XWMPUTR	One or more answers did not agree with Golden HIT answer
 37YYO3NWHD3O9GVIVZ701YH6WAICCR	A2B3ZS2XWMPUTR	Task was submitted in a time shorter than the length of the video(s)
-37YYO3NWHD3O9GVIVZ701YH6WAICCR	A3QZMGTVA4VO44	One or more answers did not agree with Golden HIT answer
-37YYO3NWHD3O9GVIVZ701YH6WAICCR	A3HEEJU34TVU1	One or more answers did not agree with Golden HIT answer
-3K3IX1W4S64JAQ7OGQXFF3QPVQBPAF	A2B3ZS2XWMPUTR	One or more answers did not agree with Golden HIT answer
-3K3IX1W4S64JAQ7OGQXFF3QPVQBPAF	A3QZMGTVA4VO44	One or more answers did not agree with Golden HIT answer
-3WJGKMRWVIMYE81WVV2BL4ZOHAUCDR	A32BIDGWOVYA9T	One or more answers did not agree with Golden HIT answer
-3WJGKMRWVIMYE81WVV2BL4ZOHAUCDR	A3QZMGTVA4VO44	One or more answers did not agree with Golden HIT answer
-3WJGKMRWVIMYE81WVV2BL4ZOHAUCDR	A1G9G9IQV38J9P	One or more answers did not agree with Golden HIT answer
-385MDVINFCSKVS7TMION0W14EA8WJX	A2SWQM5X54P1O5	One or more answers did not agree with Golden HIT answer
-385MDVINFCSKVS7TMION0W14EA8WJX	A32BIDGWOVYA9T	One or more answers did not agree with Golden HIT answer
-3SR6AEG6W56STR73DJ3Q9G65CQ5HYD	A7IH21LIOFH9	One or more answers did not agree with Golden HIT answer
-3SR6AEG6W56STR73DJ3Q9G65CQ5HYD	A2B3ZS2XWMPUTR	One or more answers did not agree with Golden HIT answer
-3SR6AEG6W56STR73DJ3Q9G65CQ5HYD	A3QZMGTVA4VO44	One or more answers did not agree with Golden HIT answer
-3SR6AEG6W56STR73DJ3Q9G65CQ5HYD	A2GYWG3QKKC2E1	One or more answers did not agree with Golden HIT answer
-3KA7IJSNW6IOT0CGM4XBAEAVD8WPBA	A3QZMGTVA4VO44	One or more answers did not agree with Golden HIT answer
-3KA7IJSNW6IOT0CGM4XBAEAVD8WPBA	A1D1Y2Z8WQ1UM	One or more answers did not agree with Golden HIT answer
-3KA7IJSNW6IOT0CGM4XBAEAVD8WPBA	A1TQYQG3VFJTWW	One or more answers did not agree with Golden HIT answer
-3RZS0FBRWKN7354M04T6LYGDVTWPCH	A1TQYQG3VFJTWW	One or more answers did not agree with Golden HIT answer
-3RZS0FBRWKN7354M04T6LYGDVTWPCH	A3QZMGTVA4VO44	One or more answers did not agree with Golden HIT answer
-3RZS0FBRWKN7354M04T6LYGDVTWPCH	A2B3ZS2XWMPUTR	One or more answers did not agree with Golden HIT answer
-3BCRDCM0OD7HCXY5DLBV3H245XFK6J	A32BIDGWOVYA9T	One or more answers did not agree with Golden HIT answer
 3BCRDCM0OD7HCXY5DLBV3H245XFK6J	A2GYWG3QKKC2E1	Task was submitted in a time shorter than the length of the video(s)
-3MA5N0ATTCOF6CDB43OZ1B1HTZ8WKW	A25DP2IBIXX6MM	One or more answers did not agree with Golden HIT answer
-3MA5N0ATTCOF6CDB43OZ1B1HTZ8WKW	A3FW9NWR6TJ4M9	One or more answers did not agree with Golden HIT answer
 3MA5N0ATTCOF6CDB43OZ1B1HTZ8WKW	A2B3ZS2XWMPUTR	Task was submitted in a time shorter than the length of the video(s)
-3MA5N0ATTCOF6CDB43OZ1B1HTZ8WKW	A1ZZ0H4IM94QTB	One or more answers did not agree with Golden HIT answer
-3MA5N0ATTCOF6CDB43OZ1B1HTZ8WKW	A2GYWG3QKKC2E1	One or more answers did not agree with Golden HIT answer
-3MA5N0ATTCOF6CDB43OZ1B1HTZ8WKW	A32BIDGWOVYA9T	One or more answers did not agree with Golden HIT answer
-3TRB893CSJNVEBGR64V8B3A7TRJ7G3	A32BIDGWOVYA9T	One or more answers did not agree with Golden HIT answer
-3TRB893CSJNVEBGR64V8B3A7TRJ7G3	A2GYWG3QKKC2E1	One or more answers did not agree with Golden HIT answer
 3TRB893CSJNVEBGR64V8B3A7TRJ7G3	A104V5RLS1VRHC	Task was submitted in a time shorter than the length of the video(s)
-3DTJ4WT8BDSGE7Q6J4X32KIUQ4GZE5	A1D1Y2Z8WQ1UM	One or more answers did not agree with Golden HIT answer
-3DTJ4WT8BDSGE7Q6J4X32KIUQ4GZE5	A2FWMAJ0Z92JAY	One or more answers did not agree with Golden HIT answer
-3DTJ4WT8BDSGE7Q6J4X32KIUQ4GZE5	A2W7FJSCH7SV0I	One or more answers did not agree with Golden HIT answer
-3DTJ4WT8BDSGE7Q6J4X32KIUQ4GZE5	A3QZMGTVA4VO44	One or more answers did not agree with Golden HIT answer
-3DTJ4WT8BDSGE7Q6J4X32KIUQ4GZE5	A1ZZ0H4IM94QTB	One or more answers did not agree with Golden HIT answer
-3R16PJFTS343XAURUXIG6JIQ969K4Y	A1D1Y2Z8WQ1UM	One or more answers did not agree with Golden HIT answer
-3R16PJFTS343XAURUXIG6JIQ969K4Y	A2B3ZS2XWMPUTR	One or more answers did not agree with Golden HIT answer
-3R16PJFTS343XAURUXIG6JIQ969K4Y	A15LJBDDYKA4M7	One or more answers did not agree with Golden HIT answer
 3R16PJFTS343XAURUXIG6JIQ969K4Y	A104V5RLS1VRHC	Task was submitted in a time shorter than the length of the video(s)
-3X878VYTIEVP0BKWVKPQTIAVSCJ7F4	A32BIDGWOVYA9T	One or more answers did not agree with Golden HIT answer
 
 ##################################################
 VideoFull: 56 spam HITs out of 201 total HITs

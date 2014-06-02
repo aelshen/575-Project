@@ -33,7 +33,7 @@ AVERAGE_SCORE_THRESHOLD = 3
 def main():
     #fragment_dict = defaultdict(list)
     #key = chunk_id of first chunk in hit 
-    #value = tuple(cumulative length of all chunks in seconds, list of Fragment objects
+    #value = Row object
     
     #video_dict = defaultdict(Video)
     #key = video_id 
@@ -158,6 +158,20 @@ def TextFragment(mturk_csv, experiment):
             work_time = row[23]
             chunk_ids = row[27:52:5]
             answer_polarities = row[54:59]
+            
+            #this checks for the two cases where a text transcription 
+            #fragments 5.1 and 14.1
+            #was mistakenly omitted from the experiment. This ensures that
+            #HITs with these fragments are not rejected for being incomplete
+            if chunk_ids[0] == ('5.1'):
+                chunk_ids = chunk_ids[1:]
+                answer_polarities = answer_polarities[1:]
+            elif chunk_ids[2] == ('14.1'):
+                chunk_ids.pop(2)
+                answer_polarities.pop(2)
+                
+            age,location = row[52].split('|')
+            gender = row[53]
             age,location = row[52].split('|')
             gender = row[53]
             
@@ -587,9 +601,13 @@ class Experiment():
 
         for hit in self.HIT_list:
             self.CheckTime(hit)
-            if self.has_transcriptions:
-                self.CheckTranscriptions(hit)
-            self.CheckGoldHIT(hit)
+            
+            #the following spam measures do not apply 
+            #to the VideoFragment and VideoFull experiments
+            if 'Video' not in self.name:
+                if self.has_transcriptions:
+                    self.CheckTranscriptions(hit)
+                self.CheckGoldHIT(hit)
             
             
         #Aggregate all the scores now that spam has been removed
@@ -710,7 +728,7 @@ class Experiment():
             
             if difference > AVERAGE_SCORE_THRESHOLD:
                 hit.reject_flag = True
-                hit.reject_reason = 'One or more answers did not agree with a Golden HIT answer'
+                hit.reject_reason = 'One or more answers did not agree with a Golden HIT answer(X)'
                 return
             
 
