@@ -70,12 +70,16 @@ def main():
         ####OPTIONAL####
         #weights worker scores against the average scores for that task
         for hit in e.HIT_list:
-            e.CompareAverages(hit)
+            if 'Video' not in e.name:
+                e.CompareAverages(hit)
     
     #print out the spam submissions
     with open('Data/spam_list.txt', 'w') as outfile:
         for e in experiment_list:    
             e.PrintSpamList(outfile)
+            
+    for e in experiment_list:
+        e.UpdateMturkCSV(e.name)
     
     
 #==============================================================================    
@@ -783,7 +787,37 @@ class Experiment():
         for hit in spam_list:
             print("\t".join([hit.hit_id, hit.worker_id, hit.reject_reason]))
         print()
-            
+    
+    ##-------------------------------------------------------------------------
+    ## Experiment.UpdateMturkCSV()
+    ##-------------------------------------------------------------------------
+    ##    Description:     Prints out all of the HITs that were flagged as spam  
+    ##
+    ##    Arguments:       outfile_stream; an opened file. 
+    ##                         if not None, prints to stdout, else prints to file
+    ##-------------------------------------------------------------------------
+    def UpdateMturkCSV(self, name):
+        csv_original = list( csv.reader(codec_open(os.path.join(MTURK_DIR,name + "_results.csv"), 'rb', 'utf-8')) ) 
+        
+        filtered_dir = os.getcwd() + '/filtered'
+        with codec_open(os.path.join(filtered_dir, name + "_results_filtered.csv"), 'w', 'utf-8') as csv_filtered:
+            csv_writer = csv.writer(csv_filtered)
+            for i in range( len(csv_original) ):
+                if i == 0:
+                    AssignmentStatus = csv_original[0].index('AssignmentStatus')
+                    RequesterFeedback = csv_original[0].index('RequesterFeedback')
+                    Reject = csv_original[0].index('Reject')
+                
+                else: 
+                    hit = self.HIT_list[i-1]
+                    if hit.reject_flag:
+                        #csv_original[i][AssignmentStatus] = 'Rejected'
+                        #csv_original[i][RequesterFeedback] = hit.reject_reason
+                        csv_original[i].append('') 
+                        csv_original[i].append( hit.reject_reason )
+                csv_writer.writerow(csv_original[i])
+#                 csv_filtered.write(",".join(csv_original[i]))     
+#                 csv_filtered.write(os.linesep)       
 
 
         
