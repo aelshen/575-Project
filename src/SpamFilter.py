@@ -22,7 +22,7 @@ MTURK_DIR = os.getcwd() + '/MTurk_results'
 
 HITS_WITH_TRANSCRIPTIONS = ['AudioFragment', 'AudioFull', 'AVFragment', 'AVFull']
 
-GOLD_HITS = { x.split()[0]:int(x.split()[1]) for x in open('DATA/gold_file', 'r').readlines()}
+GOLD_HITS = { x.split()[0]:int(x.split()[1]) for x in open('Data/gold_file', 'r').readlines()}
 cur = __import__(__name__)
 
 TEXT_TIME_THRESHOLD = 20
@@ -583,7 +583,7 @@ class Row():
 class Experiment():
     def __init__(self, name):
         self.name = name
-        
+        self.kappa = 0.0
         self.gender = Counter()
         self.age = Counter()
         self.location = Counter()
@@ -786,7 +786,7 @@ class Experiment():
             
             self.sentiment_averages[id] = total / count
 
-        print self.fleiss_kappa_iaa()
+        self.fleiss_kappa_iaa()
 
     # calculates Fleiss Kappa interannotator agreement score
     def fleiss_kappa_iaa(self):
@@ -814,7 +814,7 @@ class Experiment():
         # mean expected value
         P_e_mean = sum(P_j.values())
 
-        return (P_mean - P_e_mean)/ (1 - P_e_mean)
+        self.kappa = (P_mean - P_e_mean)/ (1 - P_e_mean)
     
     ##-------------------------------------------------------------------------
     ## Experiment.PrintSpamList()
@@ -831,6 +831,7 @@ class Experiment():
         spam_list = [hit for hit in self.HIT_list if hit.reject_flag]
         print('#'*50)
         print(self.name + ': %s spam HITs out of %s total HITs' % (str(len(spam_list)), str(len(self.HIT_list))))
+        print('Fleiss Kappa: ' + self.kappa)
         print('#'*50)
         for hit in spam_list:
             print("\t".join([hit.hit_id, hit.worker_id, hit.reject_reason]))
