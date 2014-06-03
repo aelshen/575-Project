@@ -22,7 +22,7 @@ MTURK_DIR = os.getcwd() + '/MTurk_results'
 
 HITS_WITH_TRANSCRIPTIONS = ['AudioFragment', 'AudioFull', 'AVFragment', 'AVFull']
 
-GOLD_HITS = { x.split()[0]:int(x.split()[1]) for x in open('DATA/gold_file', 'r').readlines()}
+GOLD_HITS = { x.split()[0]:int(x.split()[1]) for x in open('Data/gold_file', 'r').readlines()}
 cur = __import__(__name__)
 
 TEXT_TIME_THRESHOLD = 20
@@ -583,7 +583,7 @@ class Row():
 class Experiment():
     def __init__(self, name):
         self.name = name
-        
+        self.kappa = 0.0
         self.gender = Counter()
         self.age = Counter()
         self.location = Counter()
@@ -784,7 +784,37 @@ class Experiment():
                 total += score * score_Counter[score] 
                 count += score_Counter[score]
             
-            self.sentiment_averages[id] = total / count 
+            self.sentiment_averages[id] = total / count
+
+        self.fleiss_kappa_iaa()
+
+    # calculates Fleiss Kappa interannotator agreement score
+    def fleiss_kappa_iaa(self):
+        k = 5 # number of sentiment categories
+        N = len(self.sentiment_scores) # number of fragments/videos
+        n = Counter() # number of ratings per subject
+        for fragment in self.sentiment_scores:
+            for score in self.sentiment_scores[fragment]:
+                n[fragment] += self.sentiment_scores[fragment][score]
+
+        # proportion of all assigments to the jth category (score)
+        P_j = Counter() # P_j[score] = proportion
+        for j in range(6):
+            for fragment in self.sentiment_scores:
+                P_j[j] += float(self.sentiment_scores[fragment][j])/(N*n[fragment])
+
+        P_i = Counter()
+        for fragment in self.sentiment_scores:
+            for j in range(6):
+                P_i[fragment] += float(self.sentiment_scores[fragment][j]**2)
+            P_i[fragment] = (P_i[fragment] - n[fragment])/(n*(n-1))
+
+        # mean agreement
+        P_mean = sum(P_i.values())/N
+        # mean expected value
+        P_e_mean = sum(P_j.values())
+
+        self.kappa = (P_mean - P_e_mean)/ (1 - P_e_mean)
     
     ##-------------------------------------------------------------------------
     ## Experiment.PrintSpamList()
@@ -801,6 +831,7 @@ class Experiment():
         spam_list = [hit for hit in self.HIT_list if hit.reject_flag]
         print('#'*50)
         print(self.name + ': %s spam HITs out of %s total HITs' % (str(len(spam_list)), str(len(self.HIT_list))))
+        print('Fleiss Kappa: ' + self.kappa)
         print('#'*50)
         for hit in spam_list:
             print("\t".join([hit.hit_id, hit.worker_id, hit.reject_reason]))
