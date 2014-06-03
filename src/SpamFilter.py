@@ -784,7 +784,37 @@ class Experiment():
                 total += score * score_Counter[score] 
                 count += score_Counter[score]
             
-            self.sentiment_averages[id] = total / count 
+            self.sentiment_averages[id] = total / count
+
+        print self.fleiss_kappa_iaa()
+
+    # calculates Fleiss Kappa interannotator agreement score
+    def fleiss_kappa_iaa(self):
+        k = 5 # number of sentiment categories
+        N = len(self.sentiment_scores) # number of fragments/videos
+        n = Counter() # number of ratings per subject
+        for fragment in self.sentiment_scores:
+            for score in self.sentiment_scores[fragment]:
+                n[fragment] += self.sentiment_scores[fragment][score]
+
+        # proportion of all assigments to the jth category (score)
+        P_j = Counter() # P_j[score] = proportion
+        for j in range(6):
+            for fragment in self.sentiment_scores:
+                P_j[j] += float(self.sentiment_scores[fragment][j])/(N*n[fragment])
+
+        P_i = Counter()
+        for fragment in self.sentiment_scores:
+            for j in range(6):
+                P_i[fragment] += float(self.sentiment_scores[fragment][j]**2)
+            P_i[fragment] = (P_i[fragment] - n[fragment])/(n*(n-1))
+
+        # mean agreement
+        P_mean = sum(P_i.values())/N
+        # mean expected value
+        P_e_mean = sum(P_j.values())
+
+        return (P_mean - P_e_mean)/ (1 - P_e_mean)
     
     ##-------------------------------------------------------------------------
     ## Experiment.PrintSpamList()
