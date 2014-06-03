@@ -807,7 +807,7 @@ class Experiment():
         for fragment in self.sentiment_scores:
             for j in range(6):
                 P_i[fragment] += float(self.sentiment_scores[fragment][j]**2)
-            P_i[fragment] = (P_i[fragment] - n[fragment])/(n*(n-1))
+            P_i[fragment] = (P_i[fragment] - n[fragment])/(n[fragment]*(n[fragment]-1))
 
         # mean agreement
         P_mean = sum(P_i.values())/N
