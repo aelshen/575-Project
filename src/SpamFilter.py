@@ -83,7 +83,7 @@ def main():
         e.AggregateData()
         e.UpdateMturkCSV(e.name)
     
-    
+    pass
 #==============================================================================    
 #---------------------------------Functions------------------------------------
 #==============================================================================
@@ -707,11 +707,11 @@ class Experiment():
                 worker_answer = hit.polarities[i]
                 
                 if gold_answer > 3:
-                    if worker_answer < 3:
+                    if worker_answer <= 3:
                         hit.reject_flag = True
                         hit.reject_reason = 'One or more answers did not agree with Golden HIT answer'
                 elif gold_answer < 3:
-                    if worker_answer > 3:
+                    if worker_answer >= 3:
                         hit.reject_flag = True
                         hit.reject_reason = 'One or more answers did not agree with Golden HIT answer'
     
