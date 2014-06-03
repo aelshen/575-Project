@@ -78,7 +78,9 @@ def main():
         for e in experiment_list:    
             e.PrintSpamList(outfile)
             
+    #print out a CSV to upload to MTurk, for automated rejections
     for e in experiment_list:
+        e.AggregateData()
         e.UpdateMturkCSV(e.name)
     
     
@@ -176,15 +178,13 @@ def TextFragment(mturk_csv, experiment):
                 
             age,location = row[52].split('|')
             gender = row[53]
-            age,location = row[52].split('|')
-            gender = row[53]
+
+            temp = HIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities, age, location, gender)
             
-            #worker demographics
-            experiment.age[age] += 1
-            experiment.gender[gender] += 1
-            experiment.location[location] += 1
-            
-            temp = HIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities)
+            for field in [age,location,gender]:
+                if 'select one' in field:
+                    temp.reject_flag = True
+                    temp.reject_reason = 'Pre-survey was left incomplete'
             
             HIT_list.append( temp )
     
@@ -208,13 +208,15 @@ def TextFull(mturk_csv, experiment):
             answer_polarity = [row[32]]
             age,location = row[30].split('|')
             gender = row[31]
+
+            temp = HIT(hit_id, worker_id, work_time, vid_id, answer_polarity, age, location, gender)
             
-            #worker demographics
-            experiment.age[age] += 1
-            experiment.gender[gender] += 1
-            experiment.location[location] += 1
+            for field in [age,location,gender]:
+                if 'select one' in field:
+                    temp.reject_flag = True
+                    temp.reject_reason = 'Pre-survey was left incomplete'
             
-            HIT_list.append( HIT(hit_id, worker_id, work_time, vid_id, answer_polarity) )
+            HIT_list.append( temp )
     
     return HIT_list
     
@@ -252,13 +254,13 @@ def AudioFragment(mturk_csv, experiment):
             location = row[53]
             gender = row[54]
             
-            #worker demographics
-            experiment.age[age] += 1 
-            experiment.gender[gender] += 1
-            experiment.location[location] += 1
-            
-            temp = HIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities)
+            temp = HIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities, age, location, gender)
             temp.transcriptions = set(chunk_transcriptions)
+            
+            for field in [age,location,gender]:
+                if 'select one' in field:
+                    temp.reject_flag = True
+                    temp.reject_reason = 'Pre-survey was left incomplete'
             
             HIT_list.append( temp )
     
@@ -287,13 +289,13 @@ def AudioFull(mturk_csv, experiment):
             location = row[31]
             gender = row[32]
             
-            #worker demographics
-            experiment.age[age] += 1
-            experiment.gender[gender] += 1
-            experiment.location[location] += 1
-            
-            temp = HIT(hit_id, worker_id, work_time, vid_id, answer_polarity)
+            temp = HIT(hit_id, worker_id, work_time, vid_id, answer_polarity, age, location, gender)
             temp.transcriptions = set(vid_transcription)
+            
+            for field in [age,location,gender]:
+                if 'select one' in field:
+                    temp.reject_flag = True
+                    temp.reject_reason = 'Pre-survey was left incomplete'
             
             HIT_list.append( temp )
     
@@ -328,13 +330,13 @@ def VideoFragment(mturk_csv, experiment):
             location = row[53]
             gender = row[54]
             
-            #worker demographics
-            experiment.age[age] += 1
-            experiment.gender[gender] += 1
-            experiment.location[location] += 1
+            temp = HIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities, age, location, gender)
             
-            temp = HIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities)
-            
+            for field in [age,location,gender]:
+                if 'select one' in field:
+                    temp.reject_flag = True
+                    temp.reject_reason = 'Pre-survey was left incomplete'
+                    
             HIT_list.append( temp )
     
     return HIT_list
@@ -359,12 +361,14 @@ def VideoFull(mturk_csv, experiment):
             location = row[31]
             gender = row[32]
             
-            #worker demographics
-            experiment.age[age] += 1
-            experiment.gender[gender] += 1
-            experiment.location[location] += 1
+            temp = HIT(hit_id, worker_id, work_time, vid_id, answer_polarity, age, location, gender)
             
-            HIT_list.append( HIT(hit_id, worker_id, work_time, vid_id, answer_polarity) )
+            for field in [age,location,gender]:
+                if 'select one' in field:
+                    temp.reject_flag = True
+                    temp.reject_reason = 'Pre-survey was left incomplete'
+                    
+            HIT_list.append( temp )
     
     return HIT_list
     
@@ -402,14 +406,14 @@ def AVFragment(mturk_csv, experiment):
             location = row[53]
             gender = row[54]
             
-            #worker demographics
-            experiment.age[age] += 1
-            experiment.gender[gender] += 1
-            experiment.location[location] += 1
-            
-            temp = HIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities)
+            temp = HIT(hit_id, worker_id, work_time, chunk_ids, answer_polarities, age, location, gender)
             temp.transcriptions = set(chunk_transcriptions)
             
+            for field in [age,location,gender]:
+                if 'select one' in field:
+                    temp.reject_flag = True
+                    temp.reject_reason = 'Pre-survey was left incomplete'
+                    
             HIT_list.append( temp )
     
     return HIT_list
@@ -437,14 +441,14 @@ def AVFull(mturk_csv, experiment):
             location = row[31]
             gender = row[32]
             
-            #worker demographics
-            experiment.age[age] += 1
-            experiment.gender[gender] += 1
-            experiment.location[location] += 1
-            
-            temp = HIT(hit_id, worker_id, work_time, vid_id, answer_polarity)
+            temp = HIT(hit_id, worker_id, work_time, vid_id, answer_polarity, age, location, gender)
             temp.transcriptions = set(vid_transcription)
             
+            for field in [age,location,gender]:
+                if 'select one' in field:
+                    temp.reject_flag = True
+                    temp.reject_reason = 'Pre-survey was left incomplete'
+                    
             HIT_list.append( temp )
     
     return HIT_list
@@ -522,12 +526,15 @@ class Fragment:
 ##                    self.reject_reason; reason for having been marked as spam
 ##-------------------------------------------------------------------------
 class HIT():
-    def __init__(self, hit_id, worker_id, work_time, id, polarity):
+    def __init__(self, hit_id, worker_id, work_time, id, polarity, age, location, gender):
         self.hit_id = hit_id
         self.worker_id = worker_id
         self.work_time = int( work_time )
         self.ids = id
         self.task_id = self.ids[0]
+        self.age = age
+        self.location = location
+        self.gender = gender
         
         #the following try-block checks to make sure that none of the 
         #answers are 'select one', which means that a worker left a 
@@ -598,7 +605,7 @@ class Experiment():
     ##    Calls:           Experiment.CheckTime()
     ##                     Experiment.CheckTranscriptions()
     ##                     Experiment.CheckGoldHIT()
-    ##                     Experiment.AggregateScores()
+    ##                     Experiment.AggregateData()
     ##-------------------------------------------------------------------------
     def FilterSpam(self, answer_key):
         self.answer_key = answer_key
@@ -616,7 +623,7 @@ class Experiment():
             
         #Aggregate all the scores now that spam has been removed
         #then call function to check averages
-        self.AggregateScores()
+        self.AggregateData()
                 
     ##-------------------------------------------------------------------------
     ## Experiment.CheckTime()
@@ -737,15 +744,21 @@ class Experiment():
             
 
     ##-------------------------------------------------------------------------
-    ## Experiment.AggregateScores()
+    ## Experiment.AggregateData()
     ##-------------------------------------------------------------------------
-    ##    Description:     Builds a dictionary to hold the counts of all the 
-    ##                     scores for the experiment.
+    ##    Description:     Compiles all of the data from the experiment 
+    ##                     for filtered, non-spam submissions
+    ##                     
     ##                     dict( key=id value=Counter(key=score value=count) )
     ##                     And then builds a dictionary of the average score
     ##                     for a given id.  
+    ##
+    ##                     Counter() for each demographic field:
+    ##                         age
+    ##                         location
+    ##                         gender
     ##-------------------------------------------------------------------------
-    def AggregateScores(self):
+    def AggregateData(self):
         self.sentiment_scores = defaultdict(lambda: Counter())
         total_counts = Counter()
         self.sentiment_averages = defaultdict(float)
@@ -753,6 +766,11 @@ class Experiment():
         
         temp = [x for x in self.HIT_list if not x.reject_flag]
         for hit in temp:
+            #worker demographics
+            self.age[hit.age] += 1
+            self.gender[hit.gender] += 1
+            self.location[hit.location] += 1
+            
             for i in range( len(hit.ids) ):
                 self.sentiment_scores[hit.ids[i]][hit.polarities[i]] += 1
                 total_counts[hit.ids[i]] += 1
@@ -804,9 +822,10 @@ class Experiment():
             csv_writer = csv.writer(csv_filtered)
             for i in range( len(csv_original) ):
                 if i == 0:
-                    AssignmentStatus = csv_original[0].index('AssignmentStatus')
-                    RequesterFeedback = csv_original[0].index('RequesterFeedback')
-                    Reject = csv_original[0].index('Reject')
+#                     AssignmentStatus = csv_original[0].index('AssignmentStatus')
+#                     RequesterFeedback = csv_original[0].index('RequesterFeedback')
+#                     Reject = csv_original[0].index('Reject')
+                    pass
                 
                 else: 
                     hit = self.HIT_list[i-1]

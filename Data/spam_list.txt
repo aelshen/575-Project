@@ -39,11 +39,14 @@ AudioFull: 22 spam HITs out of 145 total HITs
 3BFF0DJK8XPL2EMPE7SQ5DLS6Z3TSK	A7IH21LIOFH9	Task was submitted in a time shorter than the length of the video(s)
 
 ##################################################
-AVFull: 28 spam HITs out of 136 total HITs
+AVFull: 31 spam HITs out of 136 total HITs
 ##################################################
 3FO95NVK5CD8MZ9XAINV5YKAIE6RS5	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
 3GKAWYFRAP6H8XA000OH54YVGT8PDH	A2VLW778RK97P2	Task was submitted in a time shorter than the length of the video(s)
+33N1S8XHHMYHU6WU7G2OV0Z01VD1ZP	A10XXWCA8N4XZS	Pre-survey was left incomplete
+3UQVX1UPFSURH680MQPAUK6JBU820F	A10XXWCA8N4XZS	Pre-survey was left incomplete
 3OND0WXMHWSUNMQCDIRW2DEPUEZHEX	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
+3W0KKJIARRM4GBHT608TNVYVBS5K85	A3QZMGTVA4VO44	Pre-survey was left incomplete
 3W0KKJIARRM4GBHT608TNVYVBS5K85	A2VLW778RK97P2	One or more transcriptions were empty or were suspiciously short
 3W0KKJIARRM4GBHT608TNVYVBS5K85	AJAU1KH2MY7YM	One or more transcriptions were empty or were suspiciously short
 3XJOUITW8U49PY7CM33LAD6ROBITQV	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
@@ -94,7 +97,7 @@ TextFragment: 19 spam HITs out of 233 total HITs
 3OB6JN3A9Q25O4WSQLR9TPL4QPORMT	A32BIDGWOVYA9T	One or more answers were left blank
 
 ##################################################
-TextFull: 21 spam HITs out of 202 total HITs
+TextFull: 22 spam HITs out of 202 total HITs
 ##################################################
 375VSR8FVWM5NBVB5AH31RHD5T6RZA	AY3LDNDWACXCT	Task was completed suspiciously quickly.
 375VSR8FVWM5NBVB5AH31RHD5T6RZA	ABMX8XUNPR3LP	Task was completed suspiciously quickly.
@@ -110,6 +113,7 @@ TextFull: 21 spam HITs out of 202 total HITs
 3P0I4CQYVYKYW3YQ2VGS8SIQD4IWOG	ABMX8XUNPR3LP	Task was completed suspiciously quickly.
 3GONHBMNHVBEQVIJ02LMFSN3Z67ZMU	ABMX8XUNPR3LP	Task was completed suspiciously quickly.
 3QTFNPMJC6VK8D3JC30MS7C34WHZNU	AY3LDNDWACXCT	One or more answers did not agree with Golden HIT answer
+3QTFNPMJC6VK8D3JC30MS7C34WHZNU	A13I8GYETPZSZW	Pre-survey was left incomplete
 3KWGG5KP6JF1I2798O1E4UMIQOMCM9	AY3LDNDWACXCT	Task was completed suspiciously quickly.
 3B6F54KMR2PKTUAGCO8GZ72XEGCS1A	AY3LDNDWACXCT	Task was completed suspiciously quickly.
 3B6F54KMR2PKTUAGCO8GZ72XEGCS1A	ACXKO7WRVOXWQ	One or more answers were left blank
@@ -119,20 +123,25 @@ TextFull: 21 spam HITs out of 202 total HITs
 3E6L1VR4XWZ6WB6RCAKYN4AZX1ZF6D	A3CFBT2CBQQIZY	Task was completed suspiciously quickly.
 
 ##################################################
-VideoFragment: 9 spam HITs out of 172 total HITs
+VideoFragment: 14 spam HITs out of 172 total HITs
 ##################################################
 335HHSX8CDIPVGCCHNGCWVW4U2YHD4	A2B3ZS2XWMPUTR	One or more answers were left blank
+335HHSX8CDIPVGCCHNGCWVW4U2YHD4	A2GYWG3QKKC2E1	Pre-survey was left incomplete
 37YYO3NWHD3O9GVIVZ701YH6WAICCR	A2B3ZS2XWMPUTR	Task was submitted in a time shorter than the length of the video(s)
+3SR6AEG6W56STR73DJ3Q9G65CQ5HYD	A2GYWG3QKKC2E1	Pre-survey was left incomplete
 3RZS0FBRWKN7354M04T6LYGDVTWPCH	A2YPGARAKET7N5	Task was submitted in a time shorter than the length of the video(s)
 3BCRDCM0OD7HCXY5DLBV3H245XFK6J	A3T2QP36ZXXFCN	One or more answers were left blank
 3BCRDCM0OD7HCXY5DLBV3H245XFK6J	A2GYWG3QKKC2E1	Task was submitted in a time shorter than the length of the video(s)
 3MA5N0ATTCOF6CDB43OZ1B1HTZ8WKW	A2B3ZS2XWMPUTR	Task was submitted in a time shorter than the length of the video(s)
+3DTJ4WT8BDSGE7Q6J4X32KIUQ4GZE5	A2FWMAJ0Z92JAY	Pre-survey was left incomplete
 3R16PJFTS343XAURUXIG6JIQ969K4Y	A104V5RLS1VRHC	Task was submitted in a time shorter than the length of the video(s)
+385MDVINFCSKVS7TMION0W14EA8WJX	A2SWQM5X54P1O5	Pre-survey was left incomplete
+3X878VYTIEVP0BKWVKPQTIAVSCJ7F4	A3IVJ1LYCM2HJY	Pre-survey was left incomplete
 3TRB893CSJNVEBGR64V8B3A7TRJ7G3	A10XXWCA8N4XZS	One or more answers were left blank
 3TRB893CSJNVEBGR64V8B3A7TRJ7G3	A104V5RLS1VRHC	Task was submitted in a time shorter than the length of the video(s)
 
 ##################################################
-VideoFull: 56 spam HITs out of 201 total HITs
+VideoFull: 57 spam HITs out of 201 total HITs
 ##################################################
 3ZLW647WAL8NYY7X5D7TWI4QE6S23A	A1FG7WZHUGYGBO	Task was submitted in a time shorter than the length of the video(s)
 3ZLW647WAL8NYY7X5D7TWI4QE6S23A	A1UF113072UTML	Task was submitted in a time shorter than the length of the video(s)
@@ -171,6 +180,7 @@ VideoFull: 56 spam HITs out of 201 total HITs
 3G3AJKPCXL5YHFJ8YCJ7FRX17LJ4YE	A1RN57G3SSIRMM	Task was submitted in a time shorter than the length of the video(s)
 372AGES0I4IGIGVW4STI4612XT8RXD	A1UF113072UTML	Task was submitted in a time shorter than the length of the video(s)
 372AGES0I4IGIGVW4STI4612XT8RXD	A2URMYFRQM2WHN	Task was submitted in a time shorter than the length of the video(s)
+372AGES0I4IGIGVW4STI4612XT8RXD	A27AY9SE0DKHZU	Pre-survey was left incomplete
 3UEDKCTP9V30GXCAWVGN9V200807K6	A1UF113072UTML	Task was submitted in a time shorter than the length of the video(s)
 3UEDKCTP9V30GXCAWVGN9V200807K6	A3QLLE1FRSUG8J	Task was submitted in a time shorter than the length of the video(s)
 3UEDKCTP9V30GXCAWVGN9V200807K6	A2URMYFRQM2WHN	Task was submitted in a time shorter than the length of the video(s)
