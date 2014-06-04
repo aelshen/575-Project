@@ -1,0 +1,37 @@
+video_id,domain,video_title,video_creator,speaker_gender,video_length,url,notes,polarity
+1,book review,Book Review | Fangirl by Rainbow Rowell.,booksandquills,female,3m20s,https://www.youtube.com/watch?v=FA1JsSytUQE,,positive
+2,book review,(Spoiler Free) Book Review. The Fault in Our Stars by John Green,booksandquills,female,3m41s,https://www.youtube.com/watch?v=5i0wDhyjXl8,,positive
+3,book review,Book Review | Warm Bodies by Isaac Marion.,booksandquills,female,3m12s,https://www.youtube.com/watch?v=TlRagvTsqOI,,mixed
+4,book review,Book Review | Matched by Ally Condie.,booksandquills,female,3m43s,https://www.youtube.com/watch?v=yzzexQxoGvQ,,negative
+5,book review,Book Review | Player One by Douglas Coupland.,booksandquills,female,4m30s,https://www.youtube.com/watch?v=ZIZLyheuu_E,,positive
+6,book review,Book & Movie Review | Carrie by Stephen King.,booksandquills,female,3m26s,https://www.youtube.com/watch?v=GfA_NcwkjmU,book and movie review,mixed/positive?
+7,book review,"Outlander by Diana Gabaldon Book Review ""Candy Reads segment""",TheCandyShow,female,3m42s,https://www.youtube.com/watch?v=bKnoqnXe4cU,,positive
+8,book review,Book Review: The Maze Runner [No Spoilers],jessethereader,male,3m39s,https://www.youtube.com/watch?v=El0MAj7hfDc,,positive
+9,book review,Review: The Last Wild,jessethereader,male,1m56s,https://www.youtube.com/watch?v=qaqO5nJOnSc,,mixed
+10,book review,Review: The Archived,jessethereader,male,3m10s,https://www.youtube.com/watch?v=avBt9TK6-1c,,positive
+11,book review,Review: Why We Broke Up,jessethereader,male,3m07s,https://www.youtube.com/watch?v=AzJ6ypiGGG0,,positive
+12,book review,Book Review: Albert Camus -- The Stranger,Dean Goranites,male,4m34s,https://www.youtube.com/watch?v=vFvBXuxI50s,,positive
+13,book review,Book Review | Wuthering Heights by Emily Brontë,Bazpierce,male,3m01s,https://www.youtube.com/watch?v=GHjV4avE88U,UK English,negative
+14,book review,Book Review | Jane Eyre by Charlotte Brontë,Bazpierce,male,4m17s,https://www.youtube.com/watch?v=P3IIcCtqqEo,UK English,positive
+15,book review,Book review | Harvest by Jim Crace,Iain Broome,male,3m40s,https://www.youtube.com/watch?v=2QrAtMFLSj0,UK English,positive
+16,book review,Recommended reading: Steal Like an Artist by Austin Kleon,Iain Broome,male,4m43s,https://www.youtube.com/watch?v=R-jzd06vSpU&index=3&list=PLEWFPFs52cgrp3zw2NPfZETdT5NOA8Lnm,UK English,positive
+17,book review,Book review of Room by Emma Donoghue,Caleb J. Ross,male,3m36s,https://www.youtube.com/watch?v=6XCVm272uRM,some explicit language,
+18,book review,Video Book review of The Fifty Year Sword by Mark Z. Danielewski,Caleb J. Ross,male,4m29s,https://www.youtube.com/watch?v=EEUPNTUv2bs,some explicit language,negative
+19,book review,Divergent - Book Review,Sam Liz,female,3m57s,https://www.youtube.com/watch?v=EgC2YG-BRxs,,
+20,book review,Book Review: Rebel Belle by Rachel Hawkins,padfootandprongs07,female,3m58s,https://www.youtube.com/watch?v=utMiX7OdXlY,,
+21,book review,To Kill A Mocking Bird Book Review,Chapter Chicks,female,5m09s,https://www.youtube.com/watch?v=Tbmytt2j7xQ,,
+22,book review,Book Review || Frankenstein by Mary Shelley.,timelordsandwizards,female,2m47s,https://www.youtube.com/watch?v=7UebzQv2A8s,UK English,
+23,book review,Book Review: The Eyre Affair by Jasper Fforde.,timelordsandwizards,female,3m49s,https://www.youtube.com/watch?v=tV3IsNwoBBM&list=PL238074FD897D69B7,UK English,
+24,book review,Battle Royale | Japanese Book Review,MercysBookishMusings,female,3m24s,https://www.youtube.com/watch?v=4Yh2cnV2SVY,UK English,mixed
+25,book review,Maus | Graphic Novel Review,MercysBookishMusings,female,3m25s,https://www.youtube.com/watch?v=vXpZJkQLghU,UK English,positive
+26,book review,Book Review | Stolen by Lucy Christopher,kassidymarina,female,4m43s,https://www.youtube.com/watch?v=s05Rr2b_6aQ,,mixed
+27,book review,Appointment with Death by Agatha Christie | Book Review,rincey reads,female,3m45s,https://www.youtube.com/watch?v=cuXUHD7O1xY&list=PL4E04B02D2EA0CBE1&index=4,,mixed
+28,book review,The Year We Left Home by Jean Thompson | Book Review,rincey reads,female,3m59s,https://www.youtube.com/watch?v=FymA7MGvZa0&list=PL4E04B02D2EA0CBE1&index=6,,mixed
+29,book review,Men We Reaped by Jesmyn Ward | Book Review,rincey reads,female,3m54s,https://www.youtube.com/watch?v=4SSBZIxHzfU&list=PL4E04B02D2EA0CBE1&index=25,,mixed
+30,headphone review,VM Audio Elux Headphone Review,Aharon HD,male,3m25s,https://www.youtube.com/watch?v=I7PGyHDJKzg,,
+31,headphone review,Audio Technica ATH-M50 Sealed Headphone Review,InnerFidelity,male,4m29s,https://www.youtube.com/watch?v=xxccWj1jNTU,,positive
+32,headphone review,Monster Beats by Dr Dre Pro,InnerFidelity,male,4m40s,https://www.youtube.com/watch?v=dLLgx695bNA,,positive
+33,headphone review,"Logitech UE 4000 Headphone Review: Rich Sound, A Little Muffled",lachlanlikesathing,male,4m45s,https://www.youtube.com/watch?v=WYG5quHVgvA,UK English,mixed/negative?
+34,book review,"Book Review | The Invisible Man, H. G. Wells",foolishoats,female,3m05s,https://www.youtube.com/watch?v=UktoIcTRHB4,,negative/mixed
+35,book review,"[BOOK REVIEW] ""Bag of Bones"" by Stephen King",thebookfox,female,3m38s,https://www.youtube.com/watch?v=TOOU7qyUz-c,,negative
+36,book review,Book Review | Pride and Prejudice by Jane Austen,Bazpierce,male,4m15s,https://www.youtube.com/watch?v=lNyQuF647QA,UK English,negative
