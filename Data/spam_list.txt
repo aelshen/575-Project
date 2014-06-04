@@ -1,5 +1,6 @@
 ##################################################
 AudioFragment: 12 spam HITs out of 62 total HITs
+Fleiss Kappa: 0.7704488001903108
 ##################################################
 3EQPA8A3749OPNCYX58UZ0VMVCCJZA	A14X36W5M4A8O4	One or more answers were left blank
 3KLL7H3EGDEBPXCY88G62H2BU93HV4	A2HQHBR7Z4AI56	One or more answers were left blank
@@ -16,6 +17,7 @@ AudioFragment: 12 spam HITs out of 62 total HITs
 
 ##################################################
 AudioFull: 26 spam HITs out of 145 total HITs
+Fleiss Kappa: 0.40290661432275554
 ##################################################
 3TCFMTM8HE1ROVTII9TA8PPTGME21I	A3YP2RNFZ1PQP	Task was submitted in a time shorter than the length of the video(s)
 3VGZ74AYTGT1QSBNXL3JRP2LU2ACG1	A3YP2RNFZ1PQP	Task was submitted in a time shorter than the length of the video(s)
@@ -46,6 +48,7 @@ AudioFull: 26 spam HITs out of 145 total HITs
 
 ##################################################
 AVFull: 33 spam HITs out of 136 total HITs
+Fleiss Kappa: 0.3512912006706558
 ##################################################
 3FO95NVK5CD8MZ9XAINV5YKAIE6RS5	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
 3GKAWYFRAP6H8XA000OH54YVGT8PDH	A2VLW778RK97P2	Task was submitted in a time shorter than the length of the video(s)
@@ -83,6 +86,7 @@ AVFull: 33 spam HITs out of 136 total HITs
 
 ##################################################
 TextFragment: 30 spam HITs out of 233 total HITs
+Fleiss Kappa: 0.41930370016389584
 ##################################################
 3PA41K45VNH1RO9Q9NLV5COZUI5P7O	AL8NYDL4JOYL3	One or more answers were left blank
 3EN4YVUOUC5ZKSCJWNK92FFBNCEJXD	A1TQYQG3VFJTWW	One or more answers did not agree with Golden HIT answer
@@ -117,6 +121,7 @@ TextFragment: 30 spam HITs out of 233 total HITs
 
 ##################################################
 TextFull: 24 spam HITs out of 202 total HITs
+Fleiss Kappa: 0.3348412740755728
 ##################################################
 375VSR8FVWM5NBVB5AH31RHD5T6RZA	AY3LDNDWACXCT	Task was completed suspiciously quickly.
 375VSR8FVWM5NBVB5AH31RHD5T6RZA	ABMX8XUNPR3LP	Task was completed suspiciously quickly.
@@ -145,6 +150,7 @@ TextFull: 24 spam HITs out of 202 total HITs
 
 ##################################################
 VideoFragment: 14 spam HITs out of 172 total HITs
+Fleiss Kappa: 0.20790125873050797
 ##################################################
 335HHSX8CDIPVGCCHNGCWVW4U2YHD4	A2B3ZS2XWMPUTR	One or more answers were left blank
 335HHSX8CDIPVGCCHNGCWVW4U2YHD4	A2GYWG3QKKC2E1	Pre-survey was left incomplete
@@ -163,6 +169,7 @@ VideoFragment: 14 spam HITs out of 172 total HITs
 
 ##################################################
 VideoFull: 57 spam HITs out of 201 total HITs
+Fleiss Kappa: 0.17470494509164117
 ##################################################
 3ZLW647WAL8NYY7X5D7TWI4QE6S23A	A1FG7WZHUGYGBO	Task was submitted in a time shorter than the length of the video(s)
 3ZLW647WAL8NYY7X5D7TWI4QE6S23A	A1UF113072UTML	Task was submitted in a time shorter than the length of the video(s)

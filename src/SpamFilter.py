@@ -9,6 +9,7 @@ SpamFilter
 import os
 import sys
 import csv
+import pickle
 from codecs import open as codec_open
 from collections import defaultdict,Counter
 from re import split as re_split
@@ -55,7 +56,7 @@ def main():
                 sys.exit(1)
             else:
                 new_experiment.HIT_list = CSV_func(filename, new_experiment)
-            
+                new_experiment.workers = set([x.worker_id for x in new_experiment.HIT_list])
             experiment_list.append( new_experiment )    
     #end for filename in os.listdir(MTURK_DIR):  
     
@@ -82,6 +83,7 @@ def main():
     for e in experiment_list:
         e.AggregateData()
         e.UpdateMturkCSV(e.name)
+    
     
     pass
 #==============================================================================    
@@ -584,6 +586,7 @@ class Experiment():
     def __init__(self, name):
         self.name = name
         self.kappa = 0.0
+        self.workers = set()
         self.gender = Counter()
         self.age = Counter()
         self.location = Counter()
@@ -792,27 +795,32 @@ class Experiment():
     def fleiss_kappa_iaa(self):
         k = 5 # number of sentiment categories
         N = len(self.sentiment_scores) # number of fragments/videos
-        n = Counter() # number of ratings per subject
+        n = 0 # number of ratings per subject
         for fragment in self.sentiment_scores:
-            for score in self.sentiment_scores[fragment]:
-                n[fragment] += self.sentiment_scores[fragment][score]
-
+            for j in range(1,6):
+                n += self.sentiment_scores[fragment][j]
+        n = float(n)/N
+        
         # proportion of all assigments to the jth category (score)
         P_j = Counter() # P_j[score] = proportion
-        for j in range(6):
+        for j in range(1,6):
             for fragment in self.sentiment_scores:
-                P_j[j] += float(self.sentiment_scores[fragment][j])/(N*n[fragment])
+                P_j[j] += float(self.sentiment_scores[fragment][j])
+        for j in range(1,6):
+            P_j[j] = (P_j[j]/(N*10))**2
 
         P_i = Counter()
         for fragment in self.sentiment_scores:
-            for j in range(6):
+            for j in range(1, 6):
                 P_i[fragment] += float(self.sentiment_scores[fragment][j]**2)
-            P_i[fragment] = (P_i[fragment] - n[fragment])/(n*(n-1))
+            
+
+            P_i[fragment] = (P_i[fragment] - n)/(n*(n-1))
 
         # mean agreement
         P_mean = sum(P_i.values())/N
         # mean expected value
-        P_e_mean = sum(P_j.values())
+        P_e_mean = sum(P_j.values()) 
 
         self.kappa = (P_mean - P_e_mean)/ (1 - P_e_mean)
     
@@ -831,7 +839,7 @@ class Experiment():
         spam_list = [hit for hit in self.HIT_list if hit.reject_flag]
         print('#'*50)
         print(self.name + ': %s spam HITs out of %s total HITs' % (str(len(spam_list)), str(len(self.HIT_list))))
-        print('Fleiss Kappa: ' + self.kappa)
+        print('Fleiss Kappa: ' + str(self.kappa) )
         print('#'*50)
         for hit in spam_list:
             print("\t".join([hit.hit_id, hit.worker_id, hit.reject_reason]))
@@ -867,8 +875,7 @@ class Experiment():
                         csv_original[i].append( hit.reject_reason )
                 csv_writer.writerow(csv_original[i])
 #                 csv_filtered.write(",".join(csv_original[i]))     
-#                 csv_filtered.write(os.linesep)       
-
+#                 csv_filtered.write(os.linesep)  
 
         
 
