@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8-sig -*-
 '''
 #==============================================================================
 SpamFilter
@@ -105,7 +105,7 @@ def Initialize():
     #value = Video object
     video_dict = defaultdict(Video)
     
-    with codec_open(fragment_HIT, 'rb', 'utf-8') as fragment_csv:
+    with codec_open(fragment_HIT, 'rb', 'utf-8-sig') as fragment_csv:
         f = list( csv.reader(fragment_csv) )
         for row in f[1:]:
             fragment_list = []
@@ -121,7 +121,7 @@ def Initialize():
             fragment_dict[fragment_list[0].id] = cur_row
     
     
-    with codec_open(full_CSV, 'rb', 'utf-8') as full_csv:
+    with codec_open(full_CSV, 'rb', 'utf-8-sig', errors='ignore') as full_csv:
         f = list( csv.reader(full_csv) )
         for row in f[1:]:
             temp = Video(row[0], row[5])
@@ -156,7 +156,7 @@ def TextFragment(mturk_csv, experiment):
     #[64] = Answer.â€œchunk_5_polarityâ€
     HIT_list = []
     
-    with codec_open(mturk_csv, 'rb', 'utf-8') as text_fragment_csv:
+    with codec_open(mturk_csv, 'rb', 'utf-8-sig') as text_fragment_csv:
         f = list( csv.reader(text_fragment_csv) )
         for row in f[1:]:
             hit_id = row[0]
@@ -198,7 +198,7 @@ def TextFull(mturk_csv, experiment):
     #[33] = Answer.â€œpolarityâ€
     HIT_list = []
     
-    with codec_open(mturk_csv, 'rb', 'utf-8') as text_full_csv:
+    with codec_open(mturk_csv, 'rb', 'utf-8-sig') as text_full_csv:
         f = list( csv.reader(text_full_csv) )
         for row in f[1:]:
             hit_id = row[0]
@@ -241,7 +241,7 @@ def AudioFragment(mturk_csv, experiment):
     #[64] = Answer.â€œchunk_5_polarityâ€
     HIT_list = []
     
-    with codec_open(mturk_csv, 'rb', 'utf-8') as audio_fragment_csv:
+    with codec_open(mturk_csv, 'rb', 'utf-8-sig') as audio_fragment_csv:
         f = list( csv.reader(audio_fragment_csv) )
         for row in f[1:]:
             hit_id = row[0]
@@ -276,7 +276,7 @@ def AudioFull(mturk_csv, experiment):
     #[34] = Answer.â€œpolarityâ€
     HIT_list = []
     
-    with codec_open(mturk_csv, 'rb', 'utf-8') as audio_full_csv:
+    with codec_open(mturk_csv, 'rb', 'utf-8-sig') as audio_full_csv:
         f = list( csv.reader(audio_full_csv) )
         for row in f[1:]:
             hit_id = row[0]
@@ -318,7 +318,7 @@ def VideoFragment(mturk_csv, experiment):
     #age_index = label_bar.index('Answer.Age')
     HIT_list = []
     
-    with codec_open(mturk_csv, 'rb', 'utf-8') as text_fragment_csv:
+    with codec_open(mturk_csv, 'rb', 'utf-8-sig') as text_fragment_csv:
         f = list( csv.reader(text_fragment_csv) )
         for row in f[1:]:
             hit_id = row[0]
@@ -349,7 +349,7 @@ def VideoFull(mturk_csv, experiment):
     #[33] = Answer.â€œpolarityâ€
     HIT_list = []
     
-    with codec_open(mturk_csv, 'rb', 'utf-8') as text_full_csv:
+    with codec_open(mturk_csv, 'rb', 'utf-8-sig') as text_full_csv:
         f = list( csv.reader(text_full_csv) )
         for row in f[1:]:
             hit_id = row[0]
@@ -393,7 +393,7 @@ def AVFragment(mturk_csv, experiment):
     #[64] = Answer.â€œchunk_5_polarityâ€
     HIT_list = []
     
-    with codec_open(mturk_csv, 'rb', 'utf-8') as audio_fragment_csv:
+    with codec_open(mturk_csv, 'rb', 'utf-8-sig') as audio_fragment_csv:
         f = list( csv.reader(audio_fragment_csv) )
         for row in f[1:]:
             hit_id = row[0]
@@ -428,7 +428,7 @@ def AVFull(mturk_csv, experiment):
     #[34] = Answer.â€œpolarityâ€
     HIT_list = []
     
-    with codec_open(mturk_csv, 'rb', 'utf-8') as audio_full_csv:
+    with codec_open(mturk_csv, 'rb', 'utf-8-sig') as audio_full_csv:
         f = list( csv.reader(audio_full_csv) )
         for row in f[1:]:
             hit_id = row[0]
@@ -846,10 +846,10 @@ class Experiment():
     ##                         if not None, prints to stdout, else prints to file
     ##-------------------------------------------------------------------------
     def UpdateMturkCSV(self, name):
-        csv_original = list( csv.reader(codec_open(os.path.join(MTURK_DIR,name + "_results.csv"), 'rb', 'utf-8')) ) 
+        csv_original = list( csv.reader(codec_open(os.path.join(MTURK_DIR,name + "_results.csv"), 'rb', 'utf-8-sig')) ) 
         
         filtered_dir = os.getcwd() + '/filtered'
-        with codec_open(os.path.join(filtered_dir, name + "_results_filtered.csv"), 'w', 'utf-8') as csv_filtered:
+        with codec_open(os.path.join(filtered_dir, name + "_results_filtered.csv"), 'w', 'utf-8-sig') as csv_filtered:
             csv_writer = csv.writer(csv_filtered)
             for i in range( len(csv_original) ):
                 if i == 0:
