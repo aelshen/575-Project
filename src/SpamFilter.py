@@ -10,6 +10,7 @@ import os
 import sys
 import csv
 import pickle
+import math
 from codecs import open as codec_open
 from collections import defaultdict,Counter
 from re import split as re_split
@@ -24,6 +25,7 @@ MTURK_DIR = os.getcwd() + '/MTurk_results'
 HITS_WITH_TRANSCRIPTIONS = ['AudioFragment', 'AudioFull', 'AVFragment', 'AVFull']
 
 GOLD_HITS = { x.split()[0]:int(x.split()[1]) for x in open('Data/gold_file', 'r').readlines()}
+VID_POLARITY = { x.split()[0]:x.split()[1] for x in open('Data/video_polarity.txt', 'r').readlines()}
 cur = __import__(__name__)
 
 TEXT_TIME_THRESHOLD = 20
@@ -123,7 +125,7 @@ def Initialize():
             fragment_dict[fragment_list[0].id] = cur_row
     
     
-    with codec_open(full_CSV, 'rb', 'utf-8') as full_csv:
+    with codec_open(full_CSV, 'rb') as full_csv:
         f = list( csv.reader(full_csv) )
         for row in f[1:]:
             temp = Video(row[0], row[5])
@@ -243,7 +245,7 @@ def AudioFragment(mturk_csv, experiment):
     #[64] = Answer.â€œchunk_5_polarityâ€
     HIT_list = []
     
-    with codec_open(mturk_csv, 'rb', 'utf-8') as audio_fragment_csv:
+    with codec_open(mturk_csv, 'rb') as audio_fragment_csv:
         f = list( csv.reader(audio_fragment_csv) )
         for row in f[1:]:
             hit_id = row[0]
@@ -278,7 +280,7 @@ def AudioFull(mturk_csv, experiment):
     #[34] = Answer.â€œpolarityâ€
     HIT_list = []
     
-    with codec_open(mturk_csv, 'rb', 'utf-8') as audio_full_csv:
+    with codec_open(mturk_csv, 'rb') as audio_full_csv:
         f = list( csv.reader(audio_full_csv) )
         for row in f[1:]:
             hit_id = row[0]
@@ -320,7 +322,7 @@ def VideoFragment(mturk_csv, experiment):
     #age_index = label_bar.index('Answer.Age')
     HIT_list = []
     
-    with codec_open(mturk_csv, 'rb', 'utf-8') as text_fragment_csv:
+    with codec_open(mturk_csv, 'rb') as text_fragment_csv:
         f = list( csv.reader(text_fragment_csv) )
         for row in f[1:]:
             hit_id = row[0]
@@ -351,7 +353,7 @@ def VideoFull(mturk_csv, experiment):
     #[33] = Answer.â€œpolarityâ€
     HIT_list = []
     
-    with codec_open(mturk_csv, 'rb', 'utf-8') as text_full_csv:
+    with codec_open(mturk_csv, 'rb') as text_full_csv:
         f = list( csv.reader(text_full_csv) )
         for row in f[1:]:
             hit_id = row[0]
@@ -395,7 +397,7 @@ def AVFragment(mturk_csv, experiment):
     #[64] = Answer.â€œchunk_5_polarityâ€
     HIT_list = []
     
-    with codec_open(mturk_csv, 'rb', 'utf-8') as audio_fragment_csv:
+    with codec_open(mturk_csv, 'rb') as audio_fragment_csv:
         f = list( csv.reader(audio_fragment_csv) )
         for row in f[1:]:
             hit_id = row[0]
@@ -430,7 +432,7 @@ def AVFull(mturk_csv, experiment):
     #[34] = Answer.â€œpolarityâ€
     HIT_list = []
     
-    with codec_open(mturk_csv, 'rb', 'utf-8') as audio_full_csv:
+    with codec_open(mturk_csv, 'rb') as audio_full_csv:
         f = list( csv.reader(audio_full_csv) )
         for row in f[1:]:
             hit_id = row[0]
@@ -587,7 +589,15 @@ class Row():
 class Experiment():
     def __init__(self, name):
         self.name = name
-        self.kappa = 0.0
+        self.kappa = "N/A"
+        self.sigma = "N/A"
+        self.kappa_spam = "N/A"
+        self.sigma_spam = "N/A"
+        self.frag_sigma = "N/A"
+        self.average = "N/A"
+        self.p_average = "N/A"
+        self.m_average = "N/A"
+        self.n_average = "N/A"
         self.workers = set()
         self.gender = Counter()
         self.age = Counter()
@@ -765,6 +775,8 @@ class Experiment():
     ##-------------------------------------------------------------------------
     def AggregateData(self):
         self.sentiment_scores = defaultdict(lambda: Counter())
+        s_scores_spam = defaultdict(lambda: Counter())
+        combined_s_scores = defaultdict(lambda: Counter()) # averages scores of each fragment for interfragment agreement
         total_counts = Counter()
         self.sentiment_averages = defaultdict(float)
         
@@ -778,8 +790,33 @@ class Experiment():
             
             for i in range( len(hit.ids) ):
                 self.sentiment_scores[hit.ids[i]][hit.polarities[i]] += 1
+                s_scores_spam[hit.ids[i]][hit.polarities[i]] += 1
                 total_counts[hit.ids[i]] += 1
+
+        if "Fragment" in self.name:
+            average_per_frag = dict()
+
+            for fragment in self.sentiment_scores:
+                average = 0
+                n = 0
+                for j in self.sentiment_scores[fragment]:
+                    average += j*self.sentiment_scores[fragment][j]
+                    n += self.sentiment_scores[fragment][j]
+                average_per_frag[fragment] = float(average)/n
+
+            for fragment in average_per_frag:
+                vid = fragment.split('.')[0]
+                combined_s_scores[vid][average_per_frag[fragment]] += 1
+            self.frag_sigma = self.std_dev(combined_s_scores)
         
+        temp = [x for x in self.HIT_list if x.reject_flag]
+        for hit in temp:    
+            for i in range( len(hit.ids) ):
+                try:
+                    s_scores_spam[hit.ids[i]][hit.polarities[i]] += 1
+                except AttributeError:
+                    continue
+
         
         for id in self.sentiment_scores:
             score_Counter = self.sentiment_scores[id]
@@ -789,32 +826,64 @@ class Experiment():
                 total += score * score_Counter[score] 
                 count += score_Counter[score]
             
-            self.sentiment_averages[id] = total / count
+            self.sentiment_averages[id] = float(total) / count
 
-        self.fleiss_kappa_iaa()
+        total = 0
+        count = 0
+        p_total = 0
+        p_count = 0
+        m_total = 0
+        m_count = 0
+        n_total = 0
+        n_count = 0
+
+        for id in self.sentiment_averages:
+            vidid = id.split('.')[0]
+            total += self.sentiment_averages[id]
+            count += 1
+            if VID_POLARITY[vidid] == 'p':
+                p_total += self.sentiment_averages[id]
+                p_count += 1
+            if VID_POLARITY[vidid] == 'm':
+                m_total += self.sentiment_averages[id]
+                m_count += 1
+            if VID_POLARITY[vidid] == 'n':
+                n_total += self.sentiment_averages[id]
+                n_count += 1
+
+        self.average = float(total)/count
+        self.p_average = float(p_total)/p_count
+        self.m_average = float(m_total)/m_count
+        self.n_average = float(n_total)/n_count
+
+        self.kappa = self.fleiss_kappa_iaa(self.sentiment_scores)
+        self.sigma = self.std_dev(self.sentiment_scores)
+
+        self.kappa_spam = self.fleiss_kappa_iaa(s_scores_spam)
+        self.sigma_spam = self.std_dev(s_scores_spam)
 
     # calculates Fleiss Kappa interannotator agreement score
-    def fleiss_kappa_iaa(self):
+    def fleiss_kappa_iaa(self, s_scores):
         k = 5 # number of sentiment categories
-        N = len(self.sentiment_scores) # number of fragments/videos
+        N = len(s_scores) # number of fragments/videos
         n = 0 # number of ratings per subject
-        for fragment in self.sentiment_scores:
+        for fragment in s_scores:
             for j in range(1,6):
-                n += self.sentiment_scores[fragment][j]
+                n += s_scores[fragment][j]
         n = float(n)/N
         
         # proportion of all assigments to the jth category (score)
         P_j = Counter() # P_j[score] = proportion
         for j in range(1,6):
-            for fragment in self.sentiment_scores:
-                P_j[j] += float(self.sentiment_scores[fragment][j])
+            for fragment in s_scores:
+                P_j[j] += float(s_scores[fragment][j])
         for j in range(1,6):
             P_j[j] = (P_j[j]/(N*10))**2
 
         P_i = Counter()
-        for fragment in self.sentiment_scores:
+        for fragment in s_scores:
             for j in range(1, 6):
-                P_i[fragment] += float(self.sentiment_scores[fragment][j]**2)
+                P_i[fragment] += float(s_scores[fragment][j]**2)
 
 
             P_i[fragment] = (P_i[fragment] - n)/(n*(n-1))
@@ -825,8 +894,24 @@ class Experiment():
         # mean expected value
         P_e_mean = sum(P_j.values()) 
 
-        self.kappa = (P_mean - P_e_mean)/ (1 - P_e_mean)
+        return (P_mean - P_e_mean)/ (1 - P_e_mean)
     
+    # calculate the standard deviation for the given sentiment scores
+    def std_dev(self, s_scores):
+        summed_sigmas = 0.0
+        for fragment in s_scores:
+            summed_score = 0
+            n = 0
+            for j in s_scores[fragment]:
+                summed_score += j*s_scores[fragment][j]
+                n += s_scores[fragment][j]
+            average = float(summed_score)/n
+            summed_squares = 0
+            for j in s_scores[fragment]:
+                summed_squares += ((j-average)**2)*s_scores[fragment][j]
+            summed_sigmas += math.sqrt(summed_squares/n)
+        return summed_sigmas/len(s_scores)
+
     ##-------------------------------------------------------------------------
     ## Experiment.PrintSpamList()
     ##-------------------------------------------------------------------------
@@ -843,6 +928,14 @@ class Experiment():
         print('#'*50)
         print(self.name + ': %s spam HITs out of %s total HITs' % (str(len(spam_list)), str(len(self.HIT_list))))
         print('Fleiss Kappa: ' + str(self.kappa) )
+        print('Fleiss Kappa+spam: ' + str(self.kappa_spam) )
+        print('Average deviation: ' + str(self.sigma))
+        print('Average deviation+spam: ' + str(self.sigma_spam))
+        print('Interfragment deviation: ' + str(self.frag_sigma))
+        print('Average: ' + str(self.average))
+        print('Positive average: ' + str(self.p_average))
+        print('Mixed average: ' + str(self.m_average))
+        print('Negative average: ' + str(self.n_average))
         print('#'*50)
         for hit in spam_list:
             print("\t".join([hit.hit_id, hit.worker_id, hit.reject_reason]))
@@ -857,10 +950,10 @@ class Experiment():
     ##                         if not None, prints to stdout, else prints to file
     ##-------------------------------------------------------------------------
     def UpdateMturkCSV(self, name):
-        csv_original = list( csv.reader(codec_open(os.path.join(MTURK_DIR,name + "_results.csv"), 'rb', 'utf-8')) ) 
+        csv_original = list( csv.reader(codec_open(os.path.join(MTURK_DIR,name + "_results.csv"), 'rb')) ) 
         
         filtered_dir = os.getcwd() + '/filtered'
-        with codec_open(os.path.join(filtered_dir, name + "_results_filtered.csv"), 'w', 'utf-8') as csv_filtered:
+        with codec_open(os.path.join(filtered_dir, name + "_results_filtered.csv"), 'w') as csv_filtered:
             csv_writer = csv.writer(csv_filtered)
             for i in range( len(csv_original) ):
                 if i == 0:
