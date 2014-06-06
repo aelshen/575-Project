@@ -1,0 +1,293 @@
+<!-- Bootstrap v3.0.3 -->
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+<section class="container" id="Survey" style="padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+<div class="row col-xs-12 col-md-12"><!-- Instructions -->
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Instructions</strong></div>
+
+<div class="panel-body">
+<ul>
+	<li>Instruction #1: First please fill out a brief survey, providing information about gender, age group and country,</li>
+	<li>Instruction #2: Please listen to the following five media fragments from various&nbsp;reviews,</li>
+	<li>Instruction #3: Just click the play button to begin playing a video. <strong>There will be NO video</strong>, as the videos are intentionally audio-only. A video will automatically reset to the start point upon completion.</li>
+	<li>Instruction #4:&nbsp;Based on the fragment, assign a score to the review of the book according the following table.</li>
+</ul>
+
+<p><u>*NOTE* Listen to each video until it automatically stops. If you do not listen to each part all the way you will not be paid. *NOTE*</u></p>
+</div>
+</div>
+<!-- End Instructions --><!-- Survey Body -->
+
+<table border="1" cellpadding="10" style="width:1000px">
+	<tbody>
+		<tr>
+			<td>5</td>
+			<td>Strongly Positive</td>
+			<td>Select this if the item embodies emotion that was extremely happy or excited toward the topic. For example, &quot;Their customer service is the best that I&#39;ve seen!!!!&quot;</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>Positive</td>
+			<td>Select this if the item embodies emotion that was generally happy or satisfied, but the emotion wasn&#39;t extreme. For example, &quot;Sure I&#39;ll shop there again.&quot;</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Neutral</td>
+			<td>Select this if the item does not embody much of positive or negative emotion toward the topic. For example, &quot;Yeah, I guess it&#39;s ok.&quot; or &quot;Is their customer service open 24x7?&quot;</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Negative</td>
+			<td>Select this if the item embodies emotion that is perceived to be angry or upsetting toward the topic, but not to the extreme. For example, &quot;I don&#39;t know if I&#39;ll shop there again because I don&#39;t trust them.&quot;</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Strongly Negative</td>
+			<td>Select this if the item embodies negative emotion toward the topic that can be perceived as extreme. For example, &quot;These guys are teriffic... NOTTTT!!!!!!&quot; or &quot;I will NEVER shop there again!!!&quot;</td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="row col-xs-12 col-md-12"><!-- Pre-Survey -->
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Pre-Survey</strong></div>
+
+<div class="panel-body">
+<fieldset><label>1. What is your gender? </label>
+
+<div class="radio"><label><input name="Gender" type="radio" value="Male" />Male </label></div>
+
+<div class="radio"><label><input name="Gender" type="radio" value="Female" />Female </label></div>
+</fieldset>
+
+<fieldset><label>2. What is your age group?</label> <select class="form-control" name="Age"><option selected="selected" value="select one">- select one -</option><option value="&lt;20">Younger than 20</option><option value="21-40">21-40</option><option value="41-60">41-60</option><option value="60+">60+</option></select></fieldset>
+
+<fieldset>
+<div class="input-group"><label>3. Country of Residence</label> <input class="form-control" name="Country" size="120" type="text" /></div>
+</fieldset>
+</div>
+</div>
+<!-- End Pre-Survey --><!-- Survey Body -->
+
+<section><script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js" type="text/javascript"></script>
+<div class="row col-xs-12 col-md-12"><!-- Fragment 1 -->
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Fragment 1</strong></div>
+
+<fieldset><label>Fragment 1: ${chunk_1_start}seconds - ${chunk_1_end}seconds</label></fieldset>
+
+<div id="firstPlayer">&nbsp;</div>
+
+<div class="input-group"><br />
+<label>Fragment 1 Partial Transcription</label>
+
+<p>Please transcribe the first 10 words of this fragment. Include utterances like &#39;umm&#39;, &#39;like&#39; and so on:</p>
+<input class="form-control" name="chunk_1_transcription" size="120" type="text" /></div>
+
+<fieldset><label>Fragment 1 Sentiment</label> <select class="form-control" name="“chunk_1_polarity”"><option selected="selected" value="select one">- select one -</option><option value="1">1 = Strongly Negative</option><option value="2">2 = Negative</option><option value="3">3 = Neutral</option><option value="4">4 = Positive</option><option value="5">5 = Strongly Positive</option></select></fieldset>
+</div>
+</div>
+<!-- End Fragment 1--><!-- Survey Body -->
+
+<div class="row col-xs-12 col-md-12"><!-- Fragment 2 -->
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Fragment 2</strong></div>
+
+<fieldset><label>Fragment 2: ${chunk_2_start}seconds - ${chunk_2_end}seconds</label></fieldset>
+
+<div id="secondPlayer">&nbsp;</div>
+
+<div class="input-group"><br />
+<label>Fragment 2 Partial Transcription</label>
+
+<p>Please transcribe the first 10 words of this fragment. Include utterances like &#39;umm&#39;, &#39;like&#39; and so on:</p>
+<input class="form-control" name="chunk_2_transcription" size="120" type="text" /></div>
+
+<fieldset><label>Fragment 2 Sentiment</label> <select class="form-control" name="“chunk_2_polarity”"><option selected="selected" value="select one">- select one -</option><option value="1">1 = Strongly Negative</option><option value="2">2 = Negative</option><option value="3">3 = Neutral</option><option value="4">4 = Positive</option><option value="5">5 = Strongly Positive</option></select></fieldset>
+</div>
+</div>
+<!-- End Fragment 2 --><!-- Survey Body -->
+
+<div class="row col-xs-12 col-md-12"><!-- Fragment 3 -->
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Fragment 3</strong></div>
+
+<fieldset><label>Fragment 3: ${chunk_3_start}seconds - ${chunk_3_end}seconds</label></fieldset>
+
+<div id="thirdPlayer">&nbsp;</div>
+
+<div class="input-group"><label>Fragment 3 Partial Transcription</label>
+
+<p>Please transcribe the first 10 words of this fragment. Include utterances like &#39;umm&#39;, &#39;like&#39; and so on:</p>
+<input class="form-control" name="chunk_3_transcription" size="120" type="text" /></div>
+
+<fieldset><label>Fragment 3 Sentiment</label> <select class="form-control" name="“chunk_3_polarity”"><option selected="selected" value="select one">- select one -</option><option value="1">1 = Strongly Negative</option><option value="2">2 = Negative</option><option value="3">3 = Neutral</option><option value="4">4 = Positive</option><option value="5">5 = Strongly Positive</option></select></fieldset>
+</div>
+</div>
+<!-- End Fragment 3 --><!-- Survey Body -->
+
+<div class="row col-xs-12 col-md-12"><!-- Fragment 4 -->
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Fragment 4</strong></div>
+
+<fieldset><label>Fragment 4: ${chunk_4_start}seconds - ${chunk_4_end}seconds</label></fieldset>
+
+<div id="fourthPlayer">&nbsp;</div>
+
+<div class="input-group"><label>Fragment 4 Partial Transcription</label>
+
+<p>Please transcribe the first 10 words of this fragment. Include utterances like &#39;umm&#39;, &#39;like&#39; and so on:</p>
+<input class="form-control" name="chunk_4_transcription" size="120" type="text" /></div>
+
+<fieldset><label>Fragment 4 Sentiment</label> <select class="form-control" name="“chunk_4_polarity”"><option selected="selected" value="select one">- select one -</option><option value="1">1 = Strongly Negative</option><option value="2">2 = Negative</option><option value="3">3 = Neutral</option><option value="4">4 = Positive</option><option value="5">5 = Strongly Positive</option></select></fieldset>
+</div>
+</div>
+<!-- End Fragment 4-—><!-- Survey Body -->
+
+<div class="row col-xs-12 col-md-12"><!-- Fragment 5 -->
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Fragment 5</strong></div>
+
+<fieldset><label>Fragment 5: ${chunk_5_start}seconds - ${chunk_5_end}seconds</label></fieldset>
+
+<div id="fifthPlayer">&nbsp;</div>
+
+<div class="input-group"><label>Fragment 5 Partial Transcription</label>
+
+<p>Please transcribe the first 10 words of this fragment. Include utterances like &#39;umm&#39;, &#39;like&#39; and so on:</p>
+<input class="form-control" name="chunk_5_transcription" size="120" type="text" /></div>
+
+<fieldset><label>Fragment 5 Sentiment</label> <select class="form-control" name="“chunk_5_polarity”"><option selected="selected" value="select one">- select one -</option><option value="1">1 = Strongly Negative</option><option value="2">2 = Negative</option><option value="3">3 = Neutral</option><option value="4">4 = Positive</option><option value="5">5 = Strongly Positive</option></select></fieldset>
+</div>
+</div>
+<!-- End Fragment 5-—><!-- Survey Body --><script>
+var tag = document.createElement('script');
+tag.src = "//www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var youtubePlayer1;
+var youtubePlayer2;
+var youtubePlayer3;
+var youtubePlayer4;
+var youtubePlayer5;
+var start_1 = parseInt(${chunk_1_start});
+var end_1 = parseInt(${chunk_1_end});
+var start_2 = parseInt(${chunk_2_start});
+var end_2 = parseInt(${chunk_2_end});
+var start_3 = parseInt(${chunk_3_start});
+var end_3 = parseInt(${chunk_3_end});
+var start_4 = parseInt(${chunk_4_start});
+var end_4 = parseInt(${chunk_4_end});
+var start_5 = parseInt(${chunk_5_start});
+var end_5 = parseInt(${chunk_5_end});
+function onYouTubeIframeAPIReady() {
+        youtubePlayer1 = new YT.Player('firstPlayer',{
+            height: '30',
+            width: '300',
+            videoId: ${chunk_1_url},
+            playerVars: { 'autoplay': 0 , 'showinfo': 0, 'start': start_1},
+            events: {
+                'onReady': onPlayerReady1
+            }
+        });
+        youtubePlayer2 = new YT.Player('secondPlayer', {
+            height: '30',
+            width: '300',
+            videoId: ${chunk_2_url},
+            playerVars: { 'autoplay': 0 , 'showinfo': 0, 'start':start_2 },
+            events: {
+                'onReady': onPlayerReady2
+            }
+        });
+        youtubePlayer3 = new YT.Player('thirdPlayer', {
+            height: '30',
+            width: '300',
+            videoId: ${chunk_3_url},
+            playerVars: { 'autoplay': 0 , 'showinfo': 0, 'start': start_3 },
+            events: {
+                'onReady': onPlayerReady3
+            }
+        });
+        youtubePlayer4 = new YT.Player('fourthPlayer',{
+            height: '30',
+            width: '300',
+            videoId: ${chunk_4_url},
+            playerVars: { 'autoplay': 0 , 'showinfo': 0, 'start': start_4 },
+            events: {
+                'onReady': onPlayerReady4
+            }
+        });
+        youtubePlayer5 = new YT.Player('fifthPlayer',{
+            height: '30',
+            width: '300',
+            videoId: ${chunk_5_url},
+            playerVars: { 'autoplay': 0 , 'showinfo': 0, 'start': start_5 },
+            events: {
+                'onReady': onPlayerReady5
+            }
+        });
+    }
+function onPlayerReady1(event) {
+        setInterval(checkTime1, 100);
+    }
+function onPlayerReady2(event) {
+        setInterval(checkTime2, 100);
+    }
+function onPlayerReady3(event) {
+        setInterval(checkTime3, 100);
+    }
+function onPlayerReady4(event) {
+        setInterval(checkTime4, 100);
+    }
+function onPlayerReady5(event) {
+        setInterval(checkTime5, 100);
+    }
+
+function checkTime1() {
+          var t = Math.floor(youtubePlayer1.getCurrentTime());
+          if ( (t >= end_1) || (t < start_1) ) {
+               youtubePlayer1.seekTo(start_1)
+               youtubePlayer1.pauseVideo()
+          }
+      }
+function checkTime2() {
+          var t = Math.floor(youtubePlayer2.getCurrentTime());
+          if ( (t >= end_2) || (t < start_2) ) {
+               youtubePlayer2.seekTo(start_2)
+               youtubePlayer2.pauseVideo()
+          }
+      }
+function checkTime3() {
+          var t = Math.floor(youtubePlayer3.getCurrentTime());
+          if ( (t >= end_3) || (t < start_3) ) {
+               youtubePlayer3.seekTo(start_3)
+               youtubePlayer3.pauseVideo()
+          }
+      }
+function checkTime4() {
+          var t = Math.floor(youtubePlayer4.getCurrentTime());
+          if ( (t >= end_4) || (t < start_4) ) {
+               youtubePlayer4.seekTo(start_4)
+               youtubePlayer4.pauseVideo()
+          }
+      }
+function checkTime5() {
+          var t = Math.floor(youtubePlayer5.getCurrentTime());
+          if ( (t >= end_5) || (t < start_5) ) {
+               youtubePlayer5.seekTo(start_5)
+               youtubePlayer5.pauseVideo()
+          }
+      }
+</script></section>
+<!-- End Survey Body --><input class="btn btn-primary" id="submitButton" type="Submit" value="Submit" /></div>
+</div>
+</section>
+<!-- close container -->
+<style type="text/css">fieldset {
+    padding: 10px;
+    background:#fbfbfb;
+    border-radius:5px;
+    margin-bottom:5px;
+}
+</style>

@@ -1,0 +1,114 @@
+<!-- Bootstrap v3.0.3 -->
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+<section class="container" id="Survey" style="padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+<div class="row col-xs-12 col-md-12"><!-- Instructions -->
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Instructions</strong></div>
+
+<div class="panel-body">
+<ul>
+	<li>Instruction #1: First please fill out a brief survey, providing information about gender, age group and country,</li>
+	<li>Instruction #2: Please read five fragments from a review, and tell us whether you feel that fragment was positive, negative or neutral in tone in accordance with the table immediately below.</li>
+</ul>
+</div>
+</div>
+<!-- End Instructions --><!-- Survey Body -->
+
+<table border="1" cellpadding="10" style="width:1000px">
+	<tbody>
+		<tr>
+			<td>5</td>
+			<td>Strongly Positive</td>
+			<td>Select this if the item embodies emotion that was extremely happy or excited toward the topic. For example, &quot;Their customer service is the best that I&#39;ve seen!!!!&quot;</td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>Positive</td>
+			<td>Select this if the item embodies emotion that was generally happy or satisfied, but the emotion wasn&#39;t extreme. For example, &quot;Sure I&#39;ll shop there again.&quot;</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Neutral</td>
+			<td>Select this if the item does not embody much of positive or negative emotion toward the topic. For example, &quot;Yeah, I guess it&#39;s ok.&quot; or &quot;Is their customer service open 24x7?&quot;</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Negative</td>
+			<td>Select this if the item embodies emotion that is perceived to be angry or upsetting toward the topic, but not to the extreme. For example, &quot;I don&#39;t know if I&#39;ll shop there again because I don&#39;t trust them.&quot;</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>Strongly Negative</td>
+			<td>Select this if the item embodies negative emotion toward the topic that can be perceived as extreme. For example, &quot;These guys are teriffic... NOTTTT!!!!!!&quot; or &quot;I will NEVER shop there again!!!&quot;</td>
+		</tr>
+	</tbody>
+</table>
+
+<div class="row col-xs-12 col-md-12"><!-- Pre-Survey -->
+<div class="panel panel-primary">
+<div class="panel-heading"><strong>Pre-Survey</strong></div>
+
+<div class="panel-body">
+<fieldset><label>1. What is your gender? </label>
+
+<div class="radio"><label><input name="Gender" type="radio" value="Male" />Male </label></div>
+
+<div class="radio"><label><input name="Gender" type="radio" value="Female" />Female </label></div>
+</fieldset>
+
+<fieldset><label>2. What is your age group?</label> <select class="form-control" name="Age"><option selected="selected" value="select one">- select one -</option><option value="&lt;20">Younger than 20</option><option value="21-40">21-40</option><option value="41-60">41-60</option><option value="60+">60+</option></select></fieldset>
+
+<fieldset>
+<div class="input-group"><label>3. Country of Residence</label> <input class="form-control" name="Age" size="120" type="text" /></div>
+</fieldset>
+</div>
+</div>
+<!-- End Pre-Survey --><!-- Survey Body -->
+
+<section>
+<fieldset><label>Fragment 1</label>
+
+<p>${chunk_1_text}</p>
+</fieldset>
+
+<fieldset><label>Fragment 1 Sentiment</label> <select class="form-control" name="chunk_1_polarity"><option selected="selected" value="select one">- select one -</option><option value="1">1 = Strongly Negative</option><option value="2">2 = Negative</option><option value="3">3 = Neutral</option><option value="4">4 = Positive</option><option value="5">5 = Strongly Positive</option></select></fieldset>
+
+<fieldset><label>Fragment 2</label>
+
+<p>${chunk_2_text}</p>
+</fieldset>
+
+<fieldset><label>Fragment 2 Sentiment</label> <select class="form-control" name="chunk_2_polarity"><option selected="selected" value="select one">- select one -</option><option value="1">1 = Strongly Negative</option><option value="2">2 = Negative</option><option value="3">3 = Neutral</option><option value="4">4 = Positive</option><option value="5">5 = Strongly Positive</option></select></fieldset>
+
+<fieldset><label>Fragment 3</label>
+
+<p>${chunk_3_text}</p>
+</fieldset>
+
+<fieldset><label>Fragment 3 Sentiment</label> <select class="form-control" name="chunk_3_polarity"><option selected="selected" value="select one">- select one -</option><option value="1">1 = Strongly Negative</option><option value="2">2 = Negative</option><option value="3">3 = Neutral</option><option value="4">4 = Positive</option><option value="5">5 = Strongly Positive</option></select></fieldset>
+
+<fieldset><label>Fragment 4</label>
+
+<p>${chunk_4_text}</p>
+</fieldset>
+
+<fieldset><label>Fragment 4 Sentiment</label> <select class="form-control" name="chunk_4_polarity"><option selected="selected" value="select one">- select one -</option><option value="1">1 = Strongly Negative</option><option value="2">2 = Negative</option><option value="3">3 = Neutral</option><option value="4">4 = Positive</option><option value="5">5 = Strongly Positive</option></select></fieldset>
+
+<fieldset><label>Fragment 5</label>
+
+<p>${chunk_5_text}</p>
+</fieldset>
+
+<fieldset><label>Fragment 5 Sentiment</label> <select class="form-control" name="chunk_5_polarity"><option selected="selected" value="select one">- select one -</option><option value="1">1 = Strongly Negative</option><option value="2">2 = Negative</option><option value="3">3 = Neutral</option><option value="4">4 = Positive</option><option value="5">5 = Strongly Positive</option></select></fieldset>
+</section>
+<!-- End Survey Body --><input class="btn btn-primary" id="submitButton" type="Submit" value="Submit" /></div>
+</div>
+</section>
+<!-- close container -->
+<style type="text/css">fieldset {
+    padding: 10px;
+    background:#fbfbfb;
+    border-radius:5px;
+    margin-bottom:5px;
+}
+</style>
