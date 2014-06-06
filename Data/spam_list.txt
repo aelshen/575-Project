@@ -87,7 +87,7 @@ Fleiss Kappa: 0.3271876105567438
 
 ##################################################
 AVFragment: 47 spam HITs out of 155 total HITs
-Fleiss Kappa: 0.5921943967977455
+Fleiss Kappa: 0.5921943967977459
 ##################################################
 3NQUW096N6LFEMILWSQ82R6LK00L9A	A10XXWCA8N4XZS	One or more answers did not agree with Golden HIT answer
 3NQUW096N6LFEMILWSQ82R6LK00L9A	A2T7K36NIIO72O	One or more answers did not agree with Golden HIT answer
@@ -192,7 +192,7 @@ Fleiss Kappa: 0.3577735239757587
 
 ##################################################
 TextFragment: 36 spam HITs out of 258 total HITs
-Fleiss Kappa: 0.38837062472422923
+Fleiss Kappa: 0.3883706247242294
 ##################################################
 3PA41K45VNH1RO9Q9NLV5COZUI5P7O	AL8NYDL4JOYL3	One or more answers were left blank
 3EN4YVUOUC5ZKSCJWNK92FFBNCEJXD	A1TQYQG3VFJTWW	One or more answers did not agree with Golden HIT answer
@@ -233,7 +233,7 @@ Fleiss Kappa: 0.38837062472422923
 
 ##################################################
 TextFull: 26 spam HITs out of 224 total HITs
-Fleiss Kappa: 0.3119062867996702
+Fleiss Kappa: 0.31190628679967036
 ##################################################
 375VSR8FVWM5NBVB5AH31RHD5T6RZA	AY3LDNDWACXCT	Task was completed suspiciously quickly.
 375VSR8FVWM5NBVB5AH31RHD5T6RZA	ABMX8XUNPR3LP	Task was completed suspiciously quickly.
@@ -264,7 +264,7 @@ Fleiss Kappa: 0.3119062867996702
 
 ##################################################
 VideoFragment: 15 spam HITs out of 224 total HITs
-Fleiss Kappa: 0.09787617920708212
+Fleiss Kappa: 0.09787617920708228
 ##################################################
 335HHSX8CDIPVGCCHNGCWVW4U2YHD4	A2B3ZS2XWMPUTR	One or more answers were left blank
 335HHSX8CDIPVGCCHNGCWVW4U2YHD4	A2GYWG3QKKC2E1	Pre-survey was left incomplete
@@ -284,7 +284,7 @@ Fleiss Kappa: 0.09787617920708212
 
 ##################################################
 VideoFull: 73 spam HITs out of 270 total HITs
-Fleiss Kappa: 0.056822451060961274
+Fleiss Kappa: 0.05682245106096135
 ##################################################
 3ZLW647WAL8NYY7X5D7TWI4QE6S23A	A1FG7WZHUGYGBO	Task was submitted in a time shorter than the length of the video(s)
 3ZLW647WAL8NYY7X5D7TWI4QE6S23A	A1P4BH68GLDE4A	Task was submitted in a time shorter than the length of the video(s)
