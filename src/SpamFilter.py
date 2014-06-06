@@ -30,6 +30,25 @@ cur = __import__(__name__)
 
 TEXT_TIME_THRESHOLD = 20
 AVERAGE_SCORE_THRESHOLD = 3
+
+# numbers csv lines
+NUMBERS = [
+'experiment',
+'Fleiss Kappa',
+'Fleiss Kappa+spam',
+'Kappa Pos only',
+'Kappa Mix only',
+'Kappa Neg only',
+'Average deviation',
+'Average deviation+spam',
+'Interfragment deviation',
+'Average',
+'Positive average',
+'Mixed average',
+'Negative average',
+]
+
+
 #==============================================================================
 #-----------------------------------Main---------------------------------------
 #==============================================================================
@@ -45,6 +64,17 @@ def main():
     fragment_dict, video_dict = Initialize()
     experiment_list = []
     
+    if os.path.exists("Results/distrubition.csv"):
+        os.remove("Results/distrubition.csv")
+    if os.path.exists("Results/distrubition_pos.csv"):
+        os.remove("Results/distrubition_pos.csv")
+    if os.path.exists("Results/distrubition_mix.csv"):
+        os.remove("Results/distrubition_mix.csv")
+    if os.path.exists("Results/distrubition_neg.csv"):
+        os.remove("Results/distrubition_neg.csv")
+    if os.path.exists("Results/numbers.csv"):
+        os.remove("Results/numbers.csv")
+
     for filename in os.listdir(MTURK_DIR):
         if not filename[0] == '.':
             name = filename.split('_')[0]
@@ -85,6 +115,21 @@ def main():
     for e in experiment_list:
         e.AggregateData()
         e.UpdateMturkCSV(e.name)
+
+    with open('Results/numbers.csv', 'w') as out:
+        out.write(NUMBERS[0] + '\n')
+        out.write(NUMBERS[1] + '\n')
+        out.write(NUMBERS[2] + '\n')
+        out.write(NUMBERS[3] + '\n')
+        out.write(NUMBERS[4] + '\n')
+        out.write(NUMBERS[5] + '\n')
+        out.write(NUMBERS[6] + '\n')
+        out.write(NUMBERS[7] + '\n')
+        out.write(NUMBERS[8] + '\n')
+        out.write(NUMBERS[9] + '\n')
+        out.write(NUMBERS[10] + '\n')
+        out.write(NUMBERS[11] + '\n')
+        out.write(NUMBERS[12])
     
 #==============================================================================
 # Build Cumulative Demographic Dictionaries
@@ -816,12 +861,13 @@ class Experiment():
                 self.sentiment_scores[hit.ids[i]][hit.polarities[i]] += 1
                 s_scores_spam[hit.ids[i]][hit.polarities[i]] += 1
                 vidid = hit.ids[i].split('.')[0]
-                if VID_POLARITY[vidid] == 'p':
-                    s_scores_pos[hit.ids[i]][hit.polarities[i]] += 1
-                if VID_POLARITY[vidid] == 'm':
-                    s_scores_mix[hit.ids[i]][hit.polarities[i]] += 1
-                if VID_POLARITY[vidid] == 'n':
-                    s_scores_neg[hit.ids[i]][hit.polarities[i]] += 1
+                if vidid in VID_POLARITY:
+                    if VID_POLARITY[vidid] == 'p':
+                        s_scores_pos[hit.ids[i]][hit.polarities[i]] += 1
+                    if VID_POLARITY[vidid] == 'm':
+                        s_scores_mix[hit.ids[i]][hit.polarities[i]] += 1
+                    if VID_POLARITY[vidid] == 'n':
+                        s_scores_neg[hit.ids[i]][hit.polarities[i]] += 1
                 total_counts[hit.ids[i]] += 1
 
         # calculate interfragment std deviation
@@ -875,15 +921,16 @@ class Experiment():
             vidid = id.split('.')[0]
             total += self.sentiment_averages[id]
             count += 1
-            if VID_POLARITY[vidid] == 'p':
-                p_total += self.sentiment_averages[id]
-                p_count += 1
-            if VID_POLARITY[vidid] == 'm':
-                m_total += self.sentiment_averages[id]
-                m_count += 1
-            if VID_POLARITY[vidid] == 'n':
-                n_total += self.sentiment_averages[id]
-                n_count += 1
+            if vidid in VID_POLARITY:
+                if VID_POLARITY[vidid] == 'p':
+                    p_total += self.sentiment_averages[id]
+                    p_count += 1
+                if VID_POLARITY[vidid] == 'm':
+                    m_total += self.sentiment_averages[id]
+                    m_count += 1
+                if VID_POLARITY[vidid] == 'n':
+                    n_total += self.sentiment_averages[id]
+                    n_count += 1
 
         self.average = float(total)/count
         self.p_average = float(p_total)/p_count
@@ -899,6 +946,23 @@ class Experiment():
         self.kappa_pos = self.fleiss_kappa_iaa(s_scores_pos)
         self.kappa_mix = self.fleiss_kappa_iaa(s_scores_mix)
         self.kappa_neg = self.fleiss_kappa_iaa(s_scores_neg)
+
+
+        self.write_distribution_csv(self.sentiment_scores, open('Results/distribution.csv', 'ab+'))
+        self.write_distribution_csv(s_scores_pos, open('Results/distribution_pos.csv', 'ab+'))
+        self.write_distribution_csv(s_scores_mix, open('Results/distribution_mix.csv', 'ab+'))
+        self.write_distribution_csv(s_scores_neg, open('Results/distribution_neg.csv', 'ab+'))
+        # **TODO:
+        # print results to csv files
+        # print all data points to a csv file for box plot (do same for each polarity)
+
+    def write_distribution_csv(self, s_scores, out):
+        out.write(self.name)
+        for fragment in s_scores:
+            for j in s_scores[fragment]:
+                for i in range(s_scores[fragment][j]):
+                    out.write(',' + str(j))
+        out.write('\n')
 
     # calculates Fleiss Kappa interannotator agreement score
     def fleiss_kappa_iaa(self, s_scores):
@@ -959,28 +1023,44 @@ class Experiment():
     ##                         if not None, prints to stdout, else prints to file
     ##-------------------------------------------------------------------------
     def PrintSpamList(self, outfile_stream = None):
+        global NUMBERS
         if outfile_stream:
             sys.stdout = outfile_stream
         
         spam_list = [hit for hit in self.HIT_list if hit.reject_flag]
         print('#'*50)
         print(self.name + ': %s spam HITs out of %s total HITs' % (str(len(spam_list)), str(len(self.HIT_list))))
+        NUMBERS[0] += ',' + self.name
         print('Fleiss Kappa: ' + str(self.kappa) )
+        NUMBERS[1] += ',' + str(self.kappa)
         print('Fleiss Kappa+spam: ' + str(self.kappa_spam) )
+        NUMBERS[2] += ',' + str(self.kappa_spam)
         print('Kappa Pos only: ' + str(self.kappa_pos) )
+        NUMBERS[3] += ',' + str(self.kappa_pos)
         print('Kappa Mix only: ' + str(self.kappa_mix) )
+        NUMBERS[4] += ',' + str(self.kappa_mix)
         print('Kappa Neg only: ' + str(self.kappa_neg) )
+        NUMBERS[5] += ',' + str(self.kappa_neg)
         print('Average deviation: ' + str(self.sigma))
+        NUMBERS[6] += ',' + str(self.sigma)
         print('Average deviation+spam: ' + str(self.sigma_spam))
+        NUMBERS[7] += ',' + str(self.sigma_spam)
         print('Interfragment deviation: ' + str(self.frag_sigma))
+        NUMBERS[8] += ',' + str(self.frag_sigma)
         print('Average: ' + str(self.average))
+        NUMBERS[9] += ',' + str(self.average)
         print('Positive average: ' + str(self.p_average))
+        NUMBERS[10] += ',' + str(self.p_average)
         print('Mixed average: ' + str(self.m_average))
+        NUMBERS[11] += ',' + str(self.m_average)
         print('Negative average: ' + str(self.n_average))
+        NUMBERS[12] += ',' + str(self.n_average)
         print('#'*50)
         for hit in spam_list:
             print("\t".join([hit.hit_id, hit.worker_id, hit.reject_reason]))
         print()
+
+
     
     ##-------------------------------------------------------------------------
     ## Experiment.UpdateMturkCSV()
