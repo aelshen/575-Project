@@ -84,6 +84,24 @@ def main():
         e.AggregateData()
         e.UpdateMturkCSV(e.name)
     
+#==============================================================================
+# Build Cumulative Demographic Dictionaries
+#==============================================================================
+#     age_temp = Counter()
+#     gender_temp = Counter()
+#     location_temp = Counter()
+#     reason_dict = Counter()
+#     for e in experiment_list:
+#         #for filtered HITs
+#         temp = [x for x in e.HIT_list if not x.reject_flag]
+#         #for spam HITs
+#         #temp = [x for x in e.HIT_list if x.reject_flag]
+#         for t in temp:
+#             age_temp[t.age] += 1
+#             gender_temp[t.gender] += 1
+#             location_temp[t.location.lower()] += 1
+#             
+#             reason_dict[t.reject_reason] += 1
     
     pass
 #==============================================================================    
