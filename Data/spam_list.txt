@@ -1,8 +1,4 @@
 ##################################################
-<<<<<<< HEAD
-AudioFragment: 12 spam HITs out of 62 total HITs
-Fleiss Kappa: 0.7704488001903111
-=======
 AudioFragment: 24 spam HITs out of 107 total HITs
 Fleiss Kappa: 0.6585229726513955
 >>>>>>> aelshen_branch
