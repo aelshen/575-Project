@@ -611,6 +611,9 @@ class Experiment():
         self.sigma = "N/A"
         self.kappa_spam = "N/A"
         self.sigma_spam = "N/A"
+        self.kappa_pos = "N/A"
+        self.kappa_mix = "N/A"
+        self.kappa_neg = "N/A"
         self.frag_sigma = "N/A"
         self.average = "N/A"
         self.p_average = "N/A"
@@ -793,12 +796,15 @@ class Experiment():
     ##-------------------------------------------------------------------------
     def AggregateData(self):
         self.sentiment_scores = defaultdict(lambda: Counter())
+        s_scores_pos = defaultdict(lambda: Counter())
+        s_scores_mix = defaultdict(lambda: Counter())
+        s_scores_neg = defaultdict(lambda: Counter())
         s_scores_spam = defaultdict(lambda: Counter())
         combined_s_scores = defaultdict(lambda: Counter()) # averages scores of each fragment for interfragment agreement
         total_counts = Counter()
         self.sentiment_averages = defaultdict(float)
         
-        
+        # create dictionaries of sentiment
         temp = [x for x in self.HIT_list if not x.reject_flag]
         for hit in temp:
             #worker demographics
@@ -809,8 +815,16 @@ class Experiment():
             for i in range( len(hit.ids) ):
                 self.sentiment_scores[hit.ids[i]][hit.polarities[i]] += 1
                 s_scores_spam[hit.ids[i]][hit.polarities[i]] += 1
+                vidid = hit.ids[i].split('.')[0]
+                if VID_POLARITY[vidid] == 'p':
+                    s_scores_pos[hit.ids[i]][hit.polarities[i]] += 1
+                if VID_POLARITY[vidid] == 'm':
+                    s_scores_mix[hit.ids[i]][hit.polarities[i]] += 1
+                if VID_POLARITY[vidid] == 'n':
+                    s_scores_neg[hit.ids[i]][hit.polarities[i]] += 1
                 total_counts[hit.ids[i]] += 1
 
+        # calculate interfragment std deviation
         if "Fragment" in self.name:
             average_per_frag = dict()
 
@@ -827,6 +841,7 @@ class Experiment():
                 combined_s_scores[vid][average_per_frag[fragment]] += 1
             self.frag_sigma = self.std_dev(combined_s_scores)
         
+        # add spam to spam dictionary
         temp = [x for x in self.HIT_list if x.reject_flag]
         for hit in temp:    
             for i in range( len(hit.ids) ):
@@ -835,7 +850,7 @@ class Experiment():
                 except AttributeError:
                     continue
 
-        
+        # averages by fragment/video
         for id in self.sentiment_scores:
             score_Counter = self.sentiment_scores[id]
             total = 0
@@ -846,6 +861,7 @@ class Experiment():
             
             self.sentiment_averages[id] = float(total) / count
 
+        # calc overall sentiment averages
         total = 0
         count = 0
         p_total = 0
@@ -879,6 +895,10 @@ class Experiment():
 
         self.kappa_spam = self.fleiss_kappa_iaa(s_scores_spam)
         self.sigma_spam = self.std_dev(s_scores_spam)
+
+        self.kappa_pos = self.fleiss_kappa_iaa(s_scores_pos)
+        self.kappa_mix = self.fleiss_kappa_iaa(s_scores_mix)
+        self.kappa_neg = self.fleiss_kappa_iaa(s_scores_neg)
 
     # calculates Fleiss Kappa interannotator agreement score
     def fleiss_kappa_iaa(self, s_scores):
@@ -947,6 +967,9 @@ class Experiment():
         print(self.name + ': %s spam HITs out of %s total HITs' % (str(len(spam_list)), str(len(self.HIT_list))))
         print('Fleiss Kappa: ' + str(self.kappa) )
         print('Fleiss Kappa+spam: ' + str(self.kappa_spam) )
+        print('Kappa Pos only: ' + str(self.kappa_pos) )
+        print('Kappa Mix only: ' + str(self.kappa_mix) )
+        print('Kappa Neg only: ' + str(self.kappa_neg) )
         print('Average deviation: ' + str(self.sigma))
         print('Average deviation+spam: ' + str(self.sigma_spam))
         print('Interfragment deviation: ' + str(self.frag_sigma))

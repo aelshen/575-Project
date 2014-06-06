@@ -1,8 +1,10 @@
 ##################################################
 AudioFragment: 24 spam HITs out of 107 total HITs
-<<<<<<< HEAD
 Fleiss Kappa: 0.658522972651
 Fleiss Kappa+spam: 0.581805872708
+Kappa Pos only: 0.648905497153
+Kappa Mix only: 0.507397853339
+Kappa Neg only: 0.791854711552
 Average deviation: 0.34336239081
 Average deviation+spam: 0.430288760798
 Interfragment deviation: 0.55240463815
@@ -10,9 +12,6 @@ Average: 3.49097744361
 Positive average: 3.9000410509
 Mixed average: 3.07984126984
 Negative average: 2.69285714286
-=======
-Fleiss Kappa: 0.6585229726513955
->>>>>>> 3a37b33a4a2503d70324ca874d26d68038d06c6b
 ##################################################
 3EQPA8A3749OPNCYX58UZ0VMVCCJZA	A14X36W5M4A8O4	One or more answers were left blank
 3KLL7H3EGDEBPXCY88G62H2BU93HV4	AI78IHE15V6SX	Unique transcriptions were not provided for all five fragments
@@ -43,6 +42,9 @@ Fleiss Kappa: 0.6585229726513955
 AudioFull: 53 spam HITs out of 211 total HITs
 Fleiss Kappa: 0.327187610557
 Fleiss Kappa+spam: 0.138067131305
+Kappa Pos only: 0.177153645936
+Kappa Mix only: 0.202782030007
+Kappa Neg only: 0.425641025641
 Average deviation: 0.612341921117
 Average deviation+spam: 0.701517009278
 Interfragment deviation: N/A
@@ -107,9 +109,11 @@ Negative average: 2.36875
 ()
 ##################################################
 AVFragment: 47 spam HITs out of 155 total HITs
-<<<<<<< HEAD
 Fleiss Kappa: 0.592194396798
 Fleiss Kappa+spam: 0.473683658716
+Kappa Pos only: 0.596935900173
+Kappa Mix only: 0.517813284478
+Kappa Neg only: 0.594466595084
 Average deviation: 0.425487556343
 Average deviation+spam: 0.543133086411
 Interfragment deviation: 0.571622788745
@@ -117,9 +121,6 @@ Average: 3.43903091061
 Positive average: 3.80468664477
 Mixed average: 3.12047619048
 Negative average: 2.69222582973
-=======
-Fleiss Kappa: 0.5921943967977459
->>>>>>> 3a37b33a4a2503d70324ca874d26d68038d06c6b
 ##################################################
 3NQUW096N6LFEMILWSQ82R6LK00L9A	A10XXWCA8N4XZS	One or more answers did not agree with Golden HIT answer
 3NQUW096N6LFEMILWSQ82R6LK00L9A	A2T7K36NIIO72O	One or more answers did not agree with Golden HIT answer
@@ -173,6 +174,9 @@ Fleiss Kappa: 0.5921943967977459
 AVFull: 48 spam HITs out of 211 total HITs
 Fleiss Kappa: 0.357773523976
 Fleiss Kappa+spam: 0.249064245137
+Kappa Pos only: 0.431558884325
+Kappa Mix only: 0.0437612059234
+Kappa Neg only: 0.14628956758
 Average deviation: 0.581299200367
 Average deviation+spam: 0.633932010993
 Interfragment deviation: N/A
@@ -232,9 +236,11 @@ Negative average: 2.29226190476
 ()
 ##################################################
 TextFragment: 36 spam HITs out of 258 total HITs
-<<<<<<< HEAD
 Fleiss Kappa: 0.388370624724
 Fleiss Kappa+spam: 0.192879320794
+Kappa Pos only: 0.3607875703
+Kappa Mix only: 0.382187859286
+Kappa Neg only: 0.375273697667
 Average deviation: 0.501133994919
 Average deviation+spam: 0.622014852964
 Interfragment deviation: 0.563957433988
@@ -242,9 +248,6 @@ Average: 3.2551265078
 Positive average: 3.49980042359
 Mixed average: 3.00614973262
 Negative average: 2.79941077441
-=======
-Fleiss Kappa: 0.3883706247242294
->>>>>>> 3a37b33a4a2503d70324ca874d26d68038d06c6b
 ##################################################
 3PA41K45VNH1RO9Q9NLV5COZUI5P7O	AL8NYDL4JOYL3	One or more answers were left blank
 3EN4YVUOUC5ZKSCJWNK92FFBNCEJXD	A1TQYQG3VFJTWW	One or more answers did not agree with Golden HIT answer
@@ -285,9 +288,11 @@ Fleiss Kappa: 0.3883706247242294
 ()
 ##################################################
 TextFull: 26 spam HITs out of 224 total HITs
-<<<<<<< HEAD
 Fleiss Kappa: 0.3119062868
 Fleiss Kappa+spam: 0.231100026599
+Kappa Pos only: 0.268732256532
+Kappa Mix only: 0.0274937514201
+Kappa Neg only: 0.112801013942
 Average deviation: 0.565830909409
 Average deviation+spam: 0.654995472093
 Interfragment deviation: N/A
@@ -295,9 +300,6 @@ Average: 3.6625
 Positive average: 4.14583333333
 Mixed average: 3.425
 Negative average: 2.45
-=======
-Fleiss Kappa: 0.31190628679967036
->>>>>>> 3a37b33a4a2503d70324ca874d26d68038d06c6b
 ##################################################
 375VSR8FVWM5NBVB5AH31RHD5T6RZA	AY3LDNDWACXCT	Task was completed suspiciously quickly.
 375VSR8FVWM5NBVB5AH31RHD5T6RZA	ABMX8XUNPR3LP	Task was completed suspiciously quickly.
@@ -328,9 +330,11 @@ Fleiss Kappa: 0.31190628679967036
 ()
 ##################################################
 VideoFragment: 15 spam HITs out of 224 total HITs
-<<<<<<< HEAD
 Fleiss Kappa: 0.0978761792071
 Fleiss Kappa+spam: 0.0727644864846
+Kappa Pos only: 0.0864968768649
+Kappa Mix only: 0.115992783615
+Kappa Neg only: 0.0939551070299
 Average deviation: 0.886032174788
 Average deviation+spam: 0.884790752659
 Interfragment deviation: 0.343678737121
@@ -338,9 +342,6 @@ Average: 3.38677248677
 Positive average: 3.47170138889
 Mixed average: 3.53529411765
 Negative average: 3.05509259259
-=======
-Fleiss Kappa: 0.09787617920708228
->>>>>>> 3a37b33a4a2503d70324ca874d26d68038d06c6b
 ##################################################
 335HHSX8CDIPVGCCHNGCWVW4U2YHD4	A2B3ZS2XWMPUTR	One or more answers were left blank
 335HHSX8CDIPVGCCHNGCWVW4U2YHD4	A2GYWG3QKKC2E1	Pre-survey was left incomplete
@@ -360,9 +361,11 @@ Fleiss Kappa: 0.09787617920708228
 ()
 ##################################################
 VideoFull: 73 spam HITs out of 270 total HITs
-<<<<<<< HEAD
 Fleiss Kappa: 0.056822451061
 Fleiss Kappa+spam: -0.424138069509
+Kappa Pos only: 0.0435583256605
+Kappa Mix only: 0.0338164251208
+Kappa Neg only: 0.0231170768084
 Average deviation: 0.809189768631
 Average deviation+spam: 0.836770142409
 Interfragment deviation: N/A
@@ -370,9 +373,6 @@ Average: 3.38013888889
 Positive average: 3.56689814815
 Mixed average: 3.25
 Negative average: 2.95
-=======
-Fleiss Kappa: 0.05682245106096135
->>>>>>> 3a37b33a4a2503d70324ca874d26d68038d06c6b
 ##################################################
 3ZLW647WAL8NYY7X5D7TWI4QE6S23A	A1FG7WZHUGYGBO	Task was submitted in a time shorter than the length of the video(s)
 3ZLW647WAL8NYY7X5D7TWI4QE6S23A	A1P4BH68GLDE4A	Task was submitted in a time shorter than the length of the video(s)
