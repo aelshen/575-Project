@@ -1,0 +1,10 @@
+Interannotator Agreement
+Stats
+average
+stddev
+variance
+Agreement between modalities
+Compare to Gold
+compare average to gold
+Compare Chunk deviation from full video sentiment judgment
+sum scores for chunks, and compare to full video score
