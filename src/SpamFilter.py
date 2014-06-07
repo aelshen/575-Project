@@ -31,6 +31,9 @@ cur = __import__(__name__)
 TEXT_TIME_THRESHOLD = 20
 AVERAGE_SCORE_THRESHOLD = 3
 
+USA = ['usa', 'us', 'united states', 'america', 'united states of america', 'u.s.', 'u.s.a.']
+US_ONLY = True
+
 # numbers csv lines
 NUMBERS = [
 'experiment',
@@ -45,7 +48,7 @@ NUMBERS = [
 'Average',
 'Positive average',
 'Mixed average',
-'Negative average',
+'Negative average'
 ]
 
 
@@ -72,8 +75,13 @@ def main():
         os.remove("Results/distrubition_mix.csv")
     if os.path.exists("Results/distrubition_neg.csv"):
         os.remove("Results/distrubition_neg.csv")
-    if os.path.exists("Results/numbers.csv"):
-        os.remove("Results/numbers.csv")
+    if US_ONLY:
+        if os.path.exists("Results/numbers_US.csv"):
+            os.remove("Results/numbers_US.csv")
+    else:
+        if os.path.exists("Results/numbers.csv"):
+            os.remove("Results/numbers.csv")
+
 
     for filename in os.listdir(MTURK_DIR):
         if not filename[0] == '.':
@@ -107,29 +115,37 @@ def main():
                 e.CompareAverages(hit)
     
     #print out the spam submissions
-    with open('Data/spam_list.txt', 'w') as outfile:
-        for e in experiment_list:    
-            e.PrintSpamList(outfile)
+    if US_ONLY:
+        with open('Data/spam_list_US.txt', 'w') as outfile:
+            for e in experiment_list:    
+                e.PrintSpamList(outfile)
+    else:
+        with open('Data/spam_list.txt', 'w') as outfile:
+            for e in experiment_list:    
+                e.PrintSpamList(outfile)
             
     #print out a CSV to upload to MTurk, for automated rejections
     for e in experiment_list:
         e.AggregateData()
         e.UpdateMturkCSV(e.name)
 
-    with open('Results/numbers.csv', 'w') as out:
-        out.write(NUMBERS[0] + '\n')
-        out.write(NUMBERS[1] + '\n')
-        out.write(NUMBERS[2] + '\n')
-        out.write(NUMBERS[3] + '\n')
-        out.write(NUMBERS[4] + '\n')
-        out.write(NUMBERS[5] + '\n')
-        out.write(NUMBERS[6] + '\n')
-        out.write(NUMBERS[7] + '\n')
-        out.write(NUMBERS[8] + '\n')
-        out.write(NUMBERS[9] + '\n')
-        out.write(NUMBERS[10] + '\n')
-        out.write(NUMBERS[11] + '\n')
-        out.write(NUMBERS[12])
+    if US_ONLY:
+        out = open('Results/numbers_US.csv', 'w')
+    else:
+        out = open('Results/numbers.csv', 'w')
+    out.write(NUMBERS[0] + '\n')
+    out.write(NUMBERS[1] + '\n')
+    out.write(NUMBERS[2] + '\n')
+    out.write(NUMBERS[3] + '\n')
+    out.write(NUMBERS[4] + '\n')
+    out.write(NUMBERS[5] + '\n')
+    out.write(NUMBERS[6] + '\n')
+    out.write(NUMBERS[7] + '\n')
+    out.write(NUMBERS[8] + '\n')
+    out.write(NUMBERS[9] + '\n')
+    out.write(NUMBERS[10] + '\n')
+    out.write(NUMBERS[11] + '\n')
+    out.write(NUMBERS[12])
     
 #==============================================================================
 # Build Cumulative Demographic Dictionaries
@@ -659,6 +675,7 @@ class Experiment():
         self.kappa_pos = "N/A"
         self.kappa_mix = "N/A"
         self.kappa_neg = "N/A"
+        self.kappa_us = "N/A"
         self.frag_sigma = "N/A"
         self.average = "N/A"
         self.p_average = "N/A"
@@ -845,6 +862,7 @@ class Experiment():
         s_scores_mix = defaultdict(lambda: Counter())
         s_scores_neg = defaultdict(lambda: Counter())
         s_scores_spam = defaultdict(lambda: Counter())
+        s_scores_us = defaultdict(lambda: Counter())
         combined_s_scores = defaultdict(lambda: Counter()) # averages scores of each fragment for interfragment agreement
         total_counts = Counter()
         self.sentiment_averages = defaultdict(float)
@@ -858,17 +876,33 @@ class Experiment():
             self.location[hit.location] += 1
             
             for i in range( len(hit.ids) ):
-                self.sentiment_scores[hit.ids[i]][hit.polarities[i]] += 1
-                s_scores_spam[hit.ids[i]][hit.polarities[i]] += 1
-                vidid = hit.ids[i].split('.')[0]
-                if vidid in VID_POLARITY:
-                    if VID_POLARITY[vidid] == 'p':
-                        s_scores_pos[hit.ids[i]][hit.polarities[i]] += 1
-                    if VID_POLARITY[vidid] == 'm':
-                        s_scores_mix[hit.ids[i]][hit.polarities[i]] += 1
-                    if VID_POLARITY[vidid] == 'n':
-                        s_scores_neg[hit.ids[i]][hit.polarities[i]] += 1
-                total_counts[hit.ids[i]] += 1
+                if US_ONLY:
+                    if hit.location.lower() in USA:
+                        self.sentiment_scores[hit.ids[i]][hit.polarities[i]] += 1
+                        s_scores_spam[hit.ids[i]][hit.polarities[i]] += 1
+                        s_scores_us[hit.ids[i]][hit.polarities[i]] += 1
+                        vidid = hit.ids[i].split('.')[0]
+                        if vidid in VID_POLARITY:
+                            if VID_POLARITY[vidid] == 'p':
+                                s_scores_pos[hit.ids[i]][hit.polarities[i]] += 1
+                            if VID_POLARITY[vidid] == 'm':
+                                s_scores_mix[hit.ids[i]][hit.polarities[i]] += 1
+                            if VID_POLARITY[vidid] == 'n':
+                                s_scores_neg[hit.ids[i]][hit.polarities[i]] += 1
+                        total_counts[hit.ids[i]] += 1
+                else:
+                    self.sentiment_scores[hit.ids[i]][hit.polarities[i]] += 1
+                    s_scores_spam[hit.ids[i]][hit.polarities[i]] += 1
+                    s_scores_us[hit.ids[i]][hit.polarities[i]] += 1
+                    vidid = hit.ids[i].split('.')[0]
+                    if vidid in VID_POLARITY:
+                        if VID_POLARITY[vidid] == 'p':
+                            s_scores_pos[hit.ids[i]][hit.polarities[i]] += 1
+                        if VID_POLARITY[vidid] == 'm':
+                            s_scores_mix[hit.ids[i]][hit.polarities[i]] += 1
+                        if VID_POLARITY[vidid] == 'n':
+                            s_scores_neg[hit.ids[i]][hit.polarities[i]] += 1
+                    total_counts[hit.ids[i]] += 1
 
         # calculate interfragment std deviation
         if "Fragment" in self.name:
@@ -947,6 +981,7 @@ class Experiment():
         self.kappa_mix = self.fleiss_kappa_iaa(s_scores_mix)
         self.kappa_neg = self.fleiss_kappa_iaa(s_scores_neg)
 
+        self.kappa_us = self.fleiss_kappa_iaa(s_scores_us)
 
         self.write_distribution_csv(self.sentiment_scores, open('Results/distribution.csv', 'ab+'))
         self.write_distribution_csv(s_scores_pos, open('Results/distribution_pos.csv', 'ab+'))
