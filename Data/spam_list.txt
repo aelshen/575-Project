@@ -1,17 +1,17 @@
 ##################################################
-AudioFragment: 44 spam HITs out of 149 total HITs
-Fleiss Kappa: 0.5887926937941368
-Fleiss Kappa+spam: 0.3801030662437218
-Kappa Pos only: 0.5594612364657252
-Kappa Mix only: 0.487678560170996
-Kappa Neg only: 0.6908655050270135
-Average deviation: 0.4086954409802558
-Average deviation+spam: 0.6964123046367764
-Interfragment deviation: 0.632802109670844
-Average: 3.474024943310658
-Positive average: 3.916228070175439
-Mixed average: 2.9988795518207283
-Negative average: 2.695138888888889
+AudioFragment: 47 spam HITs out of 195 total HITs
+Fleiss Kappa: 0.5541936995410903
+Fleiss Kappa+spam: 0.35235770736409755
+Kappa Pos only: 0.5417675192939994
+Kappa Mix only: 0.4598163411737043
+Kappa Neg only: 0.5820153441060346
+Average deviation: 0.4456672673431846
+Average deviation+spam: 0.6784162772391454
+Interfragment deviation: 0.6319209141989136
+Average: 3.4552494331065766
+Positive average: 3.9116959064327474
+Mixed average: 2.9890289449112983
+Negative average: 2.6529927248677247
 ##################################################
 391FPZIE4CZBCINY3I616V0SG2UHUF	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
 3EQPA8A3749OPNCYX58UZ0VMVCCJZA	A14X36W5M4A8O4	One or more answers were left blank
@@ -24,13 +24,11 @@ Negative average: 2.695138888888889
 338431Z1FLSTO7H4316MLTA9LP3RO8	A1CCNTL5RNF3LS	One or more answers did not agree with Golden HIT answer
 338431Z1FLSTO7H4316MLTA9LP3RO8	A24QX49QCFKLDH	One or more answers did not agree with Golden HIT answer
 338431Z1FLSTO7H4316MLTA9LP3RO8	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
-36BTXXLZ2VLPKE7MKHRD7V444Y44RC	AM2MLP4S0N45J	One or more answers did not agree with Golden HIT answer
-36BTXXLZ2VLPKE7MKHRD7V444Y44RC	A2URMYFRQM2WHN	Unique transcriptions were not provided for all five fragments
-36BTXXLZ2VLPKE7MKHRD7V444Y44RC	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
-36BTXXLZ2VLPKE7MKHRD7V444Y44RC	APMG8Q2KABUGV	Unique transcriptions were not provided for all five fragments
 359AP8GAGGXIXZ0M4IZPLCPSVZR7CT	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
 3LEG2HW4UF0IEANQP88VXRTNHWXF2W	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
 3XUY87HIVPREROJ0LDVS7QRUK2PMM0	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
+3XUY87HIVPREROJ0LDVS7QRUK2PMM0	A1ZBMULAPZZ3FG	One or more answers did not agree with Golden HIT answer
+3LN3BXKGC08A4QHSEC3K3J9OMIRWGT	A1ZBMULAPZZ3FG	One or more answers were left blank
 3LN3BXKGC08A4QHSEC3K3J9OMIRWGT	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
 3LN3BXKGC08A4QHSEC3K3J9OMIRWGT	A1T2CG5MVZWBV5	One or more answers were left blank
 37ZQELHEQ0BK9640XEASK5GUPSZMN0	A33LBKHYRD68LZ	Pre-survey was left incomplete
@@ -45,6 +43,7 @@ Negative average: 2.695138888888889
 37VE3DA4YUUWGJES3RP61584RHMHBX	A32BIDGWOVYA9T	Unique transcriptions were not provided for all five fragments
 37VE3DA4YUUWGJES3RP61584RHMHBX	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
 3EKZL9T8Y8ZFQO6YHRL1CPEM92MHC4	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
+3EKZL9T8Y8ZFQO6YHRL1CPEM92MHC4	A1R33XV5EEUL8W	One or more answers were left blank
 3CRWSLD91KH2RR4CYTA5ZUGZF24MOF	A2URMYFRQM2WHN	Pre-survey was left incomplete
 3CRWSLD91KH2RR4CYTA5ZUGZF24MOF	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
 3CRWSLD91KH2RR4CYTA5ZUGZF24MOF	A2GYWG3QKKC2E1	One or more answers were left blank
@@ -53,43 +52,39 @@ Negative average: 2.695138888888889
 3X2YVV51PUHD0BRPWTIHWW5IKT91WZ	AI78IHE15V6SX	Unique transcriptions were not provided for all five fragments
 34R3P23QHSEO4MC3YIL2OJLP1I5HWE	A1XVYOL52UT8T9	One or more answers were left blank
 34R3P23QHSEO4MC3YIL2OJLP1I5HWE	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
-3XEDXEGFX31MYMCQBWVEUGSDSUTK0I	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
-3XEDXEGFX31MYMCQBWVEUGSDSUTK0I	A2URMYFRQM2WHN	One or more answers were left blank
 309D674SHZY5ZB3CHZB5QEBOEPICBK	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
 309D674SHZY5ZB3CHZB5QEBOEPICBK	A1CCNTL5RNF3LS	One or more answers were left blank
+36BTXXLZ2VLPKE7MKHRD7V444Y44RC	AM2MLP4S0N45J	One or more answers did not agree with Golden HIT answer
+36BTXXLZ2VLPKE7MKHRD7V444Y44RC	A2URMYFRQM2WHN	Unique transcriptions were not provided for all five fragments
+36BTXXLZ2VLPKE7MKHRD7V444Y44RC	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
+36BTXXLZ2VLPKE7MKHRD7V444Y44RC	APMG8Q2KABUGV	Unique transcriptions were not provided for all five fragments
+3XEDXEGFX31MYMCQBWVEUGSDSUTK0I	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
+3XEDXEGFX31MYMCQBWVEUGSDSUTK0I	A2URMYFRQM2WHN	One or more answers were left blank
 
 ##################################################
-AudioFull: 57 spam HITs out of 236 total HITs
-Fleiss Kappa: 0.28236923314983065
-Fleiss Kappa+spam: -0.02036173284041989
-Kappa Pos only: 0.1000011482836028
-Kappa Mix only: 0.20278203000716097
-Kappa Neg only: 0.34662236987818384
-Average deviation: 0.6450766136282016
-Average deviation+spam: 0.7616917197305991
+AudioFull: 59 spam HITs out of 256 total HITs
+Fleiss Kappa: 0.25400085508581843
+Fleiss Kappa+spam: -0.10169273135072658
+Kappa Pos only: 0.04663907355165533
+Kappa Mix only: 0.16944753429736745
+Kappa Neg only: 0.219413399718356
+Average deviation: 0.6237573760018428
+Average deviation+spam: 0.7457078886039319
 Interfragment deviation: N/A
-Average: 3.812083333333333
-Positive average: 4.336111111111111
-Mixed average: 3.488194444444445
-Negative average: 2.4729166666666664
+Average: 3.8102777777777774
+Positive average: 4.346464646464646
+Mixed average: 3.469444444444444
+Negative average: 2.4416666666666664
 ##################################################
+3MNJFORX8BHAD76D7RATVYWZ16OF5X	A1TZMHJK1GLO41	Task was submitted in a time shorter than the length of the video(s)
+3MNJFORX8BHAD76D7RATVYWZ16OF5X	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
+3MNJFORX8BHAD76D7RATVYWZ16OF5X	A3P4HPBCBQDRPQ	Task was submitted in a time shorter than the length of the video(s)
+3MNJFORX8BHAD76D7RATVYWZ16OF5X	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
 3BJKPTD2QCP91ZMCZISLF3GWKXKRTU	A3P4HPBCBQDRPQ	Task was submitted in a time shorter than the length of the video(s)
 3BJKPTD2QCP91ZMCZISLF3GWKXKRTU	A24QX49QCFKLDH	Task was submitted in a time shorter than the length of the video(s)
 3BJKPTD2QCP91ZMCZISLF3GWKXKRTU	AKU3JH19XPWG7	Task was submitted in a time shorter than the length of the video(s)
 3BJKPTD2QCP91ZMCZISLF3GWKXKRTU	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
 3BJKPTD2QCP91ZMCZISLF3GWKXKRTU	A1TZMHJK1GLO41	Task was submitted in a time shorter than the length of the video(s)
-3YD0MU1NC2EU4K3OK43YFHZ4VW6A7U	A3P4HPBCBQDRPQ	Task was submitted in a time shorter than the length of the video(s)
-3YD0MU1NC2EU4K3OK43YFHZ4VW6A7U	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
-3TCFMTM8HE1ROVTII9TA8PPTGME21I	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
-3TCFMTM8HE1ROVTII9TA8PPTGME21I	A3YP2RNFZ1PQP	Task was submitted in a time shorter than the length of the video(s)
-3TCFMTM8HE1ROVTII9TA8PPTGME21I	A3P4HPBCBQDRPQ	Task was submitted in a time shorter than the length of the video(s)
-3BJKPTD2QCP91ZMCZISLF3GWKXKTRW	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
-3BJKPTD2QCP91ZMCZISLF3GWKXKTRW	A3P4HPBCBQDRPQ	Task was submitted in a time shorter than the length of the video(s)
-3BJKPTD2QCP91ZMCZISLF3GWKXKTRW	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
-3MNJFORX8BHAD76D7RATVYWZ16OF5X	A1TZMHJK1GLO41	Task was submitted in a time shorter than the length of the video(s)
-3MNJFORX8BHAD76D7RATVYWZ16OF5X	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
-3MNJFORX8BHAD76D7RATVYWZ16OF5X	A3P4HPBCBQDRPQ	Task was submitted in a time shorter than the length of the video(s)
-3MNJFORX8BHAD76D7RATVYWZ16OF5X	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
 3I7KR83SNAQ4UG03BSE7NRT6VYNK9U	A1TZMHJK1GLO41	Task was submitted in a time shorter than the length of the video(s)
 3I7KR83SNAQ4UG03BSE7NRT6VYNK9U	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
 3I7KR83SNAQ4UG03BSE7NRT6VYNK9U	A2Q2A7AB6MMFLI	One or more answers did not agree with Golden HIT answer
@@ -98,13 +93,22 @@ Negative average: 2.4729166666666664
 3I7KR83SNAQ4UG03BSE7NRT6VYNK9U	A10P6JHJ52BLZL	One or more answers did not agree with Golden HIT answer
 3A3KKYU7P3UAW0DEPF1FGOTLI43WM1	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
 3A3KKYU7P3UAW0DEPF1FGOTLI43WM1	A10P6JHJ52BLZL	One or more answers did not agree with Golden HIT answer
+3YD0MU1NC2EU4K3OK43YFHZ4VW6A7U	A3P4HPBCBQDRPQ	Task was submitted in a time shorter than the length of the video(s)
+3YD0MU1NC2EU4K3OK43YFHZ4VW6A7U	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
+3TCFMTM8HE1ROVTII9TA8PPTGME21I	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
+3TCFMTM8HE1ROVTII9TA8PPTGME21I	A3YP2RNFZ1PQP	Task was submitted in a time shorter than the length of the video(s)
+3TCFMTM8HE1ROVTII9TA8PPTGME21I	A3P4HPBCBQDRPQ	Task was submitted in a time shorter than the length of the video(s)
 3VGZ74AYTGT1QSBNXL3JRP2LU2ACG1	A1TZMHJK1GLO41	Task was submitted in a time shorter than the length of the video(s)
 3VGZ74AYTGT1QSBNXL3JRP2LU2ACG1	A3YP2RNFZ1PQP	Task was submitted in a time shorter than the length of the video(s)
 3JYPJ2TAYILE6HOWR6J7T41GS6OPFS	A2Q2A7AB6MMFLI	One or more answers did not agree with Golden HIT answer
+3JYPJ2TAYILE6HOWR6J7T41GS6OPFS	A2O97O6SDO5ZFI	One or more answers did not agree with Golden HIT answer
 3JYPJ2TAYILE6HOWR6J7T41GS6OPFS	A3P4HPBCBQDRPQ	One or more answers did not agree with Golden HIT answer
 3JYPJ2TAYILE6HOWR6J7T41GS6OPFS	A10XXWCA8N4XZS	One or more answers did not agree with Golden HIT answer
 3JYPJ2TAYILE6HOWR6J7T41GS6OPFS	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
 3JYPJ2TAYILE6HOWR6J7T41GS6OPFS	A1TZMHJK1GLO41	Task was submitted in a time shorter than the length of the video(s)
+3BJKPTD2QCP91ZMCZISLF3GWKXKTRW	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
+3BJKPTD2QCP91ZMCZISLF3GWKXKTRW	A3P4HPBCBQDRPQ	Task was submitted in a time shorter than the length of the video(s)
+3BJKPTD2QCP91ZMCZISLF3GWKXKTRW	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
 36JW4WBR06XMT0Q88TB2KVZP6FEHFF	A1TZMHJK1GLO41	Task was submitted in a time shorter than the length of the video(s)
 36JW4WBR06XMT0Q88TB2KVZP6FEHFF	A24QX49QCFKLDH	Pre-survey was left incomplete
 3AC6MFV69KVSYHH89559NNF7IK8ZHL	A3YP2RNFZ1PQP	Task was submitted in a time shorter than the length of the video(s)
@@ -113,6 +117,7 @@ Negative average: 2.4729166666666664
 3GVPRXWRPH79A2MMWSVBWFNN84B7IV	A1TZMHJK1GLO41	Task was submitted in a time shorter than the length of the video(s)
 3GVPRXWRPH79A2MMWSVBWFNN84B7IV	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
 3O71U79SRB2HPJW55AREJZQ0CR7MSC	A3P4HPBCBQDRPQ	Task was submitted in a time shorter than the length of the video(s)
+3O71U79SRB2HPJW55AREJZQ0CR7MSC	A2ADJ6EWOKW53O	Task was submitted in a time shorter than the length of the video(s)
 3O71U79SRB2HPJW55AREJZQ0CR7MSC	A3P7Y0914EBD6E	Task was submitted in a time shorter than the length of the video(s)
 3O71U79SRB2HPJW55AREJZQ0CR7MSC	A2VLW778RK97P2	One or more answers did not agree with Golden HIT answer
 3O71U79SRB2HPJW55AREJZQ0CR7MSC	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
@@ -132,35 +137,39 @@ Negative average: 2.4729166666666664
 3HEADTGN2P5OERQ14DS0GL4HHI0RVA	A1POBG27PTO9DX	Task was submitted in a time shorter than the length of the video(s)
 
 ##################################################
-AVFragment: 72 spam HITs out of 257 total HITs
-Fleiss Kappa: 0.45900727356965737
-Fleiss Kappa+spam: 0.16343376838770668
-Kappa Pos only: 0.4246904010252913
-Kappa Mix only: 0.3737640905088551
-Kappa Neg only: 0.4301743014229073
-Average deviation: 0.5080072553452417
-Average deviation+spam: 0.6650654648734735
-Interfragment deviation: 0.624684484943827
-Average: 3.4356873285444705
-Positive average: 3.8860221649695332
-Mixed average: 2.9785268652915717
-Negative average: 2.6353670634920636
+AVFragment: 79 spam HITs out of 293 total HITs
+Fleiss Kappa: 0.40763182153658545
+Fleiss Kappa+spam: 0.029338423747706566
+Kappa Pos only: 0.3624270481336834
+Kappa Mix only: 0.3063248059920392
+Kappa Neg only: 0.3412843472861287
+Average deviation: 0.5277745457046056
+Average deviation+spam: 0.6691869067254356
+Interfragment deviation: 0.6248562642885688
+Average: 3.4225661375661356
+Positive average: 3.879751461988304
+Mixed average: 2.9647058823529413
+Negative average: 2.614641203703704
 ##################################################
 3T6SSHJUZFN6ZM3IFJZ8N4DWMMTIIC	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
 3NQUW096N6LFEMILWSQ82R6LK00L9A	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
 3NQUW096N6LFEMILWSQ82R6LK00L9A	A10XXWCA8N4XZS	One or more answers did not agree with Golden HIT answer
 3NQUW096N6LFEMILWSQ82R6LK00L9A	A11RF5IYJQL5B	Unique transcriptions were not provided for all five fragments
+3NQUW096N6LFEMILWSQ82R6LK00L9A	A1M9DKI1CPKKTC	One or more answers were left blank
 3NQUW096N6LFEMILWSQ82R6LK00L9A	A2T7K36NIIO72O	One or more answers did not agree with Golden HIT answer
 3QO7EE372O09TCDVMHC0AJ05I6QBQZ	A1OVT0PCQPZ2J7	One or more answers did not agree with Golden HIT answer
 3QO7EE372O09TCDVMHC0AJ05I6QBQZ	A22AESRVRWWDGQ	Unique transcriptions were not provided for all five fragments
 3QO7EE372O09TCDVMHC0AJ05I6QBQZ	A2GYWG3QKKC2E1	Pre-survey was left incomplete
+3QO7EE372O09TCDVMHC0AJ05I6QBQZ	A1TIJU2XJM4SKU	One or more answers did not agree with Golden HIT answer
 3QO7EE372O09TCDVMHC0AJ05I6QBQZ	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
 3QO7EE372O09TCDVMHC0AJ05I6QBQZ	A10XXWCA8N4XZS	One or more answers did not agree with Golden HIT answer
 3QO7EE372O09TCDVMHC0AJ05I6QBQZ	A31SZ4NT99NKDL	One or more answers did not agree with Golden HIT answer
 3M7OI89LVY1ZTZMHL8UXFYPW0QE6C4	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
 3M7OI89LVY1ZTZMHL8UXFYPW0QE6C4	A28TOO9ZCWBH3N	One or more answers were left blank
+3M7OI89LVY1ZTZMHL8UXFYPW0QE6C4	A3EZI399A0LTI0	One or more answers were left blank
 3M7OI89LVY1ZTZMHL8UXFYPW0QE6C4	A25DP2IBIXX6MM	Unique transcriptions were not provided for all five fragments
 3TKXBROM5TN2UXNOX1K8Z5SWZ1IIJO	A12U6TXD3YST0T	One or more answers were left blank
+3TKXBROM5TN2UXNOX1K8Z5SWZ1IIJO	A364RJUWQ77TDQ	One or more answers were left blank
 3TKXBROM5TN2UXNOX1K8Z5SWZ1IIJO	A2GYWG3QKKC2E1	One or more answers were left blank
 3TKXBROM5TN2UXNOX1K8Z5SWZ1IIJO	A2EOC3K3T1NAH5	One or more transcriptions were empty or were suspiciously short
 3TKXBROM5TN2UXNOX1K8Z5SWZ1IIJO	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
@@ -178,10 +187,12 @@ Negative average: 2.6353670634920636
 37MQ8Z1JQE9OE14LUY0JMC03N9TY2M	A11RF5IYJQL5B	Unique transcriptions were not provided for all five fragments
 37MQ8Z1JQE9OE14LUY0JMC03N9TY2M	AISQNOCNLEIN6	Unique transcriptions were not provided for all five fragments
 37MQ8Z1JQE9OE14LUY0JMC03N9TY2M	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
+37MQ8Z1JQE9OE14LUY0JMC03N9TY2M	A1M9DKI1CPKKTC	One or more answers were left blank
 307L9TDWJY5JNKWQRW5DO67OP3Q3ND	A4GPDN27IYWOU	One or more answers were left blank
 307L9TDWJY5JNKWQRW5DO67OP3Q3ND	A31SZ4NT99NKDL	One or more answers were left blank
 307L9TDWJY5JNKWQRW5DO67OP3Q3ND	A10XXWCA8N4XZS	One or more answers did not agree with Golden HIT answer
 307L9TDWJY5JNKWQRW5DO67OP3Q3ND	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
+307L9TDWJY5JNKWQRW5DO67OP3Q3ND	A1QF68P8S88ZOB	Unique transcriptions were not provided for all five fragments
 34O39PNDK6L95DSVZW10F9AAESSBR0	A6Z1WJQAKC0PH	Unique transcriptions were not provided for all five fragments
 34O39PNDK6L95DSVZW10F9AAESSBR0	A2T7K36NIIO72O	Pre-survey was left incomplete
 34O39PNDK6L95DSVZW10F9AAESSBR0	A3NU0L1PE5DXD	One or more answers were left blank
@@ -190,6 +201,7 @@ Negative average: 2.6353670634920636
 3VDI8GSXAF6ZEPLAG9NEP3624DWG8A	A3NU0L1PE5DXD	One or more answers did not agree with Golden HIT answer
 37PGLWGSJTJX5HT6FMKK0KS9EQIIKN	A33LBKHYRD68LZ	Unique transcriptions were not provided for all five fragments
 37PGLWGSJTJX5HT6FMKK0KS9EQIIKN	ALF28RJ3LHMHS	One or more answers were left blank
+37PGLWGSJTJX5HT6FMKK0KS9EQIIKN	A3T8TKJMQKJIQU	Task was submitted in a time shorter than the length of the video(s)
 37PGLWGSJTJX5HT6FMKK0KS9EQIIKN	A2I98D65DNTS1T	One or more answers were left blank
 37PGLWGSJTJX5HT6FMKK0KS9EQIIKN	AI78IHE15V6SX	Unique transcriptions were not provided for all five fragments
 37PGLWGSJTJX5HT6FMKK0KS9EQIIKN	A1OVT0PCQPZ2J7	One or more answers did not agree with Golden HIT answer
@@ -220,25 +232,20 @@ Negative average: 2.6353670634920636
 34KYK9TV2RLL6SS8EL155JF60UBBSO	AHI8X7NP92DAV	Unique transcriptions were not provided for all five fragments
 
 ##################################################
-AVFull: 62 spam HITs out of 238 total HITs
-Fleiss Kappa: 0.33462699420146214
-Fleiss Kappa+spam: 0.1013530632451219
-Kappa Pos only: 0.39813564042984984
+AVFull: 65 spam HITs out of 250 total HITs
+Fleiss Kappa: 0.2987451828764964
+Fleiss Kappa+spam: 0.03396831367761054
+Kappa Pos only: 0.3308424402113661
 Kappa Mix only: 0.04376120592336806
-Kappa Neg only: 0.12765171401349432
-Average deviation: 0.5847459465887632
-Average deviation+spam: 0.6898593664191149
+Kappa Neg only: 0.06844809412647693
+Average deviation: 0.5975324867809577
+Average deviation+spam: 0.700766820924281
 Interfragment deviation: N/A
-Average: 3.8088095238095243
-Positive average: 4.448484848484848
-Mixed average: 3.439285714285714
-Negative average: 2.2714285714285714
+Average: 3.80877886002886
+Positive average: 4.43989898989899
+Mixed average: 3.4392857142857145
+Negative average: 2.28125
 ##################################################
-3FO95NVK5CD8MZ9XAINV5YKAIE6RS5	A131CBUQKTKOA5	Task was submitted in a time shorter than the length of the video(s)
-3FO95NVK5CD8MZ9XAINV5YKAIE6RS5	A13I8GYETPZSZW	Pre-survey was left incomplete
-3FO95NVK5CD8MZ9XAINV5YKAIE6RS5	A3P4HPBCBQDRPQ	Task was submitted in a time shorter than the length of the video(s)
-3FO95NVK5CD8MZ9XAINV5YKAIE6RS5	A33LBKHYRD68LZ	One or more transcriptions were empty or were suspiciously short
-3FO95NVK5CD8MZ9XAINV5YKAIE6RS5	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
 3GKAWYFRAP6H8XA000OH54YVGT8PDH	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
 3GKAWYFRAP6H8XA000OH54YVGT8PDH	A2GYWG3QKKC2E1	Pre-survey was left incomplete
 3GKAWYFRAP6H8XA000OH54YVGT8PDH	A2VLW778RK97P2	Task was submitted in a time shorter than the length of the video(s)
@@ -250,6 +257,23 @@ Negative average: 2.2714285714285714
 3UQVX1UPFSURH680MQPAUK6JBU820F	A10XXWCA8N4XZS	Pre-survey was left incomplete
 3UQVX1UPFSURH680MQPAUK6JBU820F	AHE9HJ1E0X6Q3	Task was submitted in a time shorter than the length of the video(s)
 3UQVX1UPFSURH680MQPAUK6JBU820F	A131CBUQKTKOA5	Task was submitted in a time shorter than the length of the video(s)
+3ABAOCJ4R8H5C3HSD629OZBZU3MMQN	A1H8Y5D04A7T5E	Pre-survey was left incomplete
+3ABAOCJ4R8H5C3HSD629OZBZU3MMQN	A33LBKHYRD68LZ	One or more transcriptions were empty or were suspiciously short
+3ABAOCJ4R8H5C3HSD629OZBZU3MMQN	AY13BA1JNU8C0	Task was submitted in a time shorter than the length of the video(s)
+3ABAOCJ4R8H5C3HSD629OZBZU3MMQN	A1PTC5FHUYMWYL	Task was submitted in a time shorter than the length of the video(s)
+3ABAOCJ4R8H5C3HSD629OZBZU3MMQN	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
+3ABAOCJ4R8H5C3HSD629OZBZU3MMQN	A3P7Y0914EBD6E	Task was submitted in a time shorter than the length of the video(s)
+3ABAOCJ4R8H5C3HSD629OZBZU3MMQN	AHE9HJ1E0X6Q3	Task was submitted in a time shorter than the length of the video(s)
+3UV0D2KX1MWSHO2DTMRJQ6QL1ATF4S	A2VLW778RK97P2	Task was submitted in a time shorter than the length of the video(s)
+3UV0D2KX1MWSHO2DTMRJQ6QL1ATF4S	A2LT5VXO2LS0UL	Task was submitted in a time shorter than the length of the video(s)
+3UV0D2KX1MWSHO2DTMRJQ6QL1ATF4S	AHE9HJ1E0X6Q3	Task was submitted in a time shorter than the length of the video(s)
+3UV0D2KX1MWSHO2DTMRJQ6QL1ATF4S	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
+3FO95NVK5CD8MZ9XAINV5YKAIE6RS5	A3EZI399A0LTI0	Task was submitted in a time shorter than the length of the video(s)
+3FO95NVK5CD8MZ9XAINV5YKAIE6RS5	A131CBUQKTKOA5	Task was submitted in a time shorter than the length of the video(s)
+3FO95NVK5CD8MZ9XAINV5YKAIE6RS5	A13I8GYETPZSZW	Pre-survey was left incomplete
+3FO95NVK5CD8MZ9XAINV5YKAIE6RS5	A3P4HPBCBQDRPQ	Task was submitted in a time shorter than the length of the video(s)
+3FO95NVK5CD8MZ9XAINV5YKAIE6RS5	A33LBKHYRD68LZ	One or more transcriptions were empty or were suspiciously short
+3FO95NVK5CD8MZ9XAINV5YKAIE6RS5	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
 3OND0WXMHWSUNMQCDIRW2DEPUEZHEX	A2VLW778RK97P2	One or more answers did not agree with Golden HIT answer
 3OND0WXMHWSUNMQCDIRW2DEPUEZHEX	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
 3OND0WXMHWSUNMQCDIRW2DEPUEZHEX	A131CBUQKTKOA5	Task was submitted in a time shorter than the length of the video(s)
@@ -258,17 +282,11 @@ Negative average: 2.2714285714285714
 3W0KKJIARRM4GBHT608TNVYVBS5K85	A2VLW778RK97P2	One or more transcriptions were empty or were suspiciously short
 3W0KKJIARRM4GBHT608TNVYVBS5K85	AJAU1KH2MY7YM	One or more transcriptions were empty or were suspiciously short
 3W0KKJIARRM4GBHT608TNVYVBS5K85	A1H8Y5D04A7T5E	One or more answers did not agree with Golden HIT answer
+3W0KKJIARRM4GBHT608TNVYVBS5K85	AJ56GFP4W1ZKQ	Pre-survey was left incomplete
 3XJOUITW8U49PY7CM33LAD6ROBITQV	A3RS0AOVCUSCTB	Task was submitted in a time shorter than the length of the video(s)
 3XJOUITW8U49PY7CM33LAD6ROBITQV	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
 3XJOUITW8U49PY7CM33LAD6ROBITQV	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
 3XJOUITW8U49PY7CM33LAD6ROBITQV	A3P4HPBCBQDRPQ	Task was submitted in a time shorter than the length of the video(s)
-3ABAOCJ4R8H5C3HSD629OZBZU3MMQN	A1H8Y5D04A7T5E	Pre-survey was left incomplete
-3ABAOCJ4R8H5C3HSD629OZBZU3MMQN	A33LBKHYRD68LZ	One or more transcriptions were empty or were suspiciously short
-3ABAOCJ4R8H5C3HSD629OZBZU3MMQN	AY13BA1JNU8C0	Task was submitted in a time shorter than the length of the video(s)
-3ABAOCJ4R8H5C3HSD629OZBZU3MMQN	A1PTC5FHUYMWYL	Task was submitted in a time shorter than the length of the video(s)
-3ABAOCJ4R8H5C3HSD629OZBZU3MMQN	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
-3ABAOCJ4R8H5C3HSD629OZBZU3MMQN	A3P7Y0914EBD6E	Task was submitted in a time shorter than the length of the video(s)
-3ABAOCJ4R8H5C3HSD629OZBZU3MMQN	AHE9HJ1E0X6Q3	Task was submitted in a time shorter than the length of the video(s)
 38XPGNCKHTDHDLO3T1WN8ST7P4H4V5	A2VLW778RK97P2	One or more answers did not agree with Golden HIT answer
 38XPGNCKHTDHDLO3T1WN8ST7P4H4V5	A7IH21LIOFH9	Task was submitted in a time shorter than the length of the video(s)
 38XPGNCKHTDHDLO3T1WN8ST7P4H4V5	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
@@ -277,6 +295,7 @@ Negative average: 2.2714285714285714
 38XPGNCKHTDHDLO3T1WN8ST7P4H4V5	A1W36Q5THCHYUZ	One or more answers did not agree with Golden HIT answer
 3VP28W7DUNX8KLQ2EFH9K23U25VZFN	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
 3H1C3QRA01W36EFWRQDVRMH9HMVCEK	A2VLW778RK97P2	Task was submitted in a time shorter than the length of the video(s)
+3H1C3QRA01W36EFWRQDVRMH9HMVCEK	AJ56GFP4W1ZKQ	One or more answers did not agree with Golden HIT answer
 3H1C3QRA01W36EFWRQDVRMH9HMVCEK	AHE9HJ1E0X6Q3	Task was submitted in a time shorter than the length of the video(s)
 3H1C3QRA01W36EFWRQDVRMH9HMVCEK	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
 3H1C3QRA01W36EFWRQDVRMH9HMVCEK	A2UHH88Z8XNXMN	One or more transcriptions were empty or were suspiciously short
@@ -287,10 +306,6 @@ Negative average: 2.2714285714285714
 3126F2F5F8GM03O0WVZ1BMGGG59PEA	A1ZBMULAPZZ3FG	Task was submitted in a time shorter than the length of the video(s)
 3126F2F5F8GM03O0WVZ1BMGGG59PEA	A12YM0F6SCQVJY	Task was submitted in a time shorter than the length of the video(s)
 3OB6JN3A9Q25O4WSQLR9TPL4QPOMRO	A2VLW778RK97P2	Task was submitted in a time shorter than the length of the video(s)
-3UV0D2KX1MWSHO2DTMRJQ6QL1ATF4S	A2VLW778RK97P2	Task was submitted in a time shorter than the length of the video(s)
-3UV0D2KX1MWSHO2DTMRJQ6QL1ATF4S	A2LT5VXO2LS0UL	Task was submitted in a time shorter than the length of the video(s)
-3UV0D2KX1MWSHO2DTMRJQ6QL1ATF4S	AHE9HJ1E0X6Q3	Task was submitted in a time shorter than the length of the video(s)
-3UV0D2KX1MWSHO2DTMRJQ6QL1ATF4S	A33LBKHYRD68LZ	Task was submitted in a time shorter than the length of the video(s)
 3R868ACW4SPEYLMXPZNR2N363KVZGM	A2VLW778RK97P2	Task was submitted in a time shorter than the length of the video(s)
 3R868ACW4SPEYLMXPZNR2N363KVZGM	A33LBKHYRD68LZ	One or more transcriptions were empty or were suspiciously short
 3R868ACW4SPEYLMXPZNR2N363KVZGM	A2SBQNC3XMZIGM	Task was submitted in a time shorter than the length of the video(s)
@@ -300,17 +315,17 @@ Negative average: 2.2714285714285714
 ##################################################
 TextFragment: 35 spam HITs out of 259 total HITs
 Fleiss Kappa: 0.37608437639648584
-Fleiss Kappa+spam: 0.18988077577924475
+Fleiss Kappa+spam: 0.1898807757792444
 Kappa Pos only: 0.33934114807463334
 Kappa Mix only: 0.3825272498066857
 Kappa Neg only: 0.3651610622558656
 Average deviation: 0.5116749627352748
-Average deviation+spam: 0.621609999401475
-Interfragment deviation: 0.5587237482825368
-Average: 3.2584657252132976
-Positive average: 3.668948576675849
+Average deviation+spam: 0.6216099994014753
+Interfragment deviation: 0.5587237482825369
+Average: 3.258465725213297
+Positive average: 3.6689485766758505
 Mixed average: 3.0016934046345813
-Negative average: 2.804145622895623
+Negative average: 2.8041456228956227
 ##################################################
 3PA41K45VNH1RO9Q9NLV5COZUI5P7O	AL8NYDL4JOYL3	One or more answers were left blank
 3EN4YVUOUC5ZKSCJWNK92FFBNCEJXD	A1TQYQG3VFJTWW	One or more answers did not agree with Golden HIT answer
@@ -351,12 +366,12 @@ Negative average: 2.804145622895623
 ##################################################
 TextFull: 23 spam HITs out of 224 total HITs
 Fleiss Kappa: 0.2831357760533913
-Fleiss Kappa+spam: 0.23110002659895806
+Fleiss Kappa+spam: 0.2311000265989579
 Kappa Pos only: 0.16776929601357102
 Kappa Mix only: 0.027493751420131815
-Kappa Neg only: 0.11280101394169827
+Kappa Neg only: 0.11280101394169835
 Average deviation: 0.6234329823792569
-Average deviation+spam: 0.6549954720934106
+Average deviation+spam: 0.6549954720934105
 Interfragment deviation: N/A
 Average: 3.7090909090909094
 Positive average: 4.409090909090909
@@ -389,15 +404,15 @@ Negative average: 2.45
 
 ##################################################
 VideoFragment: 15 spam HITs out of 224 total HITs
-Fleiss Kappa: 0.09787617920708212
-Fleiss Kappa+spam: 0.07276448648458986
+Fleiss Kappa: 0.09787617920708205
+Fleiss Kappa+spam: 0.0727644864845897
 Kappa Pos only: 0.08788289110883529
 Kappa Mix only: 0.11599278361456011
 Kappa Neg only: 0.09395510702990613
-Average deviation: 0.8860321747876503
-Average deviation+spam: 0.8847907526593226
-Interfragment deviation: 0.34367873712076913
-Average: 3.386772486772486
+Average deviation: 0.8860321747876495
+Average deviation+spam: 0.8847907526593224
+Interfragment deviation: 0.3436787371207692
+Average: 3.386772486772487
 Positive average: 3.4647173489278753
 Mixed average: 3.5352941176470587
 Negative average: 3.0550925925925934
@@ -421,17 +436,17 @@ Negative average: 3.0550925925925934
 ##################################################
 VideoFull: 73 spam HITs out of 273 total HITs
 Fleiss Kappa: 0.045442532220201094
-Fleiss Kappa+spam: -0.45606273155641863
+Fleiss Kappa+spam: -0.45606273155641874
 Kappa Pos only: 0.02774439904937385
 Kappa Mix only: 0.033816425120772924
 Kappa Neg only: 0.023117076808351938
-Average deviation: 0.811168925017834
-Average deviation+spam: 0.8377614783290415
+Average deviation: 0.8111689250178342
+Average deviation+spam: 0.8377614783290417
 Interfragment deviation: N/A
-Average: 3.37
+Average: 3.3699999999999997
 Positive average: 3.563636363636364
 Mixed average: 3.25
-Negative average: 2.95
+Negative average: 2.9499999999999997
 ##################################################
 3ZLW647WAL8NYY7X5D7TWI4QE6S23A	A1FG7WZHUGYGBO	Task was submitted in a time shorter than the length of the video(s)
 3ZLW647WAL8NYY7X5D7TWI4QE6S23A	A1P4BH68GLDE4A	Task was submitted in a time shorter than the length of the video(s)
