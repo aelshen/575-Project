@@ -32,7 +32,7 @@ TEXT_TIME_THRESHOLD = 20
 AVERAGE_SCORE_THRESHOLD = 3
 
 USA = ['usa', 'us', 'united states', 'america', 'united states of america', 'u.s.', 'u.s.a.']
-US_ONLY = True
+US_ONLY = False
 
 # numbers csv lines
 NUMBERS = [
